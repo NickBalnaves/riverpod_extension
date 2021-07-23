@@ -84,3 +84,20 @@ ProviderBuilder<Product?>(
     builder: (product) {}
 )
 ```
+
+### App lifecycle observer
+
+```
+useEffect(
+  () {
+    final observer = AppLifeCycleObserver(
+      onResume: () {
+        // Do something
+      },
+    );
+    WidgetsBinding.instance?.addObserver(observer);
+    return () => WidgetsBinding.instance?.removeObserver(observer);
+  },
+  const [],
+);
+```

@@ -1,3 +1,7 @@
+## 1.0.1
+
+* Add AppLifeCycleObserver
+
 ## 1.0.0
 
-* TODO: Initial release.
+* Initial release.
