@@ -5,40 +5,40 @@ const ansiColorStart = '\x1B';
 const ansiColorReset = '$ansiColorStart[0m';
 
 /// Red log color
-const ansiColorRed = '31';
+const ansiColorRed = '$ansiColorStart[31m';
 
 /// Green log color
-const ansiColorGreen = '32';
+const ansiColorGreen = '$ansiColorStart[32m';
 
 /// Yellow log color
-const ansiColorYellow = '33';
+const ansiColorYellow = '$ansiColorStart[33m';
 
 /// Blue log color
-const ansiColorBlue = '34';
+const ansiColorBlue = '$ansiColorStart[34m';
 
 /// Magenta log color
-const ansiColorMagenta = '35';
+const ansiColorMagenta = '$ansiColorStart[35m';
 
 /// Cyan log color
-const ansiColorCyan = '36';
+const ansiColorCyan = '$ansiColorStart[36m';
 
 /// White log color
-const ansiColorWhite = '37';
+const ansiColorWhite = '$ansiColorStart[37m';
 
 /// Bright red log color
-const ansiColorBrightRed = '91';
+const ansiColorBrightRed = '$ansiColorStart[91m';
 
 /// Bright green log color
-const ansiColorBrightGreen = '92';
+const ansiColorBrightGreen = '$ansiColorStart[92m';
 
 /// Bright yellow log color
-const ansiColorBrightYellow = '93';
+const ansiColorBrightYellow = '$ansiColorStart[93m';
 
 /// Bright blue log color
-const ansiColorBrightBlue = '94';
+const ansiColorBrightBlue = '$ansiColorStart[94m';
 
 /// Bright magenta log color
-const ansiColorBrightMagenta = '95';
+const ansiColorBrightMagenta = '$ansiColorStart[95m';
 
 /// Bright cyan log color
-const ansiColorBrightCyan = '96';
+const ansiColorBrightCyan = '$ansiColorStart[96m';

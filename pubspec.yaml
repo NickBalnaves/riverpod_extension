@@ -1,6 +1,6 @@
 name: riverpod_extension
-description: Riverpod extensions
-version: 1.0.1
+description: Handy riverpod extensions. To aid in building applications that use riverpod
+version: 1.0.2
 homepage: https://github.com/NickBalnaves/riverpod_extension
 
 environment:
@@ -14,7 +14,6 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_hooks: ^0.17.0
-  flutter_secure_storage: ^4.2.0
   freezed: ^0.14.2
   freezed_annotation: ^0.14.2
   hooks_riverpod: ^0.14.0+4

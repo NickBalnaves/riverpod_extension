@@ -298,8 +298,7 @@ final _logRecordProvider = Provider.family.autoDispose<void, LogRecord>(
       log(
         // ignore: do_not_use_environment
         const bool.fromEnvironment('color_log')
-            ? '$ansiColorStart'
-                '[${logRecord.color}m'
+            ? '${logRecord.color}'
                 '${logRecord.message}'
                 '$ansiColorReset'
             : logRecord.message,

@@ -51,15 +51,21 @@ final _customHttpProvider =
 );
 ```
 
+Requests include automatic retries and are automatically logged in Firebase Performance
+
 ### Log provider
 
-Logs can be added through BuildContext or a ProviderReference e.g.
+Logs can be added through BuildContext or a ProviderReference
 
-`context.logInfo('MyLoggerName', 'Some info message', error, stackTrace)`
+`context.logInfo('MyLoggerName', 'Some info message')`
+
+`ref.logSevere('MyLoggerName', 'Some info message', error, stackTrace)`
 
 and accessed by 
 
 `ref.watch(logProvider).state`
+
+Use --dart-define=color_log=true to show log colors in an ANSI supported console
 
 ### Token provider
 
