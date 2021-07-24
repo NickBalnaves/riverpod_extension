@@ -8,5 +8,5 @@ extension UriExtension on Uri {
       );
 
   /// Parse to a riverpod_navigation UriTemplate
-  UriTemplate get uriToTemplate => UriTemplate.parse(toString());
+  UriTemplate get toUriTemplate => UriTemplate.parse(toString());
 }

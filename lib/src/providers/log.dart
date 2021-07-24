@@ -291,10 +291,16 @@ final logProvider = StateProvider.autoDispose<List<LogRecord>>(
   (ref) => <LogRecord>[],
 );
 
+/// Log level provider
+final logLevelProvider = Provider.autoDispose<LogLevel>(
+  (ref) => const LogLevel.info(),
+);
+
 final _logRecordProvider = Provider.family.autoDispose<void, LogRecord>(
   (ref, logRecord) {
     ref.watch(logProvider).state.add(logRecord);
-    if (kDebugMode) {
+    if (kDebugMode &&
+        logRecord.logLevel.value >= ref.watch(logLevelProvider).value) {
       log(
         // ignore: do_not_use_environment
         const bool.fromEnvironment('color_log')
