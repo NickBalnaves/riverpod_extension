@@ -3,20 +3,24 @@ import 'dart:convert';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:http/http.dart';
 import 'package:http/retry.dart';
-import '../models/http/http_group.dart';
 
+import '../models/async/response_state.dart';
+import '../models/http/http_group.dart';
+import '../models/http/retry_group.dart';
 import 'log.dart';
 
 /// Retry client provider
-final retryClientProvider = Provider.autoDispose<RetryClient>(
-  (ref) => RetryClient(
+final retryClientProvider =
+    Provider.autoDispose.family<RetryClient, RetryGroup>(
+  (ref, group) => RetryClient(
     Client(),
+    retries: group.retries,
     when: (response) {
       /// Retry requests 3 times if any errors on the API
 
       if (response.statusCode >= 400) {
         ref.logSevere(
-          'retryClientProvider',
+          'Retry',
           '${response.statusCode} ${response.reasonPhrase} '
               '${response.request?.url} ${response.request?.headers}\n'
               '${response.headers}',
@@ -25,7 +29,7 @@ final retryClientProvider = Provider.autoDispose<RetryClient>(
         return true;
       }
       ref.logFine(
-        'retryClientProvider',
+        'Retry',
         '${response.statusCode} ${response.reasonPhrase} '
             '${response.request?.url} ${response.request?.headers}\n'
             '${response.headers}',
@@ -33,7 +37,7 @@ final retryClientProvider = Provider.autoDispose<RetryClient>(
       return false;
     },
     whenError: (error, stackTrace) {
-      ref.logSevere('retryClientProvider', 'Error', error, stackTrace);
+      ref.logSevere('Retry', 'Error', error, stackTrace);
       return false;
     },
   ),
@@ -49,17 +53,21 @@ final _httpResponseProvider =
 /// HTTP request provider which always maps to a Map<String, dynamic>
 /// to be easily parsed into a model
 final httpRequestProvider = FutureProvider.autoDispose
-    .family<Map<String, dynamic>, HttpGroup>((ref, group) async {
-  try {
-    final response = await ref.watch(_httpResponseProvider(group).future);
-    ref.logFine('httpRequestProvider', response.body);
-    final Object? responseObject = jsonDecode(response.body);
-    if (responseObject is Map<String, dynamic>) {
-      return responseObject;
+    .family<HttpResponseState<Map<String, dynamic>>, HttpGroup>(
+  (ref, group) async {
+    try {
+      final response = await ref.watch(_httpResponseProvider(group).future);
+      ref.logFine('HTTP', response.body);
+      final Object? responseObject = jsonDecode(response.body);
+      if (responseObject is Map<String, dynamic>) {
+        return HttpResponseState(responseObject);
+      }
+      return HttpResponseState(
+        <String, dynamic>{'data': responseObject},
+      );
+    } on Exception catch (e) {
+      ref.logSevere('HTTP', e);
+      return HttpResponseState.error(e);
     }
-    return <String, dynamic>{'data': responseObject};
-  } on Exception catch (e) {
-    ref.logSevere('httpRequestProvider', e);
-    return <String, dynamic>{};
-  }
-});
+  },
+);

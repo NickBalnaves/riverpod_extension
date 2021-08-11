@@ -63,13 +63,17 @@ final metricRetryClientProvider = Provider.autoDispose<_MetricRetryClient>(
 );
 
 /// Custom API for an API repository associated to one domain
-final _customHttpProvider =
-    FutureProvider.autoDispose.family<Map<String, dynamic>, HttpRequest>(
+final _customHttpProvider = FutureProvider.autoDispose
+    .family<HttpResponseState<Map<String, dynamic>>, HttpRequest>(
   (ref, request) async {
-    return ref.watch(
+    final response = await ref.watch(
       httpRequestProvider(
         HttpGroup(
-          client: ref.watch(metricRetryClientProvider),
+          client: ref.watch(
+            metricRetryClientProvider(
+              RetryGroup(retries: request.retries),
+            ),
+          ),
           request: Request(
             request.method,
             Uri(
@@ -86,13 +90,22 @@ final _customHttpProvider =
         ),
       ).future,
     );
+    response.when(
+      (_) {},
+      loading: () {},
+      error: (exception) {
+        // Do something with exception
+      },
+    );
+    return response;
   },
 );
 
 /// Sign in request
 final customSignInRequestProvider =
-    FutureProvider.autoDispose.family<Map<String, dynamic>, SignInRequest>(
-  (ref, signIn) async => ref.watch(
+    FutureProvider.autoDispose
+        .family<HttpResponseState<Map<String, dynamic>>, SignInRequest>(
+  (ref, signIn) async => await ref.read(
     _customHttpProvider(
       HttpRequest(
         method: HttpMethods.post,
@@ -151,6 +164,18 @@ Helper widgets to display provider data, similar to StreamBuilder or FutureBuild
 ProviderBuilder<Product?>(
   provider: productProvider,
   builder: (product) {}
+)
+```
+
+```
+ProviderHttpFutureBuilder<ProductsResponse>(
+  provider: productsProvider,
+  error: (error, stackTrace) => TextButton(
+    onPressed: () => context.refresh(productsProvider),
+    child: Text('Retry'),
+  ),
+  loading: () => const CircularProgressIndicator(),
+  data: (products) => Text(products.toString()),
 )
 ```
 

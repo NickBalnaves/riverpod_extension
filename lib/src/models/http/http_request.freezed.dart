@@ -19,11 +19,13 @@ class _$HttpRequestTearOff {
   _HttpRequest call(
       {required String method,
       required String path,
-      Map<String, dynamic>? queryParameters}) {
+      Map<String, dynamic>? queryParameters,
+      int retries = 3}) {
     return _HttpRequest(
       method: method,
       path: path,
       queryParameters: queryParameters,
+      retries: retries,
     );
   }
 }
@@ -37,6 +39,7 @@ mixin _$HttpRequest {
   String get path => throw _privateConstructorUsedError;
   Map<String, dynamic>? get queryParameters =>
       throw _privateConstructorUsedError;
+  int get retries => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HttpRequestCopyWith<HttpRequest> get copyWith =>
@@ -49,7 +52,10 @@ abstract class $HttpRequestCopyWith<$Res> {
           HttpRequest value, $Res Function(HttpRequest) then) =
       _$HttpRequestCopyWithImpl<$Res>;
   $Res call(
-      {String method, String path, Map<String, dynamic>? queryParameters});
+      {String method,
+      String path,
+      Map<String, dynamic>? queryParameters,
+      int retries});
 }
 
 /// @nodoc
@@ -65,6 +71,7 @@ class _$HttpRequestCopyWithImpl<$Res> implements $HttpRequestCopyWith<$Res> {
     Object? method = freezed,
     Object? path = freezed,
     Object? queryParameters = freezed,
+    Object? retries = freezed,
   }) {
     return _then(_value.copyWith(
       method: method == freezed
@@ -79,6 +86,10 @@ class _$HttpRequestCopyWithImpl<$Res> implements $HttpRequestCopyWith<$Res> {
           ? _value.queryParameters
           : queryParameters // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      retries: retries == freezed
+          ? _value.retries
+          : retries // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -91,7 +102,10 @@ abstract class _$HttpRequestCopyWith<$Res>
       __$HttpRequestCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String method, String path, Map<String, dynamic>? queryParameters});
+      {String method,
+      String path,
+      Map<String, dynamic>? queryParameters,
+      int retries});
 }
 
 /// @nodoc
@@ -109,6 +123,7 @@ class __$HttpRequestCopyWithImpl<$Res> extends _$HttpRequestCopyWithImpl<$Res>
     Object? method = freezed,
     Object? path = freezed,
     Object? queryParameters = freezed,
+    Object? retries = freezed,
   }) {
     return _then(_HttpRequest(
       method: method == freezed
@@ -123,6 +138,10 @@ class __$HttpRequestCopyWithImpl<$Res> extends _$HttpRequestCopyWithImpl<$Res>
           ? _value.queryParameters
           : queryParameters // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      retries: retries == freezed
+          ? _value.retries
+          : retries // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -131,7 +150,10 @@ class __$HttpRequestCopyWithImpl<$Res> extends _$HttpRequestCopyWithImpl<$Res>
 
 class _$_HttpRequest implements _HttpRequest {
   const _$_HttpRequest(
-      {required this.method, required this.path, this.queryParameters});
+      {required this.method,
+      required this.path,
+      this.queryParameters,
+      this.retries = 3});
 
   @override
   final String method;
@@ -139,10 +161,13 @@ class _$_HttpRequest implements _HttpRequest {
   final String path;
   @override
   final Map<String, dynamic>? queryParameters;
+  @JsonKey(defaultValue: 3)
+  @override
+  final int retries;
 
   @override
   String toString() {
-    return 'HttpRequest(method: $method, path: $path, queryParameters: $queryParameters)';
+    return 'HttpRequest(method: $method, path: $path, queryParameters: $queryParameters, retries: $retries)';
   }
 
   @override
@@ -155,7 +180,9 @@ class _$_HttpRequest implements _HttpRequest {
                 const DeepCollectionEquality().equals(other.path, path)) &&
             (identical(other.queryParameters, queryParameters) ||
                 const DeepCollectionEquality()
-                    .equals(other.queryParameters, queryParameters)));
+                    .equals(other.queryParameters, queryParameters)) &&
+            (identical(other.retries, retries) ||
+                const DeepCollectionEquality().equals(other.retries, retries)));
   }
 
   @override
@@ -163,7 +190,8 @@ class _$_HttpRequest implements _HttpRequest {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(method) ^
       const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(queryParameters);
+      const DeepCollectionEquality().hash(queryParameters) ^
+      const DeepCollectionEquality().hash(retries);
 
   @JsonKey(ignore: true)
   @override
@@ -175,7 +203,8 @@ abstract class _HttpRequest implements HttpRequest {
   const factory _HttpRequest(
       {required String method,
       required String path,
-      Map<String, dynamic>? queryParameters}) = _$_HttpRequest;
+      Map<String, dynamic>? queryParameters,
+      int retries}) = _$_HttpRequest;
 
   @override
   String get method => throw _privateConstructorUsedError;
@@ -184,6 +213,8 @@ abstract class _HttpRequest implements HttpRequest {
   @override
   Map<String, dynamic>? get queryParameters =>
       throw _privateConstructorUsedError;
+  @override
+  int get retries => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$HttpRequestCopyWith<_HttpRequest> get copyWith =>

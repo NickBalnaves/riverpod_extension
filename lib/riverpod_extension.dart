@@ -2,11 +2,15 @@ library riverpod_extension;
 
 export 'src/constants/hooks.dart';
 export 'src/constants/http.dart';
+export 'src/extensions/context.dart';
 export 'src/extensions/datetime.dart';
 export 'src/extensions/duration.dart';
+export 'src/extensions/http_response_state.dart';
 export 'src/extensions/uri.dart';
+export 'src/models/async/response_state.dart';
 export 'src/models/http/http_group.dart';
 export 'src/models/http/http_request.dart';
+export 'src/models/http/retry_group.dart';
 export 'src/models/log/log_level.dart';
 export 'src/observers/app_lifecycle.dart';
 export 'src/providers/http.dart';
