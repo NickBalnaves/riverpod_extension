@@ -12,6 +12,7 @@ export 'src/models/http/http_group.dart';
 export 'src/models/http/http_request.dart';
 export 'src/models/http/retry_group.dart';
 export 'src/models/log/log_level.dart';
+export 'src/models/log/log_record.dart';
 export 'src/observers/app_lifecycle.dart';
 export 'src/providers/http.dart';
 export 'src/providers/log.dart';

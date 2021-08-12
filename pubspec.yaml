@@ -1,6 +1,6 @@
 name: riverpod_extension
 description: Handy riverpod extensions. To aid in building applications that use riverpod
-version: 1.1.0
+version: 1.1.1
 homepage: https://github.com/NickBalnaves/riverpod_extension
 
 environment:

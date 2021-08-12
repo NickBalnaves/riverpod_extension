@@ -1,3 +1,7 @@
+## 1.1.1
+
+* Expose LogRecord
+
 ## 1.1.0
 
 * Add ProviderHttpFutureBuilder for HTTP requests
