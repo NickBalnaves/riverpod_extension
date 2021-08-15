@@ -1,3 +1,7 @@
+## 1.2.1
+
+* Fix parsing array from http provider
+
 ## 1.2.0
 
 * Add exception handling to http requests

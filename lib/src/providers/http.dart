@@ -59,15 +59,15 @@ final httpRequestProvider = FutureProvider.autoDispose
     try {
       final response = await ref.watch(_httpResponseProvider(group).future);
       var data = <String, dynamic>{};
-      if (!response.body.startsWith('{') && !response.body.startsWith('{')) {
-        data = <String, dynamic>{'data': response.body};
-      } else {
+      if (response.body.startsWith('{') || response.body.startsWith('[')) {
         final Object? responseObject = jsonDecode(response.body);
         if (responseObject is Map<String, dynamic>) {
           data = responseObject;
         } else {
           data = <String, dynamic>{'data': responseObject};
         }
+      } else {
+        data = <String, dynamic>{'data': response.body};
       }
       if (response.statusCode >= 400) {
         final httpException = HttpException(
