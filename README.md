@@ -128,7 +128,7 @@ Logs can be added through BuildContext or a ProviderReference
 
 and accessed by 
 
-`ref.watch(logProvider).state`
+`ref.watch(logStreamProvider).data?.value`
 
 Use --dart-define=color_log=true to show log colors in an ANSI supported console
 

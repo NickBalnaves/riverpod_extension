@@ -1,3 +1,8 @@
+## 1.2.0
+
+* Add exception handling to http requests
+* Allow logs to be streamed
+
 ## 1.1.1
 
 * Expose LogRecord

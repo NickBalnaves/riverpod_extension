@@ -2,6 +2,7 @@ library riverpod_extension;
 
 export 'src/constants/hooks.dart';
 export 'src/constants/http.dart';
+export 'src/exceptions/http.dart';
 export 'src/extensions/context.dart';
 export 'src/extensions/datetime.dart';
 export 'src/extensions/duration.dart';
