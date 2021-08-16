@@ -10,6 +10,7 @@ class HttpRequest with _$HttpRequest {
     required String method,
     required String path,
     Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? body,
     @Default(3) int retries,
   }) = _HttpRequest;
 }

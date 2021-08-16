@@ -1,3 +1,7 @@
+## 1.2.2
+
+* Add body field for HttpRequest
+
 ## 1.2.1
 
 * Fix parsing array from http provider
