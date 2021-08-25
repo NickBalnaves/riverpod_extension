@@ -8,7 +8,6 @@ import '../../riverpod_extension.dart';
 import '../models/async/response_state.dart';
 import '../models/http/http_group.dart';
 import '../models/http/retry_group.dart';
-import 'log.dart';
 
 /// Retry client provider
 final retryClientProvider =
@@ -18,27 +17,20 @@ final retryClientProvider =
     retries: group.retries,
     when: (response) {
       /// Retry requests 3 times if any errors on the API
-
       if (response.statusCode >= 400) {
-        ref.logSevere(
-          'HTTP Retry',
-          '${response.statusCode} ${response.reasonPhrase} '
-              '${response.request?.url} ${response.request?.headers}\n'
-              '${response.headers}',
-        );
-
+        final onRetry = group.onRetry;
+        if (onRetry != null) {
+          onRetry(response);
+        }
         return true;
       }
-      ref.logFine(
-        'HTTP Retry',
-        '${response.statusCode} ${response.reasonPhrase} '
-            '${response.request?.url} ${response.request?.headers}\n'
-            '${response.headers}',
-      );
       return false;
     },
     whenError: (error, stackTrace) {
-      ref.logSevere('HTTP Retry', 'Error', error, stackTrace);
+      final onRetryError = group.onRetryError;
+      if (onRetryError != null) {
+        onRetryError(error, stackTrace);
+      }
       return false;
     },
   ),
@@ -71,17 +63,13 @@ final httpRequestProvider = FutureProvider.autoDispose
       }
       if (response.statusCode >= 400) {
         final httpException = HttpException(
-          statusCode: response.statusCode,
-          reasonPhrase: response.reasonPhrase,
+          response: response,
           data: data,
         );
-        ref.logWarning('HTTP', httpException, httpException);
         return HttpResponseState.error(httpException);
       }
-      ref.logFine('HTTP', response.body);
       return HttpResponseState(data);
     } on Exception catch (e) {
-      ref.logSevere('HTTP', e);
       return HttpResponseState.error(e);
     }
   },

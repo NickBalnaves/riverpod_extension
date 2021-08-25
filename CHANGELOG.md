@@ -1,3 +1,7 @@
+## 1.3.0
+
+* Add response to HttpException
+
 ## 1.2.2
 
 * Add body field for HttpRequest

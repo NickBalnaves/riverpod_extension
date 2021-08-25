@@ -1,22 +1,26 @@
+import 'package:http/http.dart';
+
 /// Exception thrown when the server responds with a greater than 400 status
 /// code
 class HttpException implements Exception {
   /// [HttpException]
   const HttpException({
-    required this.statusCode,
-    required this.reasonPhrase,
-    this.data = const <String, dynamic>{},
+    required this.response,
+    required this.data,
   });
 
-  /// The HTTP status code for this response.
-  final int statusCode;
+  /// HTTP response.
+  final Response response;
 
-  /// The reason phrase associated with the status code.
-  final String? reasonPhrase;
-
-  /// Data sent with the request
+  /// Response body wrapped in a 'data' field if not already in a Map
   final Map<String, dynamic> data;
 
   @override
-  String toString() => '$statusCode: $reasonPhrase';
+  String toString() => '${response.request?.method} '
+      '${response.request?.url} '
+      '${response.request?.headers}\n'
+      '${response.statusCode} '
+      '${response.reasonPhrase} '
+      '${response.headers} '
+      '${response.body}';
 }

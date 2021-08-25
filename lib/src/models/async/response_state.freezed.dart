@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$HttpResponseStateTearOff {
   const _$HttpResponseStateTearOff();
 
-  HttpResponseData<T> call<T>(T? data) {
+  HttpResponseData<T> call<T>(T data) {
     return HttpResponseData<T>(
       data,
     );
@@ -40,14 +40,14 @@ const $HttpResponseState = _$HttpResponseStateTearOff();
 mixin _$HttpResponseState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(T? data) $default, {
+    TResult Function(T data) $default, {
     required TResult Function() loading,
     required TResult Function(Exception exception) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(T? data)? $default, {
+    TResult Function(T data)? $default, {
     TResult Function()? loading,
     TResult Function(Exception exception)? error,
     required TResult orElse(),
@@ -92,7 +92,7 @@ abstract class $HttpResponseDataCopyWith<T, $Res> {
   factory $HttpResponseDataCopyWith(
           HttpResponseData<T> value, $Res Function(HttpResponseData<T>) then) =
       _$HttpResponseDataCopyWithImpl<T, $Res>;
-  $Res call({T? data});
+  $Res call({T data});
 }
 
 /// @nodoc
@@ -114,7 +114,7 @@ class _$HttpResponseDataCopyWithImpl<T, $Res>
       data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as T?,
+              as T,
     ));
   }
 }
@@ -125,7 +125,7 @@ class _$HttpResponseData<T> implements HttpResponseData<T> {
   const _$HttpResponseData(this.data);
 
   @override
-  final T? data;
+  final T data;
 
   @override
   String toString() {
@@ -152,7 +152,7 @@ class _$HttpResponseData<T> implements HttpResponseData<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(T? data) $default, {
+    TResult Function(T data) $default, {
     required TResult Function() loading,
     required TResult Function(Exception exception) error,
   }) {
@@ -162,7 +162,7 @@ class _$HttpResponseData<T> implements HttpResponseData<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(T? data)? $default, {
+    TResult Function(T data)? $default, {
     TResult Function()? loading,
     TResult Function(Exception exception)? error,
     required TResult orElse(),
@@ -199,9 +199,9 @@ class _$HttpResponseData<T> implements HttpResponseData<T> {
 }
 
 abstract class HttpResponseData<T> implements HttpResponseState<T> {
-  const factory HttpResponseData(T? data) = _$HttpResponseData<T>;
+  const factory HttpResponseData(T data) = _$HttpResponseData<T>;
 
-  T? get data => throw _privateConstructorUsedError;
+  T get data => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $HttpResponseDataCopyWith<T, HttpResponseData<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -247,7 +247,7 @@ class _$HttpResponseLoading<T> implements HttpResponseLoading<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(T? data) $default, {
+    TResult Function(T data) $default, {
     required TResult Function() loading,
     required TResult Function(Exception exception) error,
   }) {
@@ -257,7 +257,7 @@ class _$HttpResponseLoading<T> implements HttpResponseLoading<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(T? data)? $default, {
+    TResult Function(T data)? $default, {
     TResult Function()? loading,
     TResult Function(Exception exception)? error,
     required TResult orElse(),
@@ -364,7 +364,7 @@ class _$HttpResponseError<T> implements HttpResponseError<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(T? data) $default, {
+    TResult Function(T data) $default, {
     required TResult Function() loading,
     required TResult Function(Exception exception) error,
   }) {
@@ -374,7 +374,7 @@ class _$HttpResponseError<T> implements HttpResponseError<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(T? data)? $default, {
+    TResult Function(T data)? $default, {
     TResult Function()? loading,
     TResult Function(Exception exception)? error,
     required TResult orElse(),

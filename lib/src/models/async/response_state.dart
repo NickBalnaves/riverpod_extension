@@ -6,7 +6,7 @@ part 'response_state.freezed.dart';
 @freezed
 class HttpResponseState<T> with _$HttpResponseState<T> {
   /// HTTP response completed with a success
-  const factory HttpResponseState(T? data) = HttpResponseData<T>;
+  const factory HttpResponseState(T data) = HttpResponseData<T>;
 
   /// HTTP response loading
   const factory HttpResponseState.loading() = HttpResponseLoading;

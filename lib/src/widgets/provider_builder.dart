@@ -83,13 +83,8 @@ class ProviderHttpFutureBuilder<T> extends HookWidget {
 
   @override
   Widget build(BuildContext context) => useProvider(provider).when(
-        data: (value1) => value1.when(
-          (value2) {
-            if (value2 == null) {
-              return loading();
-            }
-            return data(value2);
-          },
+        data: (httpResponseState) => httpResponseState.when(
+          data,
           loading: loading,
           error: (exception) => error(
             exception,

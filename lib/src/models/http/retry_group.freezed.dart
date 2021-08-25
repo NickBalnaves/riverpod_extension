@@ -16,9 +16,14 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$RetryGroupTearOff {
   const _$RetryGroupTearOff();
 
-  _RetryGroup call({required int retries}) {
+  _RetryGroup call(
+      {required int retries,
+      dynamic Function(BaseResponse)? onRetry,
+      dynamic Function(Object, StackTrace)? onRetryError}) {
     return _RetryGroup(
       retries: retries,
+      onRetry: onRetry,
+      onRetryError: onRetryError,
     );
   }
 }
@@ -29,6 +34,10 @@ const $RetryGroup = _$RetryGroupTearOff();
 /// @nodoc
 mixin _$RetryGroup {
   int get retries => throw _privateConstructorUsedError;
+  dynamic Function(BaseResponse)? get onRetry =>
+      throw _privateConstructorUsedError;
+  dynamic Function(Object, StackTrace)? get onRetryError =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RetryGroupCopyWith<RetryGroup> get copyWith =>
@@ -40,7 +49,10 @@ abstract class $RetryGroupCopyWith<$Res> {
   factory $RetryGroupCopyWith(
           RetryGroup value, $Res Function(RetryGroup) then) =
       _$RetryGroupCopyWithImpl<$Res>;
-  $Res call({int retries});
+  $Res call(
+      {int retries,
+      dynamic Function(BaseResponse)? onRetry,
+      dynamic Function(Object, StackTrace)? onRetryError});
 }
 
 /// @nodoc
@@ -54,12 +66,22 @@ class _$RetryGroupCopyWithImpl<$Res> implements $RetryGroupCopyWith<$Res> {
   @override
   $Res call({
     Object? retries = freezed,
+    Object? onRetry = freezed,
+    Object? onRetryError = freezed,
   }) {
     return _then(_value.copyWith(
       retries: retries == freezed
           ? _value.retries
           : retries // ignore: cast_nullable_to_non_nullable
               as int,
+      onRetry: onRetry == freezed
+          ? _value.onRetry
+          : onRetry // ignore: cast_nullable_to_non_nullable
+              as dynamic Function(BaseResponse)?,
+      onRetryError: onRetryError == freezed
+          ? _value.onRetryError
+          : onRetryError // ignore: cast_nullable_to_non_nullable
+              as dynamic Function(Object, StackTrace)?,
     ));
   }
 }
@@ -70,7 +92,10 @@ abstract class _$RetryGroupCopyWith<$Res> implements $RetryGroupCopyWith<$Res> {
           _RetryGroup value, $Res Function(_RetryGroup) then) =
       __$RetryGroupCopyWithImpl<$Res>;
   @override
-  $Res call({int retries});
+  $Res call(
+      {int retries,
+      dynamic Function(BaseResponse)? onRetry,
+      dynamic Function(Object, StackTrace)? onRetryError});
 }
 
 /// @nodoc
@@ -86,12 +111,22 @@ class __$RetryGroupCopyWithImpl<$Res> extends _$RetryGroupCopyWithImpl<$Res>
   @override
   $Res call({
     Object? retries = freezed,
+    Object? onRetry = freezed,
+    Object? onRetryError = freezed,
   }) {
     return _then(_RetryGroup(
       retries: retries == freezed
           ? _value.retries
           : retries // ignore: cast_nullable_to_non_nullable
               as int,
+      onRetry: onRetry == freezed
+          ? _value.onRetry
+          : onRetry // ignore: cast_nullable_to_non_nullable
+              as dynamic Function(BaseResponse)?,
+      onRetryError: onRetryError == freezed
+          ? _value.onRetryError
+          : onRetryError // ignore: cast_nullable_to_non_nullable
+              as dynamic Function(Object, StackTrace)?,
     ));
   }
 }
@@ -99,14 +134,18 @@ class __$RetryGroupCopyWithImpl<$Res> extends _$RetryGroupCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_RetryGroup implements _RetryGroup {
-  const _$_RetryGroup({required this.retries});
+  const _$_RetryGroup({required this.retries, this.onRetry, this.onRetryError});
 
   @override
   final int retries;
+  @override
+  final dynamic Function(BaseResponse)? onRetry;
+  @override
+  final dynamic Function(Object, StackTrace)? onRetryError;
 
   @override
   String toString() {
-    return 'RetryGroup(retries: $retries)';
+    return 'RetryGroup(retries: $retries, onRetry: $onRetry, onRetryError: $onRetryError)';
   }
 
   @override
@@ -114,12 +153,22 @@ class _$_RetryGroup implements _RetryGroup {
     return identical(this, other) ||
         (other is _RetryGroup &&
             (identical(other.retries, retries) ||
-                const DeepCollectionEquality().equals(other.retries, retries)));
+                const DeepCollectionEquality()
+                    .equals(other.retries, retries)) &&
+            (identical(other.onRetry, onRetry) ||
+                const DeepCollectionEquality()
+                    .equals(other.onRetry, onRetry)) &&
+            (identical(other.onRetryError, onRetryError) ||
+                const DeepCollectionEquality()
+                    .equals(other.onRetryError, onRetryError)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(retries);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(retries) ^
+      const DeepCollectionEquality().hash(onRetry) ^
+      const DeepCollectionEquality().hash(onRetryError);
 
   @JsonKey(ignore: true)
   @override
@@ -128,10 +177,19 @@ class _$_RetryGroup implements _RetryGroup {
 }
 
 abstract class _RetryGroup implements RetryGroup {
-  const factory _RetryGroup({required int retries}) = _$_RetryGroup;
+  const factory _RetryGroup(
+      {required int retries,
+      dynamic Function(BaseResponse)? onRetry,
+      dynamic Function(Object, StackTrace)? onRetryError}) = _$_RetryGroup;
 
   @override
   int get retries => throw _privateConstructorUsedError;
+  @override
+  dynamic Function(BaseResponse)? get onRetry =>
+      throw _privateConstructorUsedError;
+  @override
+  dynamic Function(Object, StackTrace)? get onRetryError =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$RetryGroupCopyWith<_RetryGroup> get copyWith =>

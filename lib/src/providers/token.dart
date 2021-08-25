@@ -16,10 +16,10 @@ final tokenExpiryProvider = FutureProvider.autoDispose.family<void, String?>(
     final durationToRefreshToken =
         tokenExpiryDuration - const Duration(seconds: 30);
     if (durationToRefreshToken.isNegative) {
-      ref.logInfo('tokenExpiryProvider', 'Token expired');
+      ref.logInfo('Token', 'Token expired');
     } else {
       ref.logInfo(
-          'tokenExpiryProvider',
+          'Token',
           'Token expires in ${tokenExpiryDuration.toHoursMinuteSecondsString}, '
               'set to refresh in '
               '${durationToRefreshToken.toHoursMinuteSecondsString}');
@@ -30,7 +30,7 @@ final tokenExpiryProvider = FutureProvider.autoDispose.family<void, String?>(
     ref.onDispose(refreshDelay.cancel);
     await refreshDelay.value;
     ref.logInfo(
-      'tokenExpiryProvider',
+      'Token',
       'Token refresh delay finished. Ready to refresh token',
     );
   },
