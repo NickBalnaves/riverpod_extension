@@ -21,12 +21,14 @@ class _$HttpRequestTearOff {
       required String path,
       Map<String, dynamic>? queryParameters,
       Map<String, dynamic>? body,
+      Uint8List? bodyBytes,
       int retries = 3}) {
     return _HttpRequest(
       method: method,
       path: path,
       queryParameters: queryParameters,
       body: body,
+      bodyBytes: bodyBytes,
       retries: retries,
     );
   }
@@ -42,6 +44,7 @@ mixin _$HttpRequest {
   Map<String, dynamic>? get queryParameters =>
       throw _privateConstructorUsedError;
   Map<String, dynamic>? get body => throw _privateConstructorUsedError;
+  Uint8List? get bodyBytes => throw _privateConstructorUsedError;
   int get retries => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -59,6 +62,7 @@ abstract class $HttpRequestCopyWith<$Res> {
       String path,
       Map<String, dynamic>? queryParameters,
       Map<String, dynamic>? body,
+      Uint8List? bodyBytes,
       int retries});
 }
 
@@ -76,6 +80,7 @@ class _$HttpRequestCopyWithImpl<$Res> implements $HttpRequestCopyWith<$Res> {
     Object? path = freezed,
     Object? queryParameters = freezed,
     Object? body = freezed,
+    Object? bodyBytes = freezed,
     Object? retries = freezed,
   }) {
     return _then(_value.copyWith(
@@ -95,6 +100,10 @@ class _$HttpRequestCopyWithImpl<$Res> implements $HttpRequestCopyWith<$Res> {
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      bodyBytes: bodyBytes == freezed
+          ? _value.bodyBytes
+          : bodyBytes // ignore: cast_nullable_to_non_nullable
+              as Uint8List?,
       retries: retries == freezed
           ? _value.retries
           : retries // ignore: cast_nullable_to_non_nullable
@@ -115,6 +124,7 @@ abstract class _$HttpRequestCopyWith<$Res>
       String path,
       Map<String, dynamic>? queryParameters,
       Map<String, dynamic>? body,
+      Uint8List? bodyBytes,
       int retries});
 }
 
@@ -134,6 +144,7 @@ class __$HttpRequestCopyWithImpl<$Res> extends _$HttpRequestCopyWithImpl<$Res>
     Object? path = freezed,
     Object? queryParameters = freezed,
     Object? body = freezed,
+    Object? bodyBytes = freezed,
     Object? retries = freezed,
   }) {
     return _then(_HttpRequest(
@@ -153,6 +164,10 @@ class __$HttpRequestCopyWithImpl<$Res> extends _$HttpRequestCopyWithImpl<$Res>
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      bodyBytes: bodyBytes == freezed
+          ? _value.bodyBytes
+          : bodyBytes // ignore: cast_nullable_to_non_nullable
+              as Uint8List?,
       retries: retries == freezed
           ? _value.retries
           : retries // ignore: cast_nullable_to_non_nullable
@@ -169,6 +184,7 @@ class _$_HttpRequest implements _HttpRequest {
       required this.path,
       this.queryParameters,
       this.body,
+      this.bodyBytes,
       this.retries = 3});
 
   @override
@@ -179,13 +195,15 @@ class _$_HttpRequest implements _HttpRequest {
   final Map<String, dynamic>? queryParameters;
   @override
   final Map<String, dynamic>? body;
+  @override
+  final Uint8List? bodyBytes;
   @JsonKey(defaultValue: 3)
   @override
   final int retries;
 
   @override
   String toString() {
-    return 'HttpRequest(method: $method, path: $path, queryParameters: $queryParameters, body: $body, retries: $retries)';
+    return 'HttpRequest(method: $method, path: $path, queryParameters: $queryParameters, body: $body, bodyBytes: $bodyBytes, retries: $retries)';
   }
 
   @override
@@ -201,6 +219,9 @@ class _$_HttpRequest implements _HttpRequest {
                     .equals(other.queryParameters, queryParameters)) &&
             (identical(other.body, body) ||
                 const DeepCollectionEquality().equals(other.body, body)) &&
+            (identical(other.bodyBytes, bodyBytes) ||
+                const DeepCollectionEquality()
+                    .equals(other.bodyBytes, bodyBytes)) &&
             (identical(other.retries, retries) ||
                 const DeepCollectionEquality().equals(other.retries, retries)));
   }
@@ -212,6 +233,7 @@ class _$_HttpRequest implements _HttpRequest {
       const DeepCollectionEquality().hash(path) ^
       const DeepCollectionEquality().hash(queryParameters) ^
       const DeepCollectionEquality().hash(body) ^
+      const DeepCollectionEquality().hash(bodyBytes) ^
       const DeepCollectionEquality().hash(retries);
 
   @JsonKey(ignore: true)
@@ -226,6 +248,7 @@ abstract class _HttpRequest implements HttpRequest {
       required String path,
       Map<String, dynamic>? queryParameters,
       Map<String, dynamic>? body,
+      Uint8List? bodyBytes,
       int retries}) = _$_HttpRequest;
 
   @override
@@ -237,6 +260,8 @@ abstract class _HttpRequest implements HttpRequest {
       throw _privateConstructorUsedError;
   @override
   Map<String, dynamic>? get body => throw _privateConstructorUsedError;
+  @override
+  Uint8List? get bodyBytes => throw _privateConstructorUsedError;
   @override
   int get retries => throw _privateConstructorUsedError;
   @override

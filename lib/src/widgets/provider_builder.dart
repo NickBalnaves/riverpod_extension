@@ -109,7 +109,7 @@ class ProviderBuilder<T> extends HookWidget {
   final AutoDisposeProvider<T> provider;
 
   /// Builder widget to show when data is retrieved from the value
-  final Widget Function(T?) builder;
+  final Widget Function(T) builder;
 
   @override
   Widget build(BuildContext context) => builder(useProvider(provider));

@@ -1,3 +1,7 @@
+## 1.3.1
+
+* Add bodyBytes to HttpRequest
+
 ## 1.3.0
 
 * Add response to HttpException
