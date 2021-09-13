@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:riverpod_navigation/riverpod_navigation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_navigation/riverpod_navigation.dart';
+
 import 'uri.dart';
 
 /// Extensions on [BuildContext]

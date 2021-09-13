@@ -8,12 +8,13 @@ extension UriExtension on Uri {
         userInfo: userInfo.isNotEmpty ? userInfo : null,
         host: host.isNotEmpty ? host : null,
         port: port != 0 ? port : null,
-        path: path + uri.path,
-        queryParameters: <String, String>{
-          ...queryParameters,
-          ...uri.queryParameters
-        },
-        fragment: fragment + uri.fragment,
+        path: (path == '/' ? '' : path) + uri.path,
+        queryParameters: queryParameters.isEmpty && uri.queryParameters.isEmpty
+            ? null
+            : <String, String>{...queryParameters, ...uri.queryParameters},
+        fragment: fragment.isEmpty && uri.fragment.isEmpty
+            ? null
+            : fragment + uri.fragment,
       );
 
   /// Parse to a riverpod_navigation UriTemplate

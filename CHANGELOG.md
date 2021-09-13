@@ -1,3 +1,7 @@
+## 1.3.2
+
+* Fix Uri combine extension for root routes
+
 ## 1.3.1
 
 * Add bodyBytes to HttpRequest
