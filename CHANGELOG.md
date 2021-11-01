@@ -1,51 +1,56 @@
+## 1.4.0-dev.0
+
+* feat: Add navigation providers
+* chore: Upgrade to riverpod dev release
+
 ## 1.3.2
 
-* Fix Uri combine extension for root routes
+* fix: Uri combine extension for root routes
 
 ## 1.3.1
 
-* Add bodyBytes to HttpRequest
+* feat: Add bodyBytes to HttpRequest
 
 ## 1.3.0
 
-* Add response to HttpException
+* feat: Add response to HttpException
 
 ## 1.2.2
 
-* Add body field for HttpRequest
+* feat: Add body field for HttpRequest
 
 ## 1.2.1
 
-* Fix parsing array from http provider
+* fix: Parsing array from http provider
 
 ## 1.2.0
 
-* Add exception handling to http requests
-* Allow logs to be streamed
+* feat: Add exception handling to http requests
+* feat: Allow logs to be streamed
 
 ## 1.1.1
 
-* Expose LogRecord
+* feat: Expose LogRecord
 
 ## 1.1.0
 
-* Add ProviderHttpFutureBuilder for HTTP requests
-* Add pushRoute for providers
-* Add retries to requests
+* feat: Add ProviderHttpFutureBuilder for HTTP requests
+* feat: Add pushRoute for providers
+* feat: Add retries to requests
 
 ## 1.0.3
 
-* Remove firebase dependency
-* Allow log level to be applied
-* Allow HTTP client to be passed to requests
+* fix: Remove firebase dependency
+* feat: Allow log level to be applied
+* feat: Allow HTTP client to be passed to requests
 
 ## 1.0.2
 
-* Improve pub score
+* chore: Improve pub score
 
 ## 1.0.1
 
-* Add AppLifeCycleObserver
+* feat: Add AppLifeCycleObserver
 
 ## 1.0.0
 

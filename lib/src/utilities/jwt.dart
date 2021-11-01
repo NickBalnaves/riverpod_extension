@@ -5,8 +5,11 @@ class Jwt {
   Jwt._();
 
   /// Decode a string JWT token
-  static Map<String, dynamic> decode(String token) {
+  static Map<String, dynamic> decode(final String token) {
     final splitToken = token.split('.');
+    if (splitToken.length < 3) {
+      return <String, dynamic>{};
+    }
     try {
       return jsonDecode(
         utf8.decode(
@@ -21,13 +24,13 @@ class Jwt {
   }
 
   /// Token expiration date
-  static DateTime? expiry(String? token) {
+  static DateTime? expiry(final String? token) {
     if (token == null) {
       return null;
     }
     return DateTime.fromMillisecondsSinceEpoch(0).add(
       Duration(
-        seconds: decode(token)['exp'] as int,
+        seconds: decode(token)['exp'] as int? ?? 0,
       ),
     );
   }

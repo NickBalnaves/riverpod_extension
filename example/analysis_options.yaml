@@ -1,0 +1,6 @@
+include: ../analysis_options.yaml
+
+linter:
+  rules:
+    # Key can be defined when needed
+    use_key_in_widget_constructors: false

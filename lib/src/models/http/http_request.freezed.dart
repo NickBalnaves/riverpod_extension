@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'http_request.dart';
 
@@ -209,32 +210,27 @@ class _$_HttpRequest implements _HttpRequest {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _HttpRequest &&
-            (identical(other.method, method) ||
-                const DeepCollectionEquality().equals(other.method, method)) &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.queryParameters, queryParameters) ||
-                const DeepCollectionEquality()
-                    .equals(other.queryParameters, queryParameters)) &&
-            (identical(other.body, body) ||
-                const DeepCollectionEquality().equals(other.body, body)) &&
+        (other.runtimeType == runtimeType &&
+            other is _HttpRequest &&
+            (identical(other.method, method) || other.method == method) &&
+            (identical(other.path, path) || other.path == path) &&
+            const DeepCollectionEquality()
+                .equals(other.queryParameters, queryParameters) &&
+            const DeepCollectionEquality().equals(other.body, body) &&
             (identical(other.bodyBytes, bodyBytes) ||
-                const DeepCollectionEquality()
-                    .equals(other.bodyBytes, bodyBytes)) &&
-            (identical(other.retries, retries) ||
-                const DeepCollectionEquality().equals(other.retries, retries)));
+                other.bodyBytes == bodyBytes) &&
+            (identical(other.retries, retries) || other.retries == retries));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(method) ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(queryParameters) ^
-      const DeepCollectionEquality().hash(body) ^
-      const DeepCollectionEquality().hash(bodyBytes) ^
-      const DeepCollectionEquality().hash(retries);
+  int get hashCode => Object.hash(
+      runtimeType,
+      method,
+      path,
+      const DeepCollectionEquality().hash(queryParameters),
+      const DeepCollectionEquality().hash(body),
+      bodyBytes,
+      retries);
 
   @JsonKey(ignore: true)
   @override
@@ -252,18 +248,17 @@ abstract class _HttpRequest implements HttpRequest {
       int retries}) = _$_HttpRequest;
 
   @override
-  String get method => throw _privateConstructorUsedError;
+  String get method;
   @override
-  String get path => throw _privateConstructorUsedError;
+  String get path;
   @override
-  Map<String, dynamic>? get queryParameters =>
-      throw _privateConstructorUsedError;
+  Map<String, dynamic>? get queryParameters;
   @override
-  Map<String, dynamic>? get body => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get body;
   @override
-  Uint8List? get bodyBytes => throw _privateConstructorUsedError;
+  Uint8List? get bodyBytes;
   @override
-  int get retries => throw _privateConstructorUsedError;
+  int get retries;
   @override
   @JsonKey(ignore: true)
   _$HttpRequestCopyWith<_HttpRequest> get copyWith =>

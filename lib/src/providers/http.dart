@@ -12,10 +12,10 @@ import '../models/http/retry_group.dart';
 /// Retry client provider
 final retryClientProvider =
     Provider.autoDispose.family<RetryClient, RetryGroup>(
-  (ref, group) => RetryClient(
+  (final ref, final group) => RetryClient(
     Client(),
     retries: group.retries,
-    when: (response) {
+    when: (final response) {
       /// Retry requests 3 times if any errors on the API
       if (response.statusCode >= 400) {
         final onRetry = group.onRetry;
@@ -26,7 +26,7 @@ final retryClientProvider =
       }
       return false;
     },
-    whenError: (error, stackTrace) {
+    whenError: (final error, final stackTrace) {
       final onRetryError = group.onRetryError;
       if (onRetryError != null) {
         onRetryError(error, stackTrace);
@@ -38,7 +38,7 @@ final retryClientProvider =
 
 final _httpResponseProvider =
     FutureProvider.autoDispose.family<Response, HttpGroup>(
-  (ref, group) async => Response.fromStream(
+  (final ref, final group) async => Response.fromStream(
     await group.client.send(group.request),
   ),
 );
@@ -47,7 +47,7 @@ final _httpResponseProvider =
 /// to be easily parsed into a model
 final httpRequestProvider = FutureProvider.autoDispose
     .family<HttpResponseState<Map<String, dynamic>>, HttpGroup>(
-  (ref, group) async {
+  (final ref, final group) async {
     try {
       final response = await ref.watch(_httpResponseProvider(group).future);
       var data = <String, dynamic>{};

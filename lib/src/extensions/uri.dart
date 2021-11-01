@@ -1,9 +1,9 @@
-import 'package:riverpod_navigation/riverpod_navigation.dart';
+import '../parsing/template.dart';
 
 /// Extension on [Uri]
 extension UriExtension on Uri {
   /// Combine Uri with another
-  Uri combine(Uri uri) => Uri(
+  Uri combine(final Uri uri) => Uri(
         scheme: scheme.isNotEmpty ? scheme : null,
         userInfo: userInfo.isNotEmpty ? userInfo : null,
         host: host.isNotEmpty ? host : null,

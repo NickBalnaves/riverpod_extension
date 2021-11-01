@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'http_group.dart';
 
@@ -124,18 +125,14 @@ class _$_HttpGroup implements _HttpGroup {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _HttpGroup &&
-            (identical(other.client, client) ||
-                const DeepCollectionEquality().equals(other.client, client)) &&
-            (identical(other.request, request) ||
-                const DeepCollectionEquality().equals(other.request, request)));
+        (other.runtimeType == runtimeType &&
+            other is _HttpGroup &&
+            (identical(other.client, client) || other.client == client) &&
+            (identical(other.request, request) || other.request == request));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(client) ^
-      const DeepCollectionEquality().hash(request);
+  int get hashCode => Object.hash(runtimeType, client, request);
 
   @JsonKey(ignore: true)
   @override
@@ -148,9 +145,9 @@ abstract class _HttpGroup implements HttpGroup {
       {required Client client, required BaseRequest request}) = _$_HttpGroup;
 
   @override
-  Client get client => throw _privateConstructorUsedError;
+  Client get client;
   @override
-  BaseRequest get request => throw _privateConstructorUsedError;
+  BaseRequest get request;
   @override
   @JsonKey(ignore: true)
   _$HttpGroupCopyWith<_HttpGroup> get copyWith =>

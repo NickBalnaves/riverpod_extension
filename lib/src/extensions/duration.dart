@@ -1,6 +1,6 @@
 /// [Duration] extensions
 extension DurationExtension on Duration {
-  String _padTwo(int n) => n.toString().padLeft(2, '0');
+  String _padTwo(final int n) => n.toString().padLeft(2, '0');
 
   /// Formats to 00:00:00
   String get toHoursMinuteSecondsString => '${_padTwo(inHours)}:'

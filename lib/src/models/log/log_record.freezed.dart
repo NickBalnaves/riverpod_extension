@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'log_record.dart';
 
@@ -244,37 +245,23 @@ class _$_LogRecord extends _LogRecord {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LogRecord &&
+        (other.runtimeType == runtimeType &&
+            other is _LogRecord &&
             (identical(other.logLevel, logLevel) ||
-                const DeepCollectionEquality()
-                    .equals(other.logLevel, logLevel)) &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality()
-                    .equals(other.message, message)) &&
+                other.logLevel == logLevel) &&
+            (identical(other.message, message) || other.message == message) &&
             (identical(other.loggerName, loggerName) ||
-                const DeepCollectionEquality()
-                    .equals(other.loggerName, loggerName)) &&
-            (identical(other.time, time) ||
-                const DeepCollectionEquality().equals(other.time, time)) &&
-            (identical(other.color, color) ||
-                const DeepCollectionEquality().equals(other.color, color)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
+                other.loggerName == loggerName) &&
+            (identical(other.time, time) || other.time == time) &&
+            (identical(other.color, color) || other.color == color) &&
+            const DeepCollectionEquality().equals(other.error, error) &&
             (identical(other.stackTrace, stackTrace) ||
-                const DeepCollectionEquality()
-                    .equals(other.stackTrace, stackTrace)));
+                other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(logLevel) ^
-      const DeepCollectionEquality().hash(message) ^
-      const DeepCollectionEquality().hash(loggerName) ^
-      const DeepCollectionEquality().hash(time) ^
-      const DeepCollectionEquality().hash(color) ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(stackTrace);
+  int get hashCode => Object.hash(runtimeType, logLevel, message, loggerName,
+      time, color, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
@@ -294,29 +281,29 @@ abstract class _LogRecord extends LogRecord {
   const _LogRecord._() : super._();
 
   @override
-  LogLevel get logLevel => throw _privateConstructorUsedError;
+  LogLevel get logLevel;
   @override
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @override
 
   /// Logger where this record is stored.
-  String get loggerName => throw _privateConstructorUsedError;
+  String get loggerName;
   @override
 
   /// Time when this record was created.
-  DateTime get time => throw _privateConstructorUsedError;
+  DateTime get time;
   @override
 
   /// ANSI color
-  String get color => throw _privateConstructorUsedError;
+  String get color;
   @override
 
   /// Associated error (if any) when recording errors messages.
-  Object? get error => throw _privateConstructorUsedError;
+  Object? get error;
   @override
 
   /// Associated stackTrace (if any) when recording errors messages.
-  StackTrace? get stackTrace => throw _privateConstructorUsedError;
+  StackTrace? get stackTrace;
   @override
   @JsonKey(ignore: true)
   _$LogRecordCopyWith<_LogRecord> get copyWith =>

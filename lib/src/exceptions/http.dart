@@ -5,8 +5,8 @@ import 'package:http/http.dart';
 class HttpException implements Exception {
   /// [HttpException]
   const HttpException({
-    required this.response,
-    required this.data,
+    required final this.response,
+    required final this.data,
   });
 
   /// HTTP response.

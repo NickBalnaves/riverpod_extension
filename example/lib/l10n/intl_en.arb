@@ -1,0 +1,12 @@
+{
+  "@@locale": "en",
+  "buttonLogin": "LOGIN",
+  "fieldPassword": "Password",
+  "fieldUsername": "Username",
+  "fieldSignOut": "Sign out",
+  "messageUserOffline": "Tap button below to add a contact!",
+  "titleApp": "Example",
+  "titleImages": "Images",
+  "titleProfile": "Profile",
+  "titleLogin": "Login"
+}

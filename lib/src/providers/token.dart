@@ -7,7 +7,7 @@ import 'log.dart';
 
 /// Detects an expired token
 final tokenExpiryProvider = FutureProvider.autoDispose.family<void, String?>(
-  (ref, token) async {
+  (final ref, final token) async {
     final tokenExpiryTime = Jwt.expiry(token);
     if (tokenExpiryTime == null) {
       return;
@@ -19,10 +19,11 @@ final tokenExpiryProvider = FutureProvider.autoDispose.family<void, String?>(
       ref.logInfo('Token', 'Token expired');
     } else {
       ref.logInfo(
-          'Token',
-          'Token expires in ${tokenExpiryDuration.toHoursMinuteSecondsString}, '
-              'set to refresh in '
-              '${durationToRefreshToken.toHoursMinuteSecondsString}');
+        'Token',
+        'Token expires in ${tokenExpiryDuration.toHoursMinuteSecondsString}, '
+            'set to refresh in '
+            '${durationToRefreshToken.toHoursMinuteSecondsString}',
+      );
     }
     final refreshDelay = CancelableOperation.fromFuture(
       Future<void>.delayed(durationToRefreshToken),

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'response_state.dart';
 
@@ -22,8 +23,10 @@ class _$HttpResponseStateTearOff {
     );
   }
 
-  HttpResponseLoading<T> loading<T>() {
-    return HttpResponseLoading<T>();
+  HttpResponseLoading<T> loading<T>(AsyncValue<HttpResponseState<T>>? value) {
+    return HttpResponseLoading<T>(
+      value,
+    );
   }
 
   HttpResponseError<T> error<T>(Exception exception) {
@@ -41,14 +44,21 @@ mixin _$HttpResponseState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(T data) $default, {
-    required TResult Function() loading,
+    required TResult Function(AsyncValue<HttpResponseState<T>>? value) loading,
     required TResult Function(Exception exception) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(T data)? $default, {
+    TResult Function(AsyncValue<HttpResponseState<T>>? value)? loading,
+    TResult Function(Exception exception)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(T data)? $default, {
-    TResult Function()? loading,
+    TResult Function(AsyncValue<HttpResponseState<T>>? value)? loading,
     TResult Function(Exception exception)? error,
     required TResult orElse(),
   }) =>
@@ -58,6 +68,13 @@ mixin _$HttpResponseState<T> {
     TResult Function(HttpResponseData<T> value) $default, {
     required TResult Function(HttpResponseLoading<T> value) loading,
     required TResult Function(HttpResponseError<T> value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(HttpResponseData<T> value)? $default, {
+    TResult Function(HttpResponseLoading<T> value)? loading,
+    TResult Function(HttpResponseError<T> value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -135,14 +152,14 @@ class _$HttpResponseData<T> implements HttpResponseData<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is HttpResponseData<T> &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)));
+        (other.runtimeType == runtimeType &&
+            other is HttpResponseData<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
@@ -153,7 +170,7 @@ class _$HttpResponseData<T> implements HttpResponseData<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(T data) $default, {
-    required TResult Function() loading,
+    required TResult Function(AsyncValue<HttpResponseState<T>>? value) loading,
     required TResult Function(Exception exception) error,
   }) {
     return $default(data);
@@ -161,9 +178,19 @@ class _$HttpResponseData<T> implements HttpResponseData<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(T data)? $default, {
+    TResult Function(AsyncValue<HttpResponseState<T>>? value)? loading,
+    TResult Function(Exception exception)? error,
+  }) {
+    return $default?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(T data)? $default, {
-    TResult Function()? loading,
+    TResult Function(AsyncValue<HttpResponseState<T>>? value)? loading,
     TResult Function(Exception exception)? error,
     required TResult orElse(),
   }) {
@@ -185,6 +212,16 @@ class _$HttpResponseData<T> implements HttpResponseData<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(HttpResponseData<T> value)? $default, {
+    TResult Function(HttpResponseLoading<T> value)? loading,
+    TResult Function(HttpResponseError<T> value)? error,
+  }) {
+    return $default?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(HttpResponseData<T> value)? $default, {
     TResult Function(HttpResponseLoading<T> value)? loading,
@@ -201,7 +238,7 @@ class _$HttpResponseData<T> implements HttpResponseData<T> {
 abstract class HttpResponseData<T> implements HttpResponseState<T> {
   const factory HttpResponseData(T data) = _$HttpResponseData<T>;
 
-  T get data => throw _privateConstructorUsedError;
+  T get data;
   @JsonKey(ignore: true)
   $HttpResponseDataCopyWith<T, HttpResponseData<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -212,6 +249,7 @@ abstract class $HttpResponseLoadingCopyWith<T, $Res> {
   factory $HttpResponseLoadingCopyWith(HttpResponseLoading<T> value,
           $Res Function(HttpResponseLoading<T>) then) =
       _$HttpResponseLoadingCopyWithImpl<T, $Res>;
+  $Res call({AsyncValue<HttpResponseState<T>>? value});
 }
 
 /// @nodoc
@@ -224,46 +262,80 @@ class _$HttpResponseLoadingCopyWithImpl<T, $Res>
 
   @override
   HttpResponseLoading<T> get _value => super._value as HttpResponseLoading<T>;
+
+  @override
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(HttpResponseLoading<T>(
+      value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as AsyncValue<HttpResponseState<T>>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$HttpResponseLoading<T> implements HttpResponseLoading<T> {
-  const _$HttpResponseLoading();
+  const _$HttpResponseLoading(this.value);
+
+  @override
+  final AsyncValue<HttpResponseState<T>>? value;
 
   @override
   String toString() {
-    return 'HttpResponseState<$T>.loading()';
+    return 'HttpResponseState<$T>.loading(value: $value)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is HttpResponseLoading<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is HttpResponseLoading<T> &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  $HttpResponseLoadingCopyWith<T, HttpResponseLoading<T>> get copyWith =>
+      _$HttpResponseLoadingCopyWithImpl<T, HttpResponseLoading<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(T data) $default, {
-    required TResult Function() loading,
+    required TResult Function(AsyncValue<HttpResponseState<T>>? value) loading,
     required TResult Function(Exception exception) error,
   }) {
-    return loading();
+    return loading(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(T data)? $default, {
+    TResult Function(AsyncValue<HttpResponseState<T>>? value)? loading,
+    TResult Function(Exception exception)? error,
+  }) {
+    return loading?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(T data)? $default, {
-    TResult Function()? loading,
+    TResult Function(AsyncValue<HttpResponseState<T>>? value)? loading,
     TResult Function(Exception exception)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
-      return loading();
+      return loading(value);
     }
     return orElse();
   }
@@ -276,6 +348,16 @@ class _$HttpResponseLoading<T> implements HttpResponseLoading<T> {
     required TResult Function(HttpResponseError<T> value) error,
   }) {
     return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(HttpResponseData<T> value)? $default, {
+    TResult Function(HttpResponseLoading<T> value)? loading,
+    TResult Function(HttpResponseError<T> value)? error,
+  }) {
+    return loading?.call(this);
   }
 
   @override
@@ -294,7 +376,13 @@ class _$HttpResponseLoading<T> implements HttpResponseLoading<T> {
 }
 
 abstract class HttpResponseLoading<T> implements HttpResponseState<T> {
-  const factory HttpResponseLoading() = _$HttpResponseLoading<T>;
+  const factory HttpResponseLoading(AsyncValue<HttpResponseState<T>>? value) =
+      _$HttpResponseLoading<T>;
+
+  AsyncValue<HttpResponseState<T>>? get value;
+  @JsonKey(ignore: true)
+  $HttpResponseLoadingCopyWith<T, HttpResponseLoading<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -345,15 +433,14 @@ class _$HttpResponseError<T> implements HttpResponseError<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is HttpResponseError<T> &&
+        (other.runtimeType == runtimeType &&
+            other is HttpResponseError<T> &&
             (identical(other.exception, exception) ||
-                const DeepCollectionEquality()
-                    .equals(other.exception, exception)));
+                other.exception == exception));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(exception);
+  int get hashCode => Object.hash(runtimeType, exception);
 
   @JsonKey(ignore: true)
   @override
@@ -365,7 +452,7 @@ class _$HttpResponseError<T> implements HttpResponseError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(T data) $default, {
-    required TResult Function() loading,
+    required TResult Function(AsyncValue<HttpResponseState<T>>? value) loading,
     required TResult Function(Exception exception) error,
   }) {
     return error(exception);
@@ -373,9 +460,19 @@ class _$HttpResponseError<T> implements HttpResponseError<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(T data)? $default, {
+    TResult Function(AsyncValue<HttpResponseState<T>>? value)? loading,
+    TResult Function(Exception exception)? error,
+  }) {
+    return error?.call(exception);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(T data)? $default, {
-    TResult Function()? loading,
+    TResult Function(AsyncValue<HttpResponseState<T>>? value)? loading,
     TResult Function(Exception exception)? error,
     required TResult orElse(),
   }) {
@@ -397,6 +494,16 @@ class _$HttpResponseError<T> implements HttpResponseError<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(HttpResponseData<T> value)? $default, {
+    TResult Function(HttpResponseLoading<T> value)? loading,
+    TResult Function(HttpResponseError<T> value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(HttpResponseData<T> value)? $default, {
     TResult Function(HttpResponseLoading<T> value)? loading,
@@ -413,7 +520,7 @@ class _$HttpResponseError<T> implements HttpResponseError<T> {
 abstract class HttpResponseError<T> implements HttpResponseState<T> {
   const factory HttpResponseError(Exception exception) = _$HttpResponseError<T>;
 
-  Exception get exception => throw _privateConstructorUsedError;
+  Exception get exception;
   @JsonKey(ignore: true)
   $HttpResponseErrorCopyWith<T, HttpResponseError<T>> get copyWith =>
       throw _privateConstructorUsedError;

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../constants/logging.dart';
@@ -6,10 +5,14 @@ import '../models/log/log_level.dart';
 import '../models/log/log_record.dart';
 
 /// BuildContext extensions
-extension BuildContextRiverpodExtensionExtensions on BuildContext {
+extension BuildContextRiverpodExtensionExtensions on WidgetRef {
   /// Log message at level [LogLevel.finest].
-  void logFinest(String loggerName, Object? message,
-          [Object? error, StackTrace? stackTrace]) =>
+  void logFinest(
+    final String loggerName,
+    final Object? message, [
+    final Object? error,
+    final StackTrace? stackTrace,
+  ]) =>
       read(_logProvider.notifier).add(
         LogRecord(
           logLevel: const LogLevel.finest(),
@@ -23,8 +26,12 @@ extension BuildContextRiverpodExtensionExtensions on BuildContext {
       );
 
   /// Log message at level [LogLevel.finer].
-  void logFiner(String loggerName, Object? message,
-          [Object? error, StackTrace? stackTrace]) =>
+  void logFiner(
+    final String loggerName,
+    final Object? message, [
+    final Object? error,
+    final StackTrace? stackTrace,
+  ]) =>
       read(_logProvider.notifier).add(
         LogRecord(
           logLevel: const LogLevel.finer(),
@@ -38,8 +45,12 @@ extension BuildContextRiverpodExtensionExtensions on BuildContext {
       );
 
   /// Log message at level [LogLevel.fine].
-  void logFine(String loggerName, Object? message,
-          [Object? error, StackTrace? stackTrace]) =>
+  void logFine(
+    final String loggerName,
+    final Object? message, [
+    final Object? error,
+    final StackTrace? stackTrace,
+  ]) =>
       read(_logProvider.notifier).add(
         LogRecord(
           logLevel: const LogLevel.fine(),
@@ -53,8 +64,12 @@ extension BuildContextRiverpodExtensionExtensions on BuildContext {
       );
 
   /// Log message at level [LogLevel.config].
-  void logConfig(String loggerName, Object? message,
-          [Object? error, StackTrace? stackTrace]) =>
+  void logConfig(
+    final String loggerName,
+    final Object? message, [
+    final Object? error,
+    final StackTrace? stackTrace,
+  ]) =>
       read(_logProvider.notifier).add(
         LogRecord(
           logLevel: const LogLevel.config(),
@@ -68,8 +83,12 @@ extension BuildContextRiverpodExtensionExtensions on BuildContext {
       );
 
   /// Log message at level [LogLevel.info].
-  void logInfo(String loggerName, Object? message,
-          [Object? error, StackTrace? stackTrace]) =>
+  void logInfo(
+    final String loggerName,
+    final Object? message, [
+    final Object? error,
+    final StackTrace? stackTrace,
+  ]) =>
       read(_logProvider.notifier).add(
         LogRecord(
           logLevel: const LogLevel.info(),
@@ -83,8 +102,12 @@ extension BuildContextRiverpodExtensionExtensions on BuildContext {
       );
 
   /// Log message at level [LogLevel.warning].
-  void logWarning(String loggerName, Object? message,
-          [Object? error, StackTrace? stackTrace]) =>
+  void logWarning(
+    final String loggerName,
+    final Object? message, [
+    final Object? error,
+    final StackTrace? stackTrace,
+  ]) =>
       read(_logProvider.notifier).add(
         LogRecord(
           logLevel: const LogLevel.warning(),
@@ -98,8 +121,12 @@ extension BuildContextRiverpodExtensionExtensions on BuildContext {
       );
 
   /// Log message at level [LogLevel.severe].
-  void logSevere(String loggerName, Object? message,
-          [Object? error, StackTrace? stackTrace]) =>
+  void logSevere(
+    final String loggerName,
+    final Object? message, [
+    final Object? error,
+    final StackTrace? stackTrace,
+  ]) =>
       read(_logProvider.notifier).add(
         LogRecord(
           logLevel: const LogLevel.severe(),
@@ -113,8 +140,12 @@ extension BuildContextRiverpodExtensionExtensions on BuildContext {
       );
 
   /// Log message at level [LogLevel.shout].
-  void logShout(String loggerName, Object? message,
-          [Object? error, StackTrace? stackTrace]) =>
+  void logShout(
+    final String loggerName,
+    final Object? message, [
+    final Object? error,
+    final StackTrace? stackTrace,
+  ]) =>
       read(_logProvider.notifier).add(
         LogRecord(
           logLevel: const LogLevel.shout(),
@@ -129,10 +160,14 @@ extension BuildContextRiverpodExtensionExtensions on BuildContext {
 }
 
 /// ProviderReference extensions
-extension ProviderReferenceRiverpodExtensionExtensions on ProviderReference {
+extension ProviderReferenceRiverpodExtensionExtensions on ProviderRefBase {
   /// Log message at level [LogLevel.finest].
-  void logFinest(String loggerName, Object? message,
-          [Object? error, StackTrace? stackTrace]) =>
+  void logFinest(
+    final String loggerName,
+    final Object? message, [
+    final Object? error,
+    final StackTrace? stackTrace,
+  ]) =>
       read(_logProvider.notifier).add(
         LogRecord(
           logLevel: const LogLevel.finest(),
@@ -146,8 +181,12 @@ extension ProviderReferenceRiverpodExtensionExtensions on ProviderReference {
       );
 
   /// Log message at level [LogLevel.finer].
-  void logFiner(String loggerName, Object? message,
-          [Object? error, StackTrace? stackTrace]) =>
+  void logFiner(
+    final String loggerName,
+    final Object? message, [
+    final Object? error,
+    final StackTrace? stackTrace,
+  ]) =>
       read(_logProvider.notifier).add(
         LogRecord(
           logLevel: const LogLevel.finer(),
@@ -161,8 +200,12 @@ extension ProviderReferenceRiverpodExtensionExtensions on ProviderReference {
       );
 
   /// Log message at level [LogLevel.fine].
-  void logFine(String loggerName, Object? message,
-          [Object? error, StackTrace? stackTrace]) =>
+  void logFine(
+    final String loggerName,
+    final Object? message, [
+    final Object? error,
+    final StackTrace? stackTrace,
+  ]) =>
       read(_logProvider.notifier).add(
         LogRecord(
           logLevel: const LogLevel.fine(),
@@ -176,8 +219,12 @@ extension ProviderReferenceRiverpodExtensionExtensions on ProviderReference {
       );
 
   /// Log message at level [LogLevel.config].
-  void logConfig(String loggerName, Object? message,
-          [Object? error, StackTrace? stackTrace]) =>
+  void logConfig(
+    final String loggerName,
+    final Object? message, [
+    final Object? error,
+    final StackTrace? stackTrace,
+  ]) =>
       read(_logProvider.notifier).add(
         LogRecord(
           logLevel: const LogLevel.config(),
@@ -191,8 +238,12 @@ extension ProviderReferenceRiverpodExtensionExtensions on ProviderReference {
       );
 
   /// Log message at level [LogLevel.info].
-  void logInfo(String loggerName, Object? message,
-          [Object? error, StackTrace? stackTrace]) =>
+  void logInfo(
+    final String loggerName,
+    final Object? message, [
+    final Object? error,
+    final StackTrace? stackTrace,
+  ]) =>
       read(_logProvider.notifier).add(
         LogRecord(
           logLevel: const LogLevel.info(),
@@ -206,8 +257,12 @@ extension ProviderReferenceRiverpodExtensionExtensions on ProviderReference {
       );
 
   /// Log message at level [LogLevel.warning].
-  void logWarning(String loggerName, Object? message,
-          [Object? error, StackTrace? stackTrace]) =>
+  void logWarning(
+    final String loggerName,
+    final Object? message, [
+    final Object? error,
+    final StackTrace? stackTrace,
+  ]) =>
       read(_logProvider.notifier).add(
         LogRecord(
           logLevel: const LogLevel.warning(),
@@ -221,8 +276,12 @@ extension ProviderReferenceRiverpodExtensionExtensions on ProviderReference {
       );
 
   /// Log message at level [LogLevel.severe].
-  void logSevere(String loggerName, Object? message,
-          [Object? error, StackTrace? stackTrace]) =>
+  void logSevere(
+    final String loggerName,
+    final Object? message, [
+    final Object? error,
+    final StackTrace? stackTrace,
+  ]) =>
       read(_logProvider.notifier).add(
         LogRecord(
           logLevel: const LogLevel.severe(),
@@ -236,8 +295,12 @@ extension ProviderReferenceRiverpodExtensionExtensions on ProviderReference {
       );
 
   /// Log message at level [LogLevel.shout].
-  void logShout(String loggerName, Object? message,
-          [Object? error, StackTrace? stackTrace]) =>
+  void logShout(
+    final String loggerName,
+    final Object? message, [
+    final Object? error,
+    final StackTrace? stackTrace,
+  ]) =>
       read(_logProvider.notifier).add(
         LogRecord(
           logLevel: const LogLevel.shout(),
@@ -253,12 +316,12 @@ extension ProviderReferenceRiverpodExtensionExtensions on ProviderReference {
 
 /// Log provider
 final _logProvider = StateNotifierProvider<_LogNotifier, List<LogRecord>>(
-  (ref) => _LogNotifier(),
+  (final ref) => _LogNotifier(),
 );
 
 /// Log stream provider
 final logStreamProvider = StreamProvider<List<LogRecord>>(
-  (ref) => ref.watch(_logProvider.notifier).stream,
+  (final ref) => ref.watch(_logProvider.notifier).stream,
 );
 
 /// [StateNotifier] for managing the log state
@@ -267,12 +330,7 @@ class _LogNotifier extends StateNotifier<List<LogRecord>> {
   _LogNotifier() : super(<LogRecord>[]);
 
   /// Adds a log to the current state
-  void add(LogRecord log) {
+  void add(final LogRecord log) {
     state = [...state, log];
   }
 }
-
-/// Log level provider
-final logLevelProvider = Provider.autoDispose<LogLevel>(
-  (ref) => const LogLevel.info(),
-);

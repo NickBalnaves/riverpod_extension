@@ -9,23 +9,23 @@ part 'log_record.freezed.dart';
 class LogRecord with _$LogRecord {
   /// [LogRecord]
   const factory LogRecord({
-    required LogLevel logLevel,
-    required String message,
+    required final LogLevel logLevel,
+    required final String message,
 
     /// Logger where this record is stored.
-    required String loggerName,
+    required final String loggerName,
 
     /// Time when this record was created.
-    required DateTime time,
+    required final DateTime time,
 
     /// ANSI color
-    required String color,
+    required final String color,
 
     /// Associated error (if any) when recording errors messages.
-    Object? error,
+    final Object? error,
 
     /// Associated stackTrace (if any) when recording errors messages.
-    StackTrace? stackTrace,
+    final StackTrace? stackTrace,
   }) = _LogRecord;
 
   const LogRecord._();

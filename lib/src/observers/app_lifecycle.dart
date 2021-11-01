@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 class AppLifeCycleObserver with WidgetsBindingObserver {
   /// [AppLifeCycleObserver]
   AppLifeCycleObserver({
-    this.onResume,
-    this.onPause,
-    this.onInactive,
-    this.onDetached,
+    final this.onResume,
+    final this.onPause,
+    final this.onInactive,
+    final this.onDetached,
   });
 
   /// On resume
@@ -24,7 +24,7 @@ class AppLifeCycleObserver with WidgetsBindingObserver {
   VoidCallback? onDetached;
 
   @override
-  Future<void> didChangeAppLifecycleState(AppLifecycleState state) async {
+  Future<void> didChangeAppLifecycleState(final AppLifecycleState state) async {
     super.didChangeAppLifecycleState(state);
 
     final onResumeCallback = onResume;

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'retry_group.dart';
 
@@ -151,24 +152,16 @@ class _$_RetryGroup implements _RetryGroup {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RetryGroup &&
-            (identical(other.retries, retries) ||
-                const DeepCollectionEquality()
-                    .equals(other.retries, retries)) &&
-            (identical(other.onRetry, onRetry) ||
-                const DeepCollectionEquality()
-                    .equals(other.onRetry, onRetry)) &&
+        (other.runtimeType == runtimeType &&
+            other is _RetryGroup &&
+            (identical(other.retries, retries) || other.retries == retries) &&
+            (identical(other.onRetry, onRetry) || other.onRetry == onRetry) &&
             (identical(other.onRetryError, onRetryError) ||
-                const DeepCollectionEquality()
-                    .equals(other.onRetryError, onRetryError)));
+                other.onRetryError == onRetryError));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(retries) ^
-      const DeepCollectionEquality().hash(onRetry) ^
-      const DeepCollectionEquality().hash(onRetryError);
+  int get hashCode => Object.hash(runtimeType, retries, onRetry, onRetryError);
 
   @JsonKey(ignore: true)
   @override
@@ -183,13 +176,11 @@ abstract class _RetryGroup implements RetryGroup {
       dynamic Function(Object, StackTrace)? onRetryError}) = _$_RetryGroup;
 
   @override
-  int get retries => throw _privateConstructorUsedError;
+  int get retries;
   @override
-  dynamic Function(BaseResponse)? get onRetry =>
-      throw _privateConstructorUsedError;
+  dynamic Function(BaseResponse)? get onRetry;
   @override
-  dynamic Function(Object, StackTrace)? get onRetryError =>
-      throw _privateConstructorUsedError;
+  dynamic Function(Object, StackTrace)? get onRetryError;
   @override
   @JsonKey(ignore: true)
   _$RetryGroupCopyWith<_RetryGroup> get copyWith =>

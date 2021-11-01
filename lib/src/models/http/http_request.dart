@@ -9,11 +9,11 @@ part 'http_request.freezed.dart';
 class HttpRequest with _$HttpRequest {
   /// [HttpRequest]
   const factory HttpRequest({
-    required String method,
-    required String path,
-    Map<String, dynamic>? queryParameters,
-    Map<String, dynamic>? body,
-    Uint8List? bodyBytes,
-    @Default(3) int retries,
+    required final String method,
+    required final String path,
+    final Map<String, dynamic>? queryParameters,
+    final Map<String, dynamic>? body,
+    final Uint8List? bodyBytes,
+    @Default(3) final int retries,
   }) = _HttpRequest;
 }

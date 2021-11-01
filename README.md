@@ -4,6 +4,169 @@ Helpers for riverpod
 
 ## Usage
 
+### Navigation providers
+
+#### Bootstrap
+
+Define the app routing heirarchy and a provider which uses `navigationNotifierProvider` which determines the routing logic.
+
+```dart
+final unauthenticatedRoutes = RouteDefinition(
+  template: UriTemplate.parse('/'),
+  builder: (_, __, ___, ____) =>
+      const MaterialPage<void>(
+    child: LoginView(),
+  ),
+);
+
+final authenticatedRoutes = RouteDefinition(
+  template: UriTemplate.parse('/'),
+  builder: (_, __) => MaterialPage(
+    child: HomeLayout(),
+  ),
+  next: [
+    RouteDefinition(
+      template: UriTemplate.parse('/articles/:id'),
+      builder: (_, __) => MaterialPage(
+        child: ArticleLayout(
+          id: entry.parameters['id']!,
+        ),
+      ),
+    ),
+  ],
+);
+
+final appNavigationProvider =
+    StateNotifierProvider.autoDispose<NavigationNotifier, NavigationState>(
+  (ref) => ref.watch(_appNavigationStateNotifierProvider),
+);
+
+final _appNavigationStateNotifierProvider =
+    Provider.autoDispose<NavigationNotifier>(
+  (ref) => ref.watch(
+    navigationNotifierProvider(
+      NavigationRequest(
+        routes: unauthenticatedRoutes, // or authenticatedRoutes based on some condition
+      ),
+    ),
+  ),
+);
+
+```
+
+Use `appNavigationProvider` in the `MaterialApp.router` factory
+
+```dart
+void main() => runApp(
+  const ProviderScope(
+    child: App(),
+  ),
+);
+
+class App extends HookConsumerWidget {
+  const App();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return MaterialApp.router(
+      routerDelegate: RiverpodRouterDelegate(
+        notifier: ref.watch(appNavigationProvider.notifier),
+      ),
+      routeInformationParser: RiverpodRouteParser(),
+    );
+  }
+}
+```
+
+#### Navigate 
+
+##### From a provider
+
+A `appNavigationProvider` is exposed and can be used to read the current navigation state.
+
+To access the underlying notifier that allows various actions, use the `appNavigationProvider.notifier` provider.
+
+```dart
+final myProvider = Provider<MyState>((ref) {
+  final navigation = ref.watch(appNavigationProvider.notifier);
+  return MyState(
+    navigateToArticles: () {
+      navigation.navigate(Uri.parse('/articles'))
+    },
+    pop: () {
+      navigation.pop();
+    }
+  );
+});
+```
+
+##### From a WidgetRef
+
+The notifier can be accessed with the `navigation` extension method from the `WidgetRef`.
+
+```dart
+@override
+Widget build(BuildContext context, WidgetRef ref) {
+  return TextButton(
+    child: Text('Articles'),
+    onPressed: () {
+      ref.navigation.navigate(Uri.parse('/articles'))
+    }
+  );
+}
+```
+
+#### Pop behaviour
+
+To customize the behaviour of pops when navigating back, a `PopBehavior` callback can be provided to the `navigationNotifierProvider` provider. The result indicates whether the current pop action should be updated, cancelled or auto (*default behavior which simply replace the route with the parent one*).
+
+```dart
+final _appNavigationStateNotifierProvider =
+    Provider.autoDispose<NavigationNotifier>(
+  (final ref) => ref.watch(
+    navigationNotifierProvider(
+      NavigationRequest(
+        // ...
+        popBehaviour: (notifier, stack) {
+          if (stack.lastRoute?.key == Key('share-article')) {
+            return PopResult.update(Uri.parse('/'));
+          }
+          return PopResult.auto();
+        },
+      ),
+    ),
+  ),
+);
+```
+
+#### URI rewriting
+
+The uri can be modified before they are processed by the router with the `uriRewriter` property. This can be useful for redirecting or normalizing uris.
+
+```dart
+final _appNavigationStateNotifierProvider =
+    Provider.autoDispose<NavigationNotifier>(
+  (final ref) => ref.watch(
+    navigationNotifierProvider(
+      NavigationRequest(
+        // ...
+        uriRewriter: (notifier, uri) {
+          if (uri == Uri.parse('/home')) {
+            return Uri.parse('/');
+          }
+          const publicPrefix = 'https://example.com';
+          final stringUri = uri.toString();
+          if (stringUri.startsWith(publicPrefix)) {
+            return Uri.parse(stringUri.substring(publicPrefix.length);
+          }
+          return uri;
+        },
+      ),
+    ),
+  ),
+);
+```
+
 ### HTTP methods
 
 `HttpMethods.get` = "`GET`"
@@ -26,7 +189,7 @@ Helpers for riverpod
 
 ### HTTP provider
 
-```
+```dart
 /// A custom http client to trace HTTP requests for Firebase Performance
 class _MetricRetryClient extends RetryClient {
   _MetricRetryClient(this._inner) : super(_inner);
@@ -105,7 +268,7 @@ final _customHttpProvider = FutureProvider.autoDispose
 final customSignInRequestProvider =
     FutureProvider.autoDispose
         .family<HttpResponseState<Map<String, dynamic>>, SignInRequest>(
-  (ref, signIn) async => await ref.read(
+  (ref, signIn) async => await ref.watch(
     _customHttpProvider(
       HttpRequest(
         method: HttpMethods.post,
@@ -122,8 +285,6 @@ final customSignInRequestProvider =
 
 Logs can be added through BuildContext or a ProviderReference
 
-`context.logInfo('MyLoggerName', 'Some info message')`
-
 `ref.logSevere('MyLoggerName', 'Some error message', error, stackTrace)`
 
 and accessed by 
@@ -132,22 +293,54 @@ and accessed by
 
 Use --dart-define=color_log=true to show log colors in an ANSI supported console
 
-Override the level at which logs are outputted using 
+Print out logs using 
 
+```dart
+final appLogsProvider = Provider.autoDispose<void>(
+  (final ref) => ref.watch(logStreamProvider.stream).listen(
+    (final logs) {
+      if (logs.isNotEmpty) {
+        final logRecord = logs.last;
+        if (kDebugMode &&
+            logRecord.logLevel.value >= const LogLevel.info().value) {
+          log(
+            // ignore: do_not_use_environment
+            const bool.fromEnvironment('color_log')
+                ? '${logRecord.color}'
+                    '${logRecord.message}'
+                    '\x1B[0m'
+                : logRecord.message,
+            name: logRecord.loggerName,
+            level: logRecord.logLevel.value,
+            error: logRecord.error,
+            stackTrace: logRecord.stackTrace,
+          );
+        }
+      }
+    },
+  ),
+);
 ```
-ProviderScope(
-  overrides: [
-    logLevelProvider.overrideWithValue(const LogLevel.fine()),
-  ],
+
+Listen to this provider in your app root
+
+```dart
+class App extends HookConsumerWidget {
+  const App();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    ref.watch(appLogsProvider);
+    /// ...
 ```
 
 ### Token provider
 
-```
+```dart
 final tokenRefreshProvider = FutureProvider.autoDispose<void>(
   (ref) async {
     await ref.watch(tokenExpiryProvider(token).future);
-    final token = await ref.read(tokenRefreshProvider.future);
+    final token = await ref.watch(tokenRefreshProvider.future);
     if (token != null && token.isNotEmpty) {
       // Write token and any other steps required in your application
       ref.container.refresh(tokenExpiryProvider);
@@ -160,14 +353,14 @@ final tokenRefreshProvider = FutureProvider.autoDispose<void>(
 
 Helper widgets to display provider data, similar to StreamBuilder or FutureBuilder
 
-```
+```dart
 ProviderBuilder<Product?>(
   provider: productProvider,
   builder: (product) {}
 )
 ```
 
-```
+```dart
 ProviderHttpFutureBuilder<ProductsResponse>(
   provider: productsProvider,
   error: (error, stackTrace) => TextButton(
@@ -181,7 +374,7 @@ ProviderHttpFutureBuilder<ProductsResponse>(
 
 ### App lifecycle observer
 
-```
+```dart
 useEffect(
   () {
     final observer = AppLifeCycleObserver(

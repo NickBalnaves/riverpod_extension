@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../riverpod_extension.dart';
 
 /// A widget helper for displaying [StreamProvider] data
-class ProviderStreamBuilder<T> extends HookWidget {
+class ProviderStreamBuilder<T> extends HookConsumerWidget {
   /// A widget helper for displaying [StreamProvider] data
   const ProviderStreamBuilder({
-    required this.provider,
-    required this.builder,
-    Key? key,
+    required final this.provider,
+    required final this.builder,
+    final Key? key,
   }) : super(key: key);
 
   /// The provider for obtaining the stream
@@ -20,21 +19,22 @@ class ProviderStreamBuilder<T> extends HookWidget {
   final Widget Function(T?) builder;
 
   @override
-  Widget build(BuildContext context) => useProvider(provider).when(
-        data: builder,
-        error: (error, stackTrace) => builder(null),
-        loading: () => builder(null),
-      );
+  Widget build(final BuildContext context, final WidgetRef ref) =>
+      ref.watch(provider).when(
+            data: builder,
+            error: (final error, final stackTrace, final data) => builder(null),
+            loading: (final data) => builder(null),
+          );
 }
 
 /// A widget helper for displaying [FutureProvider] data
-class ProviderFutureBuilder<T> extends HookWidget {
+class ProviderFutureBuilder<T> extends HookConsumerWidget {
   /// A widget helper for displaying [FutureProvider] data
   const ProviderFutureBuilder({
-    required this.provider,
-    required this.builder,
-    this.loading,
-    Key? key,
+    required final this.provider,
+    required final this.builder,
+    final this.loading,
+    final Key? key,
   }) : super(key: key);
 
   /// The provider for obtaining the future
@@ -47,22 +47,23 @@ class ProviderFutureBuilder<T> extends HookWidget {
   final Widget? loading;
 
   @override
-  Widget build(BuildContext context) => useProvider(provider).when(
-        data: builder,
-        error: (error, stackTrace) => builder(null),
-        loading: () => loading ?? builder(null),
-      );
+  Widget build(final BuildContext context, final WidgetRef ref) =>
+      ref.watch(provider).when(
+            data: builder,
+            error: (final error, final stackTrace, final data) => builder(null),
+            loading: (final data) => loading ?? builder(null),
+          );
 }
 
 /// A widget helper for displaying [FutureProvider] data
-class ProviderHttpFutureBuilder<T> extends HookWidget {
+class ProviderHttpFutureBuilder<T> extends HookConsumerWidget {
   /// A widget helper for displaying [FutureProvider] data
   const ProviderHttpFutureBuilder({
-    required this.provider,
-    required this.data,
-    required this.loading,
-    required this.error,
-    Key? key,
+    required final this.provider,
+    required final this.data,
+    required final this.loading,
+    required final this.error,
+    final Key? key,
   }) : super(key: key);
 
   /// The provider for obtaining the future
@@ -72,37 +73,40 @@ class ProviderHttpFutureBuilder<T> extends HookWidget {
   final Widget Function(T value) data;
 
   /// Widget to display when data is loading from the future
-  final Widget Function() loading;
+  final Widget Function(AsyncValue<HttpResponseState<T>>?) loading;
 
   /// Widget to display when there is an error when retrieving data from the
   /// future
   final Widget Function(
     Object error,
     StackTrace? stackTrace,
+    AsyncData<HttpResponseState<T>>?,
   ) error;
 
   @override
-  Widget build(BuildContext context) => useProvider(provider).when(
-        data: (httpResponseState) => httpResponseState.when(
-          data,
-          loading: loading,
-          error: (exception) => error(
-            exception,
-            null,
-          ),
-        ),
-        loading: loading,
-        error: error,
-      );
+  Widget build(final BuildContext context, final WidgetRef ref) =>
+      ref.watch(provider).when(
+            data: (final httpResponseState) => httpResponseState.when(
+              data,
+              loading: loading,
+              error: (final exception) => error(
+                exception,
+                null,
+                null,
+              ),
+            ),
+            loading: loading,
+            error: error,
+          );
 }
 
 /// A widget helper for displaying [Provider] data
-class ProviderBuilder<T> extends HookWidget {
+class ProviderBuilder<T> extends HookConsumerWidget {
   /// A widget helper for displaying [Provider] data
   const ProviderBuilder({
-    required this.provider,
-    required this.builder,
-    Key? key,
+    required final this.provider,
+    required final this.builder,
+    final Key? key,
   }) : super(key: key);
 
   /// The provider for obtaining the value
@@ -112,5 +116,6 @@ class ProviderBuilder<T> extends HookWidget {
   final Widget Function(T) builder;
 
   @override
-  Widget build(BuildContext context) => builder(useProvider(provider));
+  Widget build(final BuildContext context, final WidgetRef ref) =>
+      builder(ref.watch(provider));
 }

@@ -8,8 +8,8 @@ part 'retry_group.freezed.dart';
 class RetryGroup with _$RetryGroup {
   /// [RetryGroup]
   const factory RetryGroup({
-    required int retries,
-    Function(BaseResponse)? onRetry,
-    Function(Object, StackTrace)? onRetryError,
+    required final int retries,
+    final Function(BaseResponse)? onRetry,
+    final Function(Object, StackTrace)? onRetryError,
   }) = _RetryGroup;
 }

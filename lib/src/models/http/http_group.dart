@@ -8,7 +8,7 @@ part 'http_group.freezed.dart';
 class HttpGroup with _$HttpGroup {
   /// [HttpGroup]
   const factory HttpGroup({
-    required Client client,
-    required BaseRequest request,
+    required final Client client,
+    required final BaseRequest request,
   }) = _HttpGroup;
 }

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'log_level.dart';
 
@@ -99,6 +100,20 @@ mixin _$LogLevel {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int value)? all,
+    TResult Function(int value)? off,
+    TResult Function(int value)? finest,
+    TResult Function(int value)? finer,
+    TResult Function(int value)? fine,
+    TResult Function(int value)? config,
+    TResult Function(int value)? info,
+    TResult Function(int value)? warning,
+    TResult Function(int value)? severe,
+    TResult Function(int value)? shout,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int value)? all,
     TResult Function(int value)? off,
@@ -125,6 +140,20 @@ mixin _$LogLevel {
     required TResult Function(_Warning value) warning,
     required TResult Function(_Severe value) severe,
     required TResult Function(_Shout value) shout,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_All value)? all,
+    TResult Function(_Off value)? off,
+    TResult Function(_Finest value)? finest,
+    TResult Function(_Finer value)? finer,
+    TResult Function(_Fine value)? fine,
+    TResult Function(_Config value)? config,
+    TResult Function(_Info value)? info,
+    TResult Function(_Warning value)? warning,
+    TResult Function(_Severe value)? severe,
+    TResult Function(_Shout value)? shout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -223,14 +252,13 @@ class _$_All implements _All {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _All &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _All &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+  int get hashCode => Object.hash(runtimeType, value);
 
   @JsonKey(ignore: true)
   @override
@@ -252,6 +280,23 @@ class _$_All implements _All {
     required TResult Function(int value) shout,
   }) {
     return all(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int value)? all,
+    TResult Function(int value)? off,
+    TResult Function(int value)? finest,
+    TResult Function(int value)? finer,
+    TResult Function(int value)? fine,
+    TResult Function(int value)? config,
+    TResult Function(int value)? info,
+    TResult Function(int value)? warning,
+    TResult Function(int value)? severe,
+    TResult Function(int value)? shout,
+  }) {
+    return all?.call(value);
   }
 
   @override
@@ -294,6 +339,23 @@ class _$_All implements _All {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_All value)? all,
+    TResult Function(_Off value)? off,
+    TResult Function(_Finest value)? finest,
+    TResult Function(_Finer value)? finer,
+    TResult Function(_Fine value)? fine,
+    TResult Function(_Config value)? config,
+    TResult Function(_Info value)? info,
+    TResult Function(_Warning value)? warning,
+    TResult Function(_Severe value)? severe,
+    TResult Function(_Shout value)? shout,
+  }) {
+    return all?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_All value)? all,
     TResult Function(_Off value)? off,
@@ -318,7 +380,7 @@ abstract class _All implements LogLevel {
   const factory _All({int value}) = _$_All;
 
   @override
-  int get value => throw _privateConstructorUsedError;
+  int get value;
   @override
   @JsonKey(ignore: true)
   _$AllCopyWith<_All> get copyWith => throw _privateConstructorUsedError;
@@ -371,14 +433,13 @@ class _$_Off implements _Off {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Off &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _Off &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+  int get hashCode => Object.hash(runtimeType, value);
 
   @JsonKey(ignore: true)
   @override
@@ -400,6 +461,23 @@ class _$_Off implements _Off {
     required TResult Function(int value) shout,
   }) {
     return off(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int value)? all,
+    TResult Function(int value)? off,
+    TResult Function(int value)? finest,
+    TResult Function(int value)? finer,
+    TResult Function(int value)? fine,
+    TResult Function(int value)? config,
+    TResult Function(int value)? info,
+    TResult Function(int value)? warning,
+    TResult Function(int value)? severe,
+    TResult Function(int value)? shout,
+  }) {
+    return off?.call(value);
   }
 
   @override
@@ -442,6 +520,23 @@ class _$_Off implements _Off {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_All value)? all,
+    TResult Function(_Off value)? off,
+    TResult Function(_Finest value)? finest,
+    TResult Function(_Finer value)? finer,
+    TResult Function(_Fine value)? fine,
+    TResult Function(_Config value)? config,
+    TResult Function(_Info value)? info,
+    TResult Function(_Warning value)? warning,
+    TResult Function(_Severe value)? severe,
+    TResult Function(_Shout value)? shout,
+  }) {
+    return off?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_All value)? all,
     TResult Function(_Off value)? off,
@@ -466,7 +561,7 @@ abstract class _Off implements LogLevel {
   const factory _Off({int value}) = _$_Off;
 
   @override
-  int get value => throw _privateConstructorUsedError;
+  int get value;
   @override
   @JsonKey(ignore: true)
   _$OffCopyWith<_Off> get copyWith => throw _privateConstructorUsedError;
@@ -519,14 +614,13 @@ class _$_Finest implements _Finest {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Finest &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _Finest &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+  int get hashCode => Object.hash(runtimeType, value);
 
   @JsonKey(ignore: true)
   @override
@@ -548,6 +642,23 @@ class _$_Finest implements _Finest {
     required TResult Function(int value) shout,
   }) {
     return finest(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int value)? all,
+    TResult Function(int value)? off,
+    TResult Function(int value)? finest,
+    TResult Function(int value)? finer,
+    TResult Function(int value)? fine,
+    TResult Function(int value)? config,
+    TResult Function(int value)? info,
+    TResult Function(int value)? warning,
+    TResult Function(int value)? severe,
+    TResult Function(int value)? shout,
+  }) {
+    return finest?.call(value);
   }
 
   @override
@@ -590,6 +701,23 @@ class _$_Finest implements _Finest {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_All value)? all,
+    TResult Function(_Off value)? off,
+    TResult Function(_Finest value)? finest,
+    TResult Function(_Finer value)? finer,
+    TResult Function(_Fine value)? fine,
+    TResult Function(_Config value)? config,
+    TResult Function(_Info value)? info,
+    TResult Function(_Warning value)? warning,
+    TResult Function(_Severe value)? severe,
+    TResult Function(_Shout value)? shout,
+  }) {
+    return finest?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_All value)? all,
     TResult Function(_Off value)? off,
@@ -614,7 +742,7 @@ abstract class _Finest implements LogLevel {
   const factory _Finest({int value}) = _$_Finest;
 
   @override
-  int get value => throw _privateConstructorUsedError;
+  int get value;
   @override
   @JsonKey(ignore: true)
   _$FinestCopyWith<_Finest> get copyWith => throw _privateConstructorUsedError;
@@ -667,14 +795,13 @@ class _$_Finer implements _Finer {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Finer &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _Finer &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+  int get hashCode => Object.hash(runtimeType, value);
 
   @JsonKey(ignore: true)
   @override
@@ -696,6 +823,23 @@ class _$_Finer implements _Finer {
     required TResult Function(int value) shout,
   }) {
     return finer(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int value)? all,
+    TResult Function(int value)? off,
+    TResult Function(int value)? finest,
+    TResult Function(int value)? finer,
+    TResult Function(int value)? fine,
+    TResult Function(int value)? config,
+    TResult Function(int value)? info,
+    TResult Function(int value)? warning,
+    TResult Function(int value)? severe,
+    TResult Function(int value)? shout,
+  }) {
+    return finer?.call(value);
   }
 
   @override
@@ -738,6 +882,23 @@ class _$_Finer implements _Finer {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_All value)? all,
+    TResult Function(_Off value)? off,
+    TResult Function(_Finest value)? finest,
+    TResult Function(_Finer value)? finer,
+    TResult Function(_Fine value)? fine,
+    TResult Function(_Config value)? config,
+    TResult Function(_Info value)? info,
+    TResult Function(_Warning value)? warning,
+    TResult Function(_Severe value)? severe,
+    TResult Function(_Shout value)? shout,
+  }) {
+    return finer?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_All value)? all,
     TResult Function(_Off value)? off,
@@ -762,7 +923,7 @@ abstract class _Finer implements LogLevel {
   const factory _Finer({int value}) = _$_Finer;
 
   @override
-  int get value => throw _privateConstructorUsedError;
+  int get value;
   @override
   @JsonKey(ignore: true)
   _$FinerCopyWith<_Finer> get copyWith => throw _privateConstructorUsedError;
@@ -815,14 +976,13 @@ class _$_Fine implements _Fine {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Fine &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _Fine &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+  int get hashCode => Object.hash(runtimeType, value);
 
   @JsonKey(ignore: true)
   @override
@@ -844,6 +1004,23 @@ class _$_Fine implements _Fine {
     required TResult Function(int value) shout,
   }) {
     return fine(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int value)? all,
+    TResult Function(int value)? off,
+    TResult Function(int value)? finest,
+    TResult Function(int value)? finer,
+    TResult Function(int value)? fine,
+    TResult Function(int value)? config,
+    TResult Function(int value)? info,
+    TResult Function(int value)? warning,
+    TResult Function(int value)? severe,
+    TResult Function(int value)? shout,
+  }) {
+    return fine?.call(value);
   }
 
   @override
@@ -886,6 +1063,23 @@ class _$_Fine implements _Fine {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_All value)? all,
+    TResult Function(_Off value)? off,
+    TResult Function(_Finest value)? finest,
+    TResult Function(_Finer value)? finer,
+    TResult Function(_Fine value)? fine,
+    TResult Function(_Config value)? config,
+    TResult Function(_Info value)? info,
+    TResult Function(_Warning value)? warning,
+    TResult Function(_Severe value)? severe,
+    TResult Function(_Shout value)? shout,
+  }) {
+    return fine?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_All value)? all,
     TResult Function(_Off value)? off,
@@ -910,7 +1104,7 @@ abstract class _Fine implements LogLevel {
   const factory _Fine({int value}) = _$_Fine;
 
   @override
-  int get value => throw _privateConstructorUsedError;
+  int get value;
   @override
   @JsonKey(ignore: true)
   _$FineCopyWith<_Fine> get copyWith => throw _privateConstructorUsedError;
@@ -963,14 +1157,13 @@ class _$_Config implements _Config {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Config &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _Config &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+  int get hashCode => Object.hash(runtimeType, value);
 
   @JsonKey(ignore: true)
   @override
@@ -992,6 +1185,23 @@ class _$_Config implements _Config {
     required TResult Function(int value) shout,
   }) {
     return config(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int value)? all,
+    TResult Function(int value)? off,
+    TResult Function(int value)? finest,
+    TResult Function(int value)? finer,
+    TResult Function(int value)? fine,
+    TResult Function(int value)? config,
+    TResult Function(int value)? info,
+    TResult Function(int value)? warning,
+    TResult Function(int value)? severe,
+    TResult Function(int value)? shout,
+  }) {
+    return config?.call(value);
   }
 
   @override
@@ -1034,6 +1244,23 @@ class _$_Config implements _Config {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_All value)? all,
+    TResult Function(_Off value)? off,
+    TResult Function(_Finest value)? finest,
+    TResult Function(_Finer value)? finer,
+    TResult Function(_Fine value)? fine,
+    TResult Function(_Config value)? config,
+    TResult Function(_Info value)? info,
+    TResult Function(_Warning value)? warning,
+    TResult Function(_Severe value)? severe,
+    TResult Function(_Shout value)? shout,
+  }) {
+    return config?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_All value)? all,
     TResult Function(_Off value)? off,
@@ -1058,7 +1285,7 @@ abstract class _Config implements LogLevel {
   const factory _Config({int value}) = _$_Config;
 
   @override
-  int get value => throw _privateConstructorUsedError;
+  int get value;
   @override
   @JsonKey(ignore: true)
   _$ConfigCopyWith<_Config> get copyWith => throw _privateConstructorUsedError;
@@ -1111,14 +1338,13 @@ class _$_Info implements _Info {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Info &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _Info &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+  int get hashCode => Object.hash(runtimeType, value);
 
   @JsonKey(ignore: true)
   @override
@@ -1140,6 +1366,23 @@ class _$_Info implements _Info {
     required TResult Function(int value) shout,
   }) {
     return info(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int value)? all,
+    TResult Function(int value)? off,
+    TResult Function(int value)? finest,
+    TResult Function(int value)? finer,
+    TResult Function(int value)? fine,
+    TResult Function(int value)? config,
+    TResult Function(int value)? info,
+    TResult Function(int value)? warning,
+    TResult Function(int value)? severe,
+    TResult Function(int value)? shout,
+  }) {
+    return info?.call(value);
   }
 
   @override
@@ -1182,6 +1425,23 @@ class _$_Info implements _Info {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_All value)? all,
+    TResult Function(_Off value)? off,
+    TResult Function(_Finest value)? finest,
+    TResult Function(_Finer value)? finer,
+    TResult Function(_Fine value)? fine,
+    TResult Function(_Config value)? config,
+    TResult Function(_Info value)? info,
+    TResult Function(_Warning value)? warning,
+    TResult Function(_Severe value)? severe,
+    TResult Function(_Shout value)? shout,
+  }) {
+    return info?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_All value)? all,
     TResult Function(_Off value)? off,
@@ -1206,7 +1466,7 @@ abstract class _Info implements LogLevel {
   const factory _Info({int value}) = _$_Info;
 
   @override
-  int get value => throw _privateConstructorUsedError;
+  int get value;
   @override
   @JsonKey(ignore: true)
   _$InfoCopyWith<_Info> get copyWith => throw _privateConstructorUsedError;
@@ -1259,14 +1519,13 @@ class _$_Warning implements _Warning {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Warning &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _Warning &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+  int get hashCode => Object.hash(runtimeType, value);
 
   @JsonKey(ignore: true)
   @override
@@ -1288,6 +1547,23 @@ class _$_Warning implements _Warning {
     required TResult Function(int value) shout,
   }) {
     return warning(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int value)? all,
+    TResult Function(int value)? off,
+    TResult Function(int value)? finest,
+    TResult Function(int value)? finer,
+    TResult Function(int value)? fine,
+    TResult Function(int value)? config,
+    TResult Function(int value)? info,
+    TResult Function(int value)? warning,
+    TResult Function(int value)? severe,
+    TResult Function(int value)? shout,
+  }) {
+    return warning?.call(value);
   }
 
   @override
@@ -1330,6 +1606,23 @@ class _$_Warning implements _Warning {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_All value)? all,
+    TResult Function(_Off value)? off,
+    TResult Function(_Finest value)? finest,
+    TResult Function(_Finer value)? finer,
+    TResult Function(_Fine value)? fine,
+    TResult Function(_Config value)? config,
+    TResult Function(_Info value)? info,
+    TResult Function(_Warning value)? warning,
+    TResult Function(_Severe value)? severe,
+    TResult Function(_Shout value)? shout,
+  }) {
+    return warning?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_All value)? all,
     TResult Function(_Off value)? off,
@@ -1354,7 +1647,7 @@ abstract class _Warning implements LogLevel {
   const factory _Warning({int value}) = _$_Warning;
 
   @override
-  int get value => throw _privateConstructorUsedError;
+  int get value;
   @override
   @JsonKey(ignore: true)
   _$WarningCopyWith<_Warning> get copyWith =>
@@ -1408,14 +1701,13 @@ class _$_Severe implements _Severe {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Severe &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _Severe &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+  int get hashCode => Object.hash(runtimeType, value);
 
   @JsonKey(ignore: true)
   @override
@@ -1437,6 +1729,23 @@ class _$_Severe implements _Severe {
     required TResult Function(int value) shout,
   }) {
     return severe(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int value)? all,
+    TResult Function(int value)? off,
+    TResult Function(int value)? finest,
+    TResult Function(int value)? finer,
+    TResult Function(int value)? fine,
+    TResult Function(int value)? config,
+    TResult Function(int value)? info,
+    TResult Function(int value)? warning,
+    TResult Function(int value)? severe,
+    TResult Function(int value)? shout,
+  }) {
+    return severe?.call(value);
   }
 
   @override
@@ -1479,6 +1788,23 @@ class _$_Severe implements _Severe {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_All value)? all,
+    TResult Function(_Off value)? off,
+    TResult Function(_Finest value)? finest,
+    TResult Function(_Finer value)? finer,
+    TResult Function(_Fine value)? fine,
+    TResult Function(_Config value)? config,
+    TResult Function(_Info value)? info,
+    TResult Function(_Warning value)? warning,
+    TResult Function(_Severe value)? severe,
+    TResult Function(_Shout value)? shout,
+  }) {
+    return severe?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_All value)? all,
     TResult Function(_Off value)? off,
@@ -1503,7 +1829,7 @@ abstract class _Severe implements LogLevel {
   const factory _Severe({int value}) = _$_Severe;
 
   @override
-  int get value => throw _privateConstructorUsedError;
+  int get value;
   @override
   @JsonKey(ignore: true)
   _$SevereCopyWith<_Severe> get copyWith => throw _privateConstructorUsedError;
@@ -1556,14 +1882,13 @@ class _$_Shout implements _Shout {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Shout &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _Shout &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+  int get hashCode => Object.hash(runtimeType, value);
 
   @JsonKey(ignore: true)
   @override
@@ -1585,6 +1910,23 @@ class _$_Shout implements _Shout {
     required TResult Function(int value) shout,
   }) {
     return shout(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int value)? all,
+    TResult Function(int value)? off,
+    TResult Function(int value)? finest,
+    TResult Function(int value)? finer,
+    TResult Function(int value)? fine,
+    TResult Function(int value)? config,
+    TResult Function(int value)? info,
+    TResult Function(int value)? warning,
+    TResult Function(int value)? severe,
+    TResult Function(int value)? shout,
+  }) {
+    return shout?.call(value);
   }
 
   @override
@@ -1627,6 +1969,23 @@ class _$_Shout implements _Shout {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_All value)? all,
+    TResult Function(_Off value)? off,
+    TResult Function(_Finest value)? finest,
+    TResult Function(_Finer value)? finer,
+    TResult Function(_Fine value)? fine,
+    TResult Function(_Config value)? config,
+    TResult Function(_Info value)? info,
+    TResult Function(_Warning value)? warning,
+    TResult Function(_Severe value)? severe,
+    TResult Function(_Shout value)? shout,
+  }) {
+    return shout?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_All value)? all,
     TResult Function(_Off value)? off,
@@ -1651,7 +2010,7 @@ abstract class _Shout implements LogLevel {
   const factory _Shout({int value}) = _$_Shout;
 
   @override
-  int get value => throw _privateConstructorUsedError;
+  int get value;
   @override
   @JsonKey(ignore: true)
   _$ShoutCopyWith<_Shout> get copyWith => throw _privateConstructorUsedError;
