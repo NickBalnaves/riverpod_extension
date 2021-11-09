@@ -8,7 +8,7 @@ import '../../entities/jwt_payload.dart';
 import '../../entities/storage.dart';
 
 /// [Provider] for reading storage
-final storageRepositoryProvider = FutureProvider.autoDispose<Storage?>(
+final storageRepositoryProvider = FutureProvider.autoDispose<Storage>(
   (final ref) async {
     ref.logInfo('storageProvider', 'Read storageProvider');
     final decryptedStorage = await ref.watch(decryptedStorageProvider.future);
@@ -42,21 +42,21 @@ final writeTokensStorageRepositoryProvider =
             .watch(secureStorageProvider)
             .write(key: refreshTokenKey, value: refreshToken),
     ]);
-    ref.container.refresh(decryptedStorageProvider);
+    ref.refresh(decryptedStorageProvider);
   },
 );
 
 /// User token [FutureProvider]
 final accessTokenRepositoryProvider = FutureProvider.autoDispose<String>(
   (final ref) async =>
-      (await ref.watch(storageRepositoryProvider.future))?.accessToken ?? '',
+      (await ref.watch(storageRepositoryProvider.future)).accessToken,
 );
 
 /// Refresh token [FutureProvider]
 final refreshTokenRepositoryProvider = FutureProvider.autoDispose<String>(
   (final ref) async {
     final storage = await ref.watch(storageRepositoryProvider.future);
-    return storage?.refreshToken ?? '';
+    return storage.refreshToken;
   },
 );
 

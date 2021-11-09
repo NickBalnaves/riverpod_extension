@@ -11,8 +11,8 @@ void _pushRoute(
       state.current.toUri().combine(uri),
     );
 
-/// Extensions on [ProviderRefBase]
-extension ProviderRefBaseExtension on ProviderRefBase {
+/// Extensions on [Ref]
+extension RefExtension on Ref {
   /// Push a new route
   void pushRoute(final Uri uri) =>
       _pushRoute(navigation, read(appNavigationProvider), uri);

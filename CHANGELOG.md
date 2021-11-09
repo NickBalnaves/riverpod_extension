@@ -1,7 +1,7 @@
-## 1.4.0-dev.0
+## 1.4.0
 
 * feat: Add navigation providers
-* chore: Upgrade to riverpod dev release
+* chore: Upgrade to riverpod 1.0.0
 
 ## 1.3.2
 

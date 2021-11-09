@@ -160,7 +160,7 @@ extension BuildContextRiverpodExtensionExtensions on WidgetRef {
 }
 
 /// ProviderReference extensions
-extension ProviderReferenceRiverpodExtensionExtensions on ProviderRefBase {
+extension ProviderReferenceRiverpodExtensionExtensions on Ref {
   /// Log message at level [LogLevel.finest].
   void logFinest(
     final String loggerName,

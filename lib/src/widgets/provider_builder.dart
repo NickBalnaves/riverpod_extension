@@ -22,8 +22,8 @@ class ProviderStreamBuilder<T> extends HookConsumerWidget {
   Widget build(final BuildContext context, final WidgetRef ref) =>
       ref.watch(provider).when(
             data: builder,
-            error: (final error, final stackTrace, final data) => builder(null),
-            loading: (final data) => builder(null),
+            error: (final error, final stackTrace) => builder(null),
+            loading: () => builder(null),
           );
 }
 
@@ -50,8 +50,8 @@ class ProviderFutureBuilder<T> extends HookConsumerWidget {
   Widget build(final BuildContext context, final WidgetRef ref) =>
       ref.watch(provider).when(
             data: builder,
-            error: (final error, final stackTrace, final data) => builder(null),
-            loading: (final data) => loading ?? builder(null),
+            error: (final error, final stackTrace) => builder(null),
+            loading: () => loading ?? builder(null),
           );
 }
 
@@ -95,8 +95,9 @@ class ProviderHttpFutureBuilder<T> extends HookConsumerWidget {
                 null,
               ),
             ),
-            loading: loading,
-            error: error,
+            loading: () => loading(null),
+            error: (final exception, final stackTrace) =>
+                error(exception, stackTrace, null),
           );
 }
 

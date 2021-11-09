@@ -23,17 +23,8 @@ final _appNavigationStateNotifierProvider =
                 needsLogin: () => unauthenticatedRoutes,
                 done: () => authenticatedRoutes,
               ),
-              error: (final _, final __, final ___) => unauthenticatedRoutes,
-              loading: (final data) {
-                final authState = data?.asData?.value;
-                if (authState == null) {
-                  return loadingRoutes;
-                }
-                return authState.when(
-                  needsLogin: () => unauthenticatedRoutes,
-                  done: () => authenticatedRoutes,
-                );
-              },
+              error: (final _, final __) => unauthenticatedRoutes,
+              loading: () => loadingRoutes,
             ),
       ),
     ),
