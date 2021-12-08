@@ -28,6 +28,7 @@ class Jwt {
     if (token == null) {
       return null;
     }
+
     return DateTime.fromMillisecondsSinceEpoch(0).add(
       Duration(
         seconds: decode(token)['exp'] as int? ?? 0,

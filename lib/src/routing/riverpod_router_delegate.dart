@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../models/navigation/navigation.dart';
+import '../models/navigation/navigation_state.dart';
 import '../providers/navigation.dart';
 
 /// [RiverpodRouterDelegate]
@@ -53,6 +53,7 @@ class RiverpodRouterDelegate extends RouterDelegate<Uri>
   @override
   Future<void> setNewRoutePath(final Uri configuration) {
     notifier.navigate(configuration);
+
     return Future.value();
   }
 
@@ -73,10 +74,11 @@ class RiverpodRouterDelegate extends RouterDelegate<Uri>
                   .toList(),
               entry.activeTab,
             ),
-          )
+          ),
         ],
         onPopPage: (final route, final dynamic result) {
           notifier.pop();
+
           return false;
         },
       );

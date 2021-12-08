@@ -9,7 +9,7 @@ class RetryGroup with _$RetryGroup {
   /// [RetryGroup]
   const factory RetryGroup({
     required final int retries,
-    final Function(BaseResponse)? onRetry,
-    final Function(Object, StackTrace)? onRetryError,
+    final void Function(BaseResponse)? onRetry,
+    final void Function(Object, StackTrace)? onRetryError,
   }) = _RetryGroup;
 }

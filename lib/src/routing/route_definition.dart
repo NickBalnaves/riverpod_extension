@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart';
 
-import '../models/navigation/navigation.dart';
-import '../parsing/match.dart';
-import '../parsing/template.dart';
+import '../models/navigation/navigation_state.dart';
+import '../parsing/template_match.dart';
+import '../parsing/uri_template.dart';
 
 /// [RiverpodPageBuilder]
 typedef RiverpodPageBuilder = Page Function(
@@ -81,7 +81,7 @@ class RouteDefinition extends Equatable {
               ),
             ],
           ),
-        )
+        ),
       ];
 
   Iterable<NavigationStack> _buildTabs(
@@ -117,10 +117,10 @@ class RouteDefinition extends Equatable {
 
     final activeTab = previous?.history.isEmpty ?? true
         ? 0
-        : previous!.history.first.activeTab;
+        : (previous?.history.first.activeTab ?? 0);
 
     final tabs = _buildTabs(
-      previous?.history.isEmpty ?? true ? null : previous!.history.first.tabs,
+      previous?.history.isEmpty ?? true ? null : previous?.history.first.tabs,
       template,
       uri,
     ).toList();
@@ -166,7 +166,7 @@ class RouteDefinition extends Equatable {
                   ? const <String, String>{}
                   : nextResult.history.first.parameters,
             ),
-            ...nextResult.history
+            ...nextResult.history,
           ],
         );
       }

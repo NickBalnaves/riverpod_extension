@@ -5,7 +5,7 @@ import 'package:http/http.dart';
 import 'package:http/retry.dart';
 
 import '../../riverpod_extension.dart';
-import '../models/async/response_state.dart';
+import '../models/async/http_response_state.dart';
 import '../models/http/http_group.dart';
 import '../models/http/retry_group.dart';
 
@@ -22,8 +22,10 @@ final retryClientProvider =
         if (onRetry != null) {
           onRetry(response);
         }
+
         return true;
       }
+
       return false;
     },
     whenError: (final error, final stackTrace) {
@@ -31,15 +33,9 @@ final retryClientProvider =
       if (onRetryError != null) {
         onRetryError(error, stackTrace);
       }
+
       return false;
     },
-  ),
-);
-
-final _httpResponseProvider =
-    FutureProvider.autoDispose.family<Response, HttpGroup>(
-  (final ref, final group) async => Response.fromStream(
-    await group.client.send(group.request),
   ),
 );
 
@@ -49,15 +45,15 @@ final httpRequestProvider = FutureProvider.autoDispose
     .family<HttpResponseState<Map<String, dynamic>>, HttpGroup>(
   (final ref, final group) async {
     try {
-      final response = await ref.watch(_httpResponseProvider(group).future);
+      final response = await Response.fromStream(
+        await group.client.send(group.request),
+      );
       var data = <String, dynamic>{};
       if (response.body.startsWith('{') || response.body.startsWith('[')) {
         final Object? responseObject = jsonDecode(response.body);
-        if (responseObject is Map<String, dynamic>) {
-          data = responseObject;
-        } else {
-          data = <String, dynamic>{'data': responseObject};
-        }
+        data = responseObject is Map<String, dynamic>
+            ? responseObject
+            : <String, dynamic>{'data': responseObject};
       } else {
         data = <String, dynamic>{'data': response.body};
       }
@@ -66,8 +62,10 @@ final httpRequestProvider = FutureProvider.autoDispose
           response: response,
           data: data,
         );
+
         return HttpResponseState.error(httpException);
       }
+
       return HttpResponseState(data);
     } on Exception catch (e) {
       return HttpResponseState.error(e);

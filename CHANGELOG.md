@@ -1,3 +1,8 @@
+## 1.4.1
+
+* feat: Add assert check for navigating when a route is not predefined
+* feat: Add option for including current query parameters when navigating
+
 ## 1.4.0
 
 * feat: Add navigation providers

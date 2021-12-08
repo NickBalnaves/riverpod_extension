@@ -1,3 +1,5 @@
+// ignore_for_file: member-ordering-extended, no-magic-number
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'log_level.freezed.dart';

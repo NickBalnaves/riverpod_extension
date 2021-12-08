@@ -1,4 +1,4 @@
-import '../models/navigation/navigation.dart';
+import '../models/navigation/navigation_state.dart';
 import '../providers/navigation.dart';
 
 /// [PopBehaviour]
@@ -19,11 +19,11 @@ abstract class PopResult {
   /// [PopResult]
   const PopResult();
 
-  /// [PopResult.cancel]
-  factory PopResult.cancel() => const CancelPopResult._();
-
   /// [PopResult.auto]
   factory PopResult.auto() => const AutoPopResult._();
+
+  /// [PopResult.cancel]
+  factory PopResult.cancel() => const CancelPopResult._();
 
   /// [PopResult.update]
   const factory PopResult.update(final Uri uri) = UpdatePopResult._;

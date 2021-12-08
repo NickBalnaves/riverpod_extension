@@ -1,7 +1,7 @@
 import 'package:async/async.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../extensions/duration.dart';
+import '../extensions/duration_extension.dart';
 import '../utilities/jwt.dart';
 import 'log.dart';
 

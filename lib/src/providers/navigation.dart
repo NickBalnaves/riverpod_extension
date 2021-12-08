@@ -2,8 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../riverpod_extension.dart';
-import '../models/navigation/navigation.dart';
-import '../routing/pop_behaviour.dart';
+import '../models/navigation/navigation_state.dart';
+import '../routing/pop_result.dart';
 import '../routing/route_definition.dart';
 
 /// [UriRewriter]
@@ -23,6 +23,7 @@ final navigationNotifierProvider =
     if (entry == null) {
       throw Exception('No route found for initial route "/"');
     }
+
     return NavigationNotifier(
       initial: entry,
       routes: routes,
@@ -78,6 +79,7 @@ class NavigationNotifier extends StateNotifier<NavigationState> {
     if (popResult is UpdatePopResult) {
       return true;
     }
+
     return state.current.history.length > 1;
   }
 
@@ -90,10 +92,12 @@ class NavigationNotifier extends StateNotifier<NavigationState> {
       } else if (popResult is UpdatePopResult) {
         final effectiveUri = uriRewriter(this, popResult.uri);
         final newState = state.routes.evaluate(state.current, effectiveUri);
-        state = NavigationState(
-          routes: state.routes,
-          current: newState!,
-        );
+        if (newState != null) {
+          state = NavigationState(
+            routes: state.routes,
+            current: newState,
+          );
+        }
       } else {
         state = NavigationState(
           routes: state.routes,
@@ -103,6 +107,7 @@ class NavigationNotifier extends StateNotifier<NavigationState> {
             ],
           ),
         );
+
         return true;
       }
     }
@@ -114,6 +119,10 @@ class NavigationNotifier extends StateNotifier<NavigationState> {
   void navigate(final Uri uri) {
     final effectiveUri = uriRewriter(this, uri);
     final newState = state.routes.evaluate(state.current, effectiveUri);
+    assert(
+      newState != null,
+      'RouteDefinition not set up for routing',
+    );
     if (newState != null) {
       state = NavigationState(
         routes: state.routes,

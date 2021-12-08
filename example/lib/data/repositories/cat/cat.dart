@@ -36,7 +36,7 @@ final catRequestBaseProvider =
   },
 );
 
-/// Default handler for all AWS requests
+/// Default handler for all cat requests
 final catRequestRefreshProvider = FutureProvider.autoDispose
     .family<HttpResponseState<Map<String, dynamic>>, HttpRequest>(
   (final ref, final request) async {
@@ -72,7 +72,7 @@ final catRequestRefreshProvider = FutureProvider.autoDispose
   },
 );
 
-/// Default handler for all AWS requests
+/// Default handler for all cat requests
 final catRequestProvider = FutureProvider.autoDispose
     .family<HttpResponseState<Map<String, dynamic>>, HttpRequest>(
   (final ref, final request) async {

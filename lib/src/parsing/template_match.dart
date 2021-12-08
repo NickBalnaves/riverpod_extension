@@ -2,7 +2,7 @@
 
 import 'package:equatable/equatable.dart';
 
-import 'template.dart';
+import 'uri_template.dart';
 
 abstract class TemplateMatch extends Equatable {
   const TemplateMatch();

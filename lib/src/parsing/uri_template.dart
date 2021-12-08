@@ -2,9 +2,9 @@
 
 import 'package:equatable/equatable.dart';
 
-import 'match.dart';
-import 'path_segment.dart';
-import 'query_parameter.dart';
+import 'path_segment_template.dart';
+import 'query_parameter_template.dart';
+import 'template_match.dart';
 
 class UriTemplate extends Equatable {
   const UriTemplate({
@@ -19,6 +19,7 @@ class UriTemplate extends Equatable {
         uriSplit.first.split('/').where((final x) => x.isNotEmpty).toList();
     final querySplit =
         uriSplit.length > 1 ? uriSplit.last.split('&') : const <String>[];
+
     return UriTemplate(
       pathSegments: [
         ...segmentSplit.map(
@@ -114,6 +115,7 @@ class UriTemplate extends Equatable {
               'Missing segment path parameter "${segment.name}"',
             );
           }
+
           return value;
         }
 
@@ -132,6 +134,7 @@ class UriTemplate extends Equatable {
     }
     final queryString =
         queryArguments.isNotEmpty ? '?${queryArguments.join('&')}' : '';
+
     return Uri.parse(path + queryString);
   }
 

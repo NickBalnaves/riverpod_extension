@@ -56,6 +56,7 @@ class NavigationStack extends Equatable {
     final lastEntry = history.last;
     if (lastEntry.tabs.isNotEmpty) {
       final currentTab = lastEntry.tabs[lastEntry.activeTab];
+
       return currentTab.lastRoute;
     }
 
@@ -68,7 +69,7 @@ class NavigationStack extends Equatable {
       ];
 
   /// Converts [history] to a [Uri]
-  Uri toUri() {
+  Uri toUri({final bool includeQueryParameters = false}) {
     if (history.isEmpty) {
       return Uri.parse('/');
     }
@@ -80,10 +81,19 @@ class NavigationStack extends Equatable {
           ),
     ];
 
+    Map<String, dynamic>? queryParameters;
+    if (uris.last.queryParameters.isNotEmpty) {
+      queryParameters = uris.last.queryParameters;
+    }
+    if (includeQueryParameters) {
+      queryParameters = (queryParameters == null)
+          ? history.last.uri.queryParameters
+          : (queryParameters..addAll(history.last.uri.queryParameters));
+    }
+
     return Uri(
       path: '/${uris.expand((final x) => x.pathSegments).join('/')}',
-      queryParameters:
-          uris.last.queryParameters.isEmpty ? null : uris.last.queryParameters,
+      queryParameters: queryParameters,
     );
   }
 }
@@ -127,6 +137,7 @@ class NavigationEntry extends Equatable {
         '(neither in path segments nor query parameters)',
       );
     }
+
     return value;
   }
 

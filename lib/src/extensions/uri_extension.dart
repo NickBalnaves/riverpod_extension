@@ -1,4 +1,4 @@
-import '../parsing/template.dart';
+import '../parsing/uri_template.dart';
 
 /// Extension on [Uri]
 extension UriExtension on Uri {

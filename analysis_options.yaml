@@ -1,5 +1,7 @@
 include: all_lint_rules.yaml
 analyzer:
+  plugins:
+    - dart_code_metrics
   exclude:
     - lib/generated/**
     - "**/*.g.dart"
@@ -43,3 +45,62 @@ linter:
 
     # Conflicts with `prefer_relative_imports`
     always_use_package_imports: false
+
+dart_code_metrics:
+  anti-patterns:
+    - long-method
+    - long-parameter-list
+  metrics:
+    cyclomatic-complexity: 20
+    halstead-volume: 150
+    lines-of-code: 100
+    maintainability-index: 50
+    maximum-nesting-level: 5
+    number-of-methods: 10
+    number-of-parameters: 4
+    source-lines-of-code: 50
+    weight-of-class: 0.33
+  metrics-exclude:
+    - "test/**"
+    - "integration_test/**"
+  rules:
+    - avoid-ignoring-return-values
+    - avoid-late-keyword
+    - avoid-nested-conditional-expressions:
+        acceptable-level: 2
+    - avoid-non-null-assertion
+    - avoid-unnecessary-type-assertions
+    - avoid-unused-parameters
+    - binary-expression-operand-order
+    - double-literal-format
+    - member-ordering-extended:
+        alphabetize: true
+        order:
+          - constructors
+    - newline-before-return
+    - no-boolean-literal-compare
+    - no-empty-block
+    - no-equal-arguments
+    - no-equal-then-else
+    - no-magic-number
+    - no-object-declaration
+    - prefer-conditional-expressions
+    - prefer-correct-identifier-length
+    - prefer-correct-type-name
+    - prefer-first
+    - prefer-last
+    - prefer-match-file-name
+    - prefer-trailing-comma
+    - always-remove-listener
+    - avoid-returning-widgets
+    - avoid-unnecessary-setstate
+    - avoid-wrapping-in-padding
+    - prefer-const-border-radius
+    - prefer-extracting-callbacks:
+        ignored-named-arguments:
+          - onPressed
+    - prefer-single-widget-per-file:
+        ignore-private-widgets: true
+    - avoid-throw-in-catch-block
+    - avoid-unnecessary-type-casts
+    - avoid-missing-enum-constant-in-map
