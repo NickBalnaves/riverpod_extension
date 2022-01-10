@@ -1,3 +1,7 @@
+## 1.5.0-dev.0
+
+* chore: Upgrade riverpod to 2.0.0-dev.0
+
 ## 1.4.1
 
 * feat: Add assert check for navigating when a route is not predefined

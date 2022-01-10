@@ -5,9 +5,6 @@ import 'package:http/http.dart';
 import 'package:http/retry.dart';
 
 import '../../riverpod_extension.dart';
-import '../models/async/http_response_state.dart';
-import '../models/http/http_group.dart';
-import '../models/http/retry_group.dart';
 
 /// Retry client provider
 final retryClientProvider =

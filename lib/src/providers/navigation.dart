@@ -2,9 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../riverpod_extension.dart';
-import '../models/navigation/navigation_state.dart';
-import '../routing/pop_result.dart';
-import '../routing/route_definition.dart';
 
 /// [UriRewriter]
 typedef UriRewriter = Uri Function(NavigationNotifier notifier, Uri uri);
