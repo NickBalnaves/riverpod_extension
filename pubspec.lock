@@ -229,7 +229,7 @@ packages:
       name: flutter_riverpod
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.4"
+    version: "2.0.0-dev.8"
   flutter_state_notifier:
     dependency: "direct main"
     description:
@@ -283,7 +283,7 @@ packages:
       name: hooks_riverpod
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.4"
+    version: "2.0.0-dev.8"
   html:
     dependency: transitive
     description:
@@ -430,7 +430,7 @@ packages:
       name: riverpod
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.3"
+    version: "2.0.0-dev.8"
   shelf:
     dependency: transitive
     description:
