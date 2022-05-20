@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 import 'unauthenticated_provider.dart';
 
 part 'unauthenticated_state.freezed.dart';

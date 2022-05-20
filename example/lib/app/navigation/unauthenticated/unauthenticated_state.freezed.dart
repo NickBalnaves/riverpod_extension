@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'unauthenticated_state.dart';
@@ -11,24 +12,7 @@ part of 'unauthenticated_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$UnauthenticatedStateTearOff {
-  const _$UnauthenticatedStateTearOff();
-
-  _UnauthenticatedState call(
-      {required UnauthenticatedStateNotifier notifier,
-      required Future<Exception?> Function() login}) {
-    return _UnauthenticatedState(
-      notifier: notifier,
-      login: login,
-    );
-  }
-}
-
-/// @nodoc
-const $UnauthenticatedState = _$UnauthenticatedStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$UnauthenticatedState {
@@ -79,11 +63,11 @@ class _$UnauthenticatedStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$UnauthenticatedStateCopyWith<$Res>
+abstract class _$$_UnauthenticatedStateCopyWith<$Res>
     implements $UnauthenticatedStateCopyWith<$Res> {
-  factory _$UnauthenticatedStateCopyWith(_UnauthenticatedState value,
-          $Res Function(_UnauthenticatedState) then) =
-      __$UnauthenticatedStateCopyWithImpl<$Res>;
+  factory _$$_UnauthenticatedStateCopyWith(_$_UnauthenticatedState value,
+          $Res Function(_$_UnauthenticatedState) then) =
+      __$$_UnauthenticatedStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {UnauthenticatedStateNotifier notifier,
@@ -91,22 +75,22 @@ abstract class _$UnauthenticatedStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$UnauthenticatedStateCopyWithImpl<$Res>
+class __$$_UnauthenticatedStateCopyWithImpl<$Res>
     extends _$UnauthenticatedStateCopyWithImpl<$Res>
-    implements _$UnauthenticatedStateCopyWith<$Res> {
-  __$UnauthenticatedStateCopyWithImpl(
-      _UnauthenticatedState _value, $Res Function(_UnauthenticatedState) _then)
-      : super(_value, (v) => _then(v as _UnauthenticatedState));
+    implements _$$_UnauthenticatedStateCopyWith<$Res> {
+  __$$_UnauthenticatedStateCopyWithImpl(_$_UnauthenticatedState _value,
+      $Res Function(_$_UnauthenticatedState) _then)
+      : super(_value, (v) => _then(v as _$_UnauthenticatedState));
 
   @override
-  _UnauthenticatedState get _value => super._value as _UnauthenticatedState;
+  _$_UnauthenticatedState get _value => super._value as _$_UnauthenticatedState;
 
   @override
   $Res call({
     Object? notifier = freezed,
     Object? login = freezed,
   }) {
-    return _then(_UnauthenticatedState(
+    return _then(_$_UnauthenticatedState(
       notifier: notifier == freezed
           ? _value.notifier
           : notifier // ignore: cast_nullable_to_non_nullable
@@ -138,33 +122,35 @@ class _$_UnauthenticatedState implements _UnauthenticatedState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UnauthenticatedState &&
-            (identical(other.notifier, notifier) ||
-                other.notifier == notifier) &&
+            other is _$_UnauthenticatedState &&
+            const DeepCollectionEquality().equals(other.notifier, notifier) &&
             (identical(other.login, login) || other.login == login));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, notifier, login);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(notifier), login);
 
   @JsonKey(ignore: true)
   @override
-  _$UnauthenticatedStateCopyWith<_UnauthenticatedState> get copyWith =>
-      __$UnauthenticatedStateCopyWithImpl<_UnauthenticatedState>(
+  _$$_UnauthenticatedStateCopyWith<_$_UnauthenticatedState> get copyWith =>
+      __$$_UnauthenticatedStateCopyWithImpl<_$_UnauthenticatedState>(
           this, _$identity);
 }
 
 abstract class _UnauthenticatedState implements UnauthenticatedState {
   const factory _UnauthenticatedState(
-      {required UnauthenticatedStateNotifier notifier,
-      required Future<Exception?> Function() login}) = _$_UnauthenticatedState;
+          {required final UnauthenticatedStateNotifier notifier,
+          required final Future<Exception?> Function() login}) =
+      _$_UnauthenticatedState;
 
   @override
-  UnauthenticatedStateNotifier get notifier;
+  UnauthenticatedStateNotifier get notifier =>
+      throw _privateConstructorUsedError;
   @override
-  Future<Exception?> Function() get login;
+  Future<Exception?> Function() get login => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UnauthenticatedStateCopyWith<_UnauthenticatedState> get copyWith =>
+  _$$_UnauthenticatedStateCopyWith<_$_UnauthenticatedState> get copyWith =>
       throw _privateConstructorUsedError;
 }

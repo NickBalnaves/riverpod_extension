@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'log_record.dart';
@@ -11,34 +12,7 @@ part of 'log_record.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$LogRecordTearOff {
-  const _$LogRecordTearOff();
-
-  _LogRecord call(
-      {required LogLevel logLevel,
-      required String message,
-      required String loggerName,
-      required DateTime time,
-      required String color,
-      Object? error,
-      StackTrace? stackTrace}) {
-    return _LogRecord(
-      logLevel: logLevel,
-      message: message,
-      loggerName: loggerName,
-      time: time,
-      color: color,
-      error: error,
-      stackTrace: stackTrace,
-    );
-  }
-}
-
-/// @nodoc
-const $LogRecord = _$LogRecordTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$LogRecord {
@@ -137,10 +111,10 @@ class _$LogRecordCopyWithImpl<$Res> implements $LogRecordCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$LogRecordCopyWith<$Res> implements $LogRecordCopyWith<$Res> {
-  factory _$LogRecordCopyWith(
-          _LogRecord value, $Res Function(_LogRecord) then) =
-      __$LogRecordCopyWithImpl<$Res>;
+abstract class _$$_LogRecordCopyWith<$Res> implements $LogRecordCopyWith<$Res> {
+  factory _$$_LogRecordCopyWith(
+          _$_LogRecord value, $Res Function(_$_LogRecord) then) =
+      __$$_LogRecordCopyWithImpl<$Res>;
   @override
   $Res call(
       {LogLevel logLevel,
@@ -156,13 +130,14 @@ abstract class _$LogRecordCopyWith<$Res> implements $LogRecordCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LogRecordCopyWithImpl<$Res> extends _$LogRecordCopyWithImpl<$Res>
-    implements _$LogRecordCopyWith<$Res> {
-  __$LogRecordCopyWithImpl(_LogRecord _value, $Res Function(_LogRecord) _then)
-      : super(_value, (v) => _then(v as _LogRecord));
+class __$$_LogRecordCopyWithImpl<$Res> extends _$LogRecordCopyWithImpl<$Res>
+    implements _$$_LogRecordCopyWith<$Res> {
+  __$$_LogRecordCopyWithImpl(
+      _$_LogRecord _value, $Res Function(_$_LogRecord) _then)
+      : super(_value, (v) => _then(v as _$_LogRecord));
 
   @override
-  _LogRecord get _value => super._value as _LogRecord;
+  _$_LogRecord get _value => super._value as _$_LogRecord;
 
   @override
   $Res call({
@@ -174,7 +149,7 @@ class __$LogRecordCopyWithImpl<$Res> extends _$LogRecordCopyWithImpl<$Res>
     Object? error = freezed,
     Object? stackTrace = freezed,
   }) {
-    return _then(_LogRecord(
+    return _then(_$_LogRecord(
       logLevel: logLevel == freezed
           ? _value.logLevel
           : logLevel // ignore: cast_nullable_to_non_nullable
@@ -221,91 +196,97 @@ class _$_LogRecord extends _LogRecord {
   final LogLevel logLevel;
   @override
   final String message;
-  @override
 
   /// Logger where this record is stored.
-  final String loggerName;
   @override
+  final String loggerName;
 
   /// Time when this record was created.
-  final DateTime time;
   @override
+  final DateTime time;
 
   /// ANSI color
-  final String color;
   @override
+  final String color;
 
   /// Associated error (if any) when recording errors messages.
-  final Object? error;
   @override
+  final Object? error;
 
   /// Associated stackTrace (if any) when recording errors messages.
+  @override
   final StackTrace? stackTrace;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LogRecord &&
-            (identical(other.logLevel, logLevel) ||
-                other.logLevel == logLevel) &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.loggerName, loggerName) ||
-                other.loggerName == loggerName) &&
-            (identical(other.time, time) || other.time == time) &&
-            (identical(other.color, color) || other.color == color) &&
+            other is _$_LogRecord &&
+            const DeepCollectionEquality().equals(other.logLevel, logLevel) &&
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality()
+                .equals(other.loggerName, loggerName) &&
+            const DeepCollectionEquality().equals(other.time, time) &&
+            const DeepCollectionEquality().equals(other.color, color) &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            const DeepCollectionEquality()
+                .equals(other.stackTrace, stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, logLevel, message, loggerName,
-      time, color, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(logLevel),
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(loggerName),
+      const DeepCollectionEquality().hash(time),
+      const DeepCollectionEquality().hash(color),
+      const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace));
 
   @JsonKey(ignore: true)
   @override
-  _$LogRecordCopyWith<_LogRecord> get copyWith =>
-      __$LogRecordCopyWithImpl<_LogRecord>(this, _$identity);
+  _$$_LogRecordCopyWith<_$_LogRecord> get copyWith =>
+      __$$_LogRecordCopyWithImpl<_$_LogRecord>(this, _$identity);
 }
 
 abstract class _LogRecord extends LogRecord {
   const factory _LogRecord(
-      {required LogLevel logLevel,
-      required String message,
-      required String loggerName,
-      required DateTime time,
-      required String color,
-      Object? error,
-      StackTrace? stackTrace}) = _$_LogRecord;
+      {required final LogLevel logLevel,
+      required final String message,
+      required final String loggerName,
+      required final DateTime time,
+      required final String color,
+      final Object? error,
+      final StackTrace? stackTrace}) = _$_LogRecord;
   const _LogRecord._() : super._();
 
   @override
-  LogLevel get logLevel;
+  LogLevel get logLevel => throw _privateConstructorUsedError;
   @override
-  String get message;
+  String get message => throw _privateConstructorUsedError;
   @override
 
   /// Logger where this record is stored.
-  String get loggerName;
+  String get loggerName => throw _privateConstructorUsedError;
   @override
 
   /// Time when this record was created.
-  DateTime get time;
+  DateTime get time => throw _privateConstructorUsedError;
   @override
 
   /// ANSI color
-  String get color;
+  String get color => throw _privateConstructorUsedError;
   @override
 
   /// Associated error (if any) when recording errors messages.
-  Object? get error;
+  Object? get error => throw _privateConstructorUsedError;
   @override
 
   /// Associated stackTrace (if any) when recording errors messages.
-  StackTrace? get stackTrace;
+  StackTrace? get stackTrace => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$LogRecordCopyWith<_LogRecord> get copyWith =>
+  _$$_LogRecordCopyWith<_$_LogRecord> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'unauthenticated_notifier_state.dart';
@@ -11,23 +12,7 @@ part of 'unauthenticated_notifier_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$UnauthenticatedNotifierStateTearOff {
-  const _$UnauthenticatedNotifierStateTearOff();
-
-  _UnauthenticatedNotifierState call(
-      {String userName = '', String password = ''}) {
-    return _UnauthenticatedNotifierState(
-      userName: userName,
-      password: password,
-    );
-  }
-}
-
-/// @nodoc
-const $UnauthenticatedNotifierState = _$UnauthenticatedNotifierStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$UnauthenticatedNotifierState {
@@ -76,35 +61,35 @@ class _$UnauthenticatedNotifierStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$UnauthenticatedNotifierStateCopyWith<$Res>
+abstract class _$$_UnauthenticatedNotifierStateCopyWith<$Res>
     implements $UnauthenticatedNotifierStateCopyWith<$Res> {
-  factory _$UnauthenticatedNotifierStateCopyWith(
-          _UnauthenticatedNotifierState value,
-          $Res Function(_UnauthenticatedNotifierState) then) =
-      __$UnauthenticatedNotifierStateCopyWithImpl<$Res>;
+  factory _$$_UnauthenticatedNotifierStateCopyWith(
+          _$_UnauthenticatedNotifierState value,
+          $Res Function(_$_UnauthenticatedNotifierState) then) =
+      __$$_UnauthenticatedNotifierStateCopyWithImpl<$Res>;
   @override
   $Res call({String userName, String password});
 }
 
 /// @nodoc
-class __$UnauthenticatedNotifierStateCopyWithImpl<$Res>
+class __$$_UnauthenticatedNotifierStateCopyWithImpl<$Res>
     extends _$UnauthenticatedNotifierStateCopyWithImpl<$Res>
-    implements _$UnauthenticatedNotifierStateCopyWith<$Res> {
-  __$UnauthenticatedNotifierStateCopyWithImpl(
-      _UnauthenticatedNotifierState _value,
-      $Res Function(_UnauthenticatedNotifierState) _then)
-      : super(_value, (v) => _then(v as _UnauthenticatedNotifierState));
+    implements _$$_UnauthenticatedNotifierStateCopyWith<$Res> {
+  __$$_UnauthenticatedNotifierStateCopyWithImpl(
+      _$_UnauthenticatedNotifierState _value,
+      $Res Function(_$_UnauthenticatedNotifierState) _then)
+      : super(_value, (v) => _then(v as _$_UnauthenticatedNotifierState));
 
   @override
-  _UnauthenticatedNotifierState get _value =>
-      super._value as _UnauthenticatedNotifierState;
+  _$_UnauthenticatedNotifierState get _value =>
+      super._value as _$_UnauthenticatedNotifierState;
 
   @override
   $Res call({
     Object? userName = freezed,
     Object? password = freezed,
   }) {
-    return _then(_UnauthenticatedNotifierState(
+    return _then(_$_UnauthenticatedNotifierState(
       userName: userName == freezed
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
@@ -123,11 +108,11 @@ class _$_UnauthenticatedNotifierState implements _UnauthenticatedNotifierState {
   const _$_UnauthenticatedNotifierState(
       {this.userName = '', this.password = ''});
 
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String userName;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String password;
 
   @override
@@ -139,34 +124,36 @@ class _$_UnauthenticatedNotifierState implements _UnauthenticatedNotifierState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UnauthenticatedNotifierState &&
-            (identical(other.userName, userName) ||
-                other.userName == userName) &&
-            (identical(other.password, password) ||
-                other.password == password));
+            other is _$_UnauthenticatedNotifierState &&
+            const DeepCollectionEquality().equals(other.userName, userName) &&
+            const DeepCollectionEquality().equals(other.password, password));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, userName, password);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(userName),
+      const DeepCollectionEquality().hash(password));
 
   @JsonKey(ignore: true)
   @override
-  _$UnauthenticatedNotifierStateCopyWith<_UnauthenticatedNotifierState>
-      get copyWith => __$UnauthenticatedNotifierStateCopyWithImpl<
-          _UnauthenticatedNotifierState>(this, _$identity);
+  _$$_UnauthenticatedNotifierStateCopyWith<_$_UnauthenticatedNotifierState>
+      get copyWith => __$$_UnauthenticatedNotifierStateCopyWithImpl<
+          _$_UnauthenticatedNotifierState>(this, _$identity);
 }
 
 abstract class _UnauthenticatedNotifierState
     implements UnauthenticatedNotifierState {
   const factory _UnauthenticatedNotifierState(
-      {String userName, String password}) = _$_UnauthenticatedNotifierState;
+      {final String userName,
+      final String password}) = _$_UnauthenticatedNotifierState;
 
   @override
-  String get userName;
+  String get userName => throw _privateConstructorUsedError;
   @override
-  String get password;
+  String get password => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UnauthenticatedNotifierStateCopyWith<_UnauthenticatedNotifierState>
+  _$$_UnauthenticatedNotifierStateCopyWith<_$_UnauthenticatedNotifierState>
       get copyWith => throw _privateConstructorUsedError;
 }

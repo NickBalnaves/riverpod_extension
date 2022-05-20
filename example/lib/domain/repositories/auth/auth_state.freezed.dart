@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'auth_state.dart';
@@ -11,23 +12,7 @@ part of 'auth_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AuthStateTearOff {
-  const _$AuthStateTearOff();
-
-  AuthNeedsLogin needsLogin() {
-    return const AuthNeedsLogin();
-  }
-
-  AuthDone done() {
-    return const AuthDone();
-  }
-}
-
-/// @nodoc
-const $AuthState = _$AuthStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AuthState {
@@ -87,21 +72,21 @@ class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $AuthNeedsLoginCopyWith<$Res> {
-  factory $AuthNeedsLoginCopyWith(
-          AuthNeedsLogin value, $Res Function(AuthNeedsLogin) then) =
-      _$AuthNeedsLoginCopyWithImpl<$Res>;
+abstract class _$$AuthNeedsLoginCopyWith<$Res> {
+  factory _$$AuthNeedsLoginCopyWith(
+          _$AuthNeedsLogin value, $Res Function(_$AuthNeedsLogin) then) =
+      __$$AuthNeedsLoginCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AuthNeedsLoginCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements $AuthNeedsLoginCopyWith<$Res> {
-  _$AuthNeedsLoginCopyWithImpl(
-      AuthNeedsLogin _value, $Res Function(AuthNeedsLogin) _then)
-      : super(_value, (v) => _then(v as AuthNeedsLogin));
+class __$$AuthNeedsLoginCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$AuthNeedsLoginCopyWith<$Res> {
+  __$$AuthNeedsLoginCopyWithImpl(
+      _$AuthNeedsLogin _value, $Res Function(_$AuthNeedsLogin) _then)
+      : super(_value, (v) => _then(v as _$AuthNeedsLogin));
 
   @override
-  AuthNeedsLogin get _value => super._value as AuthNeedsLogin;
+  _$AuthNeedsLogin get _value => super._value as _$AuthNeedsLogin;
 }
 
 /// @nodoc
@@ -117,7 +102,7 @@ class _$AuthNeedsLogin implements AuthNeedsLogin {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is AuthNeedsLogin);
+        (other.runtimeType == runtimeType && other is _$AuthNeedsLogin);
   }
 
   @override
@@ -191,19 +176,20 @@ abstract class AuthNeedsLogin implements AuthState {
 }
 
 /// @nodoc
-abstract class $AuthDoneCopyWith<$Res> {
-  factory $AuthDoneCopyWith(AuthDone value, $Res Function(AuthDone) then) =
-      _$AuthDoneCopyWithImpl<$Res>;
+abstract class _$$AuthDoneCopyWith<$Res> {
+  factory _$$AuthDoneCopyWith(
+          _$AuthDone value, $Res Function(_$AuthDone) then) =
+      __$$AuthDoneCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AuthDoneCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements $AuthDoneCopyWith<$Res> {
-  _$AuthDoneCopyWithImpl(AuthDone _value, $Res Function(AuthDone) _then)
-      : super(_value, (v) => _then(v as AuthDone));
+class __$$AuthDoneCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$AuthDoneCopyWith<$Res> {
+  __$$AuthDoneCopyWithImpl(_$AuthDone _value, $Res Function(_$AuthDone) _then)
+      : super(_value, (v) => _then(v as _$AuthDone));
 
   @override
-  AuthDone get _value => super._value as AuthDone;
+  _$AuthDone get _value => super._value as _$AuthDone;
 }
 
 /// @nodoc
@@ -219,7 +205,7 @@ class _$AuthDone implements AuthDone {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is AuthDone);
+        (other.runtimeType == runtimeType && other is _$AuthDone);
   }
 
   @override

@@ -12,7 +12,7 @@ _$_SearchResponse _$$_SearchResponseFromJson(Map<String, dynamic> json) =>
               ?.map(
                   (e) => SearchResponseData.fromJson(e as Map<String, dynamic>))
               .toList() ??
-          [],
+          const <SearchResponseData>[],
     );
 
 Map<String, dynamic> _$$_SearchResponseToJson(_$_SearchResponse instance) =>

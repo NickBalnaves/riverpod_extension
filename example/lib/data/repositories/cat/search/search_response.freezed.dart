@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'search_response.dart';
@@ -11,30 +12,11 @@ part of 'search_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 SearchResponse _$SearchResponseFromJson(Map<String, dynamic> json) {
   return _SearchResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$SearchResponseTearOff {
-  const _$SearchResponseTearOff();
-
-  _SearchResponse call(
-      {List<SearchResponseData> data = const <SearchResponseData>[]}) {
-    return _SearchResponse(
-      data: data,
-    );
-  }
-
-  SearchResponse fromJson(Map<String, Object?> json) {
-    return SearchResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SearchResponse = _$SearchResponseTearOff();
 
 /// @nodoc
 mixin _$SearchResponse {
@@ -77,33 +59,33 @@ class _$SearchResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SearchResponseCopyWith<$Res>
+abstract class _$$_SearchResponseCopyWith<$Res>
     implements $SearchResponseCopyWith<$Res> {
-  factory _$SearchResponseCopyWith(
-          _SearchResponse value, $Res Function(_SearchResponse) then) =
-      __$SearchResponseCopyWithImpl<$Res>;
+  factory _$$_SearchResponseCopyWith(
+          _$_SearchResponse value, $Res Function(_$_SearchResponse) then) =
+      __$$_SearchResponseCopyWithImpl<$Res>;
   @override
   $Res call({List<SearchResponseData> data});
 }
 
 /// @nodoc
-class __$SearchResponseCopyWithImpl<$Res>
+class __$$_SearchResponseCopyWithImpl<$Res>
     extends _$SearchResponseCopyWithImpl<$Res>
-    implements _$SearchResponseCopyWith<$Res> {
-  __$SearchResponseCopyWithImpl(
-      _SearchResponse _value, $Res Function(_SearchResponse) _then)
-      : super(_value, (v) => _then(v as _SearchResponse));
+    implements _$$_SearchResponseCopyWith<$Res> {
+  __$$_SearchResponseCopyWithImpl(
+      _$_SearchResponse _value, $Res Function(_$_SearchResponse) _then)
+      : super(_value, (v) => _then(v as _$_SearchResponse));
 
   @override
-  _SearchResponse get _value => super._value as _SearchResponse;
+  _$_SearchResponse get _value => super._value as _$_SearchResponse;
 
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_SearchResponse(
+    return _then(_$_SearchResponse(
       data: data == freezed
-          ? _value.data
+          ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<SearchResponseData>,
     ));
@@ -113,14 +95,20 @@ class __$SearchResponseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_SearchResponse implements _SearchResponse {
-  _$_SearchResponse({this.data = const <SearchResponseData>[]});
+  _$_SearchResponse(
+      {final List<SearchResponseData> data = const <SearchResponseData>[]})
+      : _data = data;
 
   factory _$_SearchResponse.fromJson(Map<String, dynamic> json) =>
       _$$_SearchResponseFromJson(json);
 
-  @JsonKey(defaultValue: const <SearchResponseData>[])
+  final List<SearchResponseData> _data;
   @override
-  final List<SearchResponseData> data;
+  @JsonKey()
+  List<SearchResponseData> get data {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
 
   @override
   String toString() {
@@ -131,18 +119,19 @@ class _$_SearchResponse implements _SearchResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SearchResponse &&
-            const DeepCollectionEquality().equals(other.data, data));
+            other is _$_SearchResponse &&
+            const DeepCollectionEquality().equals(other._data, _data));
   }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
-  _$SearchResponseCopyWith<_SearchResponse> get copyWith =>
-      __$SearchResponseCopyWithImpl<_SearchResponse>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_SearchResponseCopyWith<_$_SearchResponse> get copyWith =>
+      __$$_SearchResponseCopyWithImpl<_$_SearchResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -151,41 +140,23 @@ class _$_SearchResponse implements _SearchResponse {
 }
 
 abstract class _SearchResponse implements SearchResponse {
-  factory _SearchResponse({List<SearchResponseData> data}) = _$_SearchResponse;
+  factory _SearchResponse({final List<SearchResponseData> data}) =
+      _$_SearchResponse;
 
   factory _SearchResponse.fromJson(Map<String, dynamic> json) =
       _$_SearchResponse.fromJson;
 
   @override
-  List<SearchResponseData> get data;
+  List<SearchResponseData> get data => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SearchResponseCopyWith<_SearchResponse> get copyWith =>
+  _$$_SearchResponseCopyWith<_$_SearchResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 SearchResponseData _$SearchResponseDataFromJson(Map<String, dynamic> json) {
   return _SearchResponseData.fromJson(json);
 }
-
-/// @nodoc
-class _$SearchResponseDataTearOff {
-  const _$SearchResponseDataTearOff();
-
-  _SearchResponseData call({String id = '', String url = ''}) {
-    return _SearchResponseData(
-      id: id,
-      url: url,
-    );
-  }
-
-  SearchResponseData fromJson(Map<String, Object?> json) {
-    return SearchResponseData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SearchResponseData = _$SearchResponseDataTearOff();
 
 /// @nodoc
 mixin _$SearchResponseData {
@@ -234,32 +205,32 @@ class _$SearchResponseDataCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SearchResponseDataCopyWith<$Res>
+abstract class _$$_SearchResponseDataCopyWith<$Res>
     implements $SearchResponseDataCopyWith<$Res> {
-  factory _$SearchResponseDataCopyWith(
-          _SearchResponseData value, $Res Function(_SearchResponseData) then) =
-      __$SearchResponseDataCopyWithImpl<$Res>;
+  factory _$$_SearchResponseDataCopyWith(_$_SearchResponseData value,
+          $Res Function(_$_SearchResponseData) then) =
+      __$$_SearchResponseDataCopyWithImpl<$Res>;
   @override
   $Res call({String id, String url});
 }
 
 /// @nodoc
-class __$SearchResponseDataCopyWithImpl<$Res>
+class __$$_SearchResponseDataCopyWithImpl<$Res>
     extends _$SearchResponseDataCopyWithImpl<$Res>
-    implements _$SearchResponseDataCopyWith<$Res> {
-  __$SearchResponseDataCopyWithImpl(
-      _SearchResponseData _value, $Res Function(_SearchResponseData) _then)
-      : super(_value, (v) => _then(v as _SearchResponseData));
+    implements _$$_SearchResponseDataCopyWith<$Res> {
+  __$$_SearchResponseDataCopyWithImpl(
+      _$_SearchResponseData _value, $Res Function(_$_SearchResponseData) _then)
+      : super(_value, (v) => _then(v as _$_SearchResponseData));
 
   @override
-  _SearchResponseData get _value => super._value as _SearchResponseData;
+  _$_SearchResponseData get _value => super._value as _$_SearchResponseData;
 
   @override
   $Res call({
     Object? id = freezed,
     Object? url = freezed,
   }) {
-    return _then(_SearchResponseData(
+    return _then(_$_SearchResponseData(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -280,11 +251,11 @@ class _$_SearchResponseData implements _SearchResponseData {
   factory _$_SearchResponseData.fromJson(Map<String, dynamic> json) =>
       _$$_SearchResponseDataFromJson(json);
 
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String id;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String url;
 
   @override
@@ -296,18 +267,23 @@ class _$_SearchResponseData implements _SearchResponseData {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SearchResponseData &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.url, url) || other.url == url));
+            other is _$_SearchResponseData &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.url, url));
   }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, id, url);
 
   @JsonKey(ignore: true)
   @override
-  _$SearchResponseDataCopyWith<_SearchResponseData> get copyWith =>
-      __$SearchResponseDataCopyWithImpl<_SearchResponseData>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(url));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_SearchResponseDataCopyWith<_$_SearchResponseData> get copyWith =>
+      __$$_SearchResponseDataCopyWithImpl<_$_SearchResponseData>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -316,17 +292,18 @@ class _$_SearchResponseData implements _SearchResponseData {
 }
 
 abstract class _SearchResponseData implements SearchResponseData {
-  factory _SearchResponseData({String id, String url}) = _$_SearchResponseData;
+  factory _SearchResponseData({final String id, final String url}) =
+      _$_SearchResponseData;
 
   factory _SearchResponseData.fromJson(Map<String, dynamic> json) =
       _$_SearchResponseData.fromJson;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get url;
+  String get url => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SearchResponseDataCopyWith<_SearchResponseData> get copyWith =>
+  _$$_SearchResponseDataCopyWith<_$_SearchResponseData> get copyWith =>
       throw _privateConstructorUsedError;
 }

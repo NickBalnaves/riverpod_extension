@@ -46,10 +46,8 @@ class UriTemplate extends Equatable {
     }
 
     for (final queryParameter in queryParameters) {
-      if (queryParameter is QueryParameterTemplate) {
-        if (name == queryParameter.name) {
-          return true;
-        }
+      if (name == queryParameter.name) {
+        return true;
       }
     }
 

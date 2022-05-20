@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'gallery_state.dart';
@@ -11,21 +12,7 @@ part of 'gallery_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$GalleryStateTearOff {
-  const _$GalleryStateTearOff();
-
-  _GalleryState call({List<Gallery>? photos = const <Gallery>[]}) {
-    return _GalleryState(
-      photos: photos,
-    );
-  }
-}
-
-/// @nodoc
-const $GalleryState = _$GalleryStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$GalleryState {
@@ -66,32 +53,33 @@ class _$GalleryStateCopyWithImpl<$Res> implements $GalleryStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$GalleryStateCopyWith<$Res>
+abstract class _$$_GalleryStateCopyWith<$Res>
     implements $GalleryStateCopyWith<$Res> {
-  factory _$GalleryStateCopyWith(
-          _GalleryState value, $Res Function(_GalleryState) then) =
-      __$GalleryStateCopyWithImpl<$Res>;
+  factory _$$_GalleryStateCopyWith(
+          _$_GalleryState value, $Res Function(_$_GalleryState) then) =
+      __$$_GalleryStateCopyWithImpl<$Res>;
   @override
   $Res call({List<Gallery>? photos});
 }
 
 /// @nodoc
-class __$GalleryStateCopyWithImpl<$Res> extends _$GalleryStateCopyWithImpl<$Res>
-    implements _$GalleryStateCopyWith<$Res> {
-  __$GalleryStateCopyWithImpl(
-      _GalleryState _value, $Res Function(_GalleryState) _then)
-      : super(_value, (v) => _then(v as _GalleryState));
+class __$$_GalleryStateCopyWithImpl<$Res>
+    extends _$GalleryStateCopyWithImpl<$Res>
+    implements _$$_GalleryStateCopyWith<$Res> {
+  __$$_GalleryStateCopyWithImpl(
+      _$_GalleryState _value, $Res Function(_$_GalleryState) _then)
+      : super(_value, (v) => _then(v as _$_GalleryState));
 
   @override
-  _GalleryState get _value => super._value as _GalleryState;
+  _$_GalleryState get _value => super._value as _$_GalleryState;
 
   @override
   $Res call({
     Object? photos = freezed,
   }) {
-    return _then(_GalleryState(
+    return _then(_$_GalleryState(
       photos: photos == freezed
-          ? _value.photos
+          ? _value._photos
           : photos // ignore: cast_nullable_to_non_nullable
               as List<Gallery>?,
     ));
@@ -101,11 +89,18 @@ class __$GalleryStateCopyWithImpl<$Res> extends _$GalleryStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_GalleryState implements _GalleryState {
-  const _$_GalleryState({this.photos = const <Gallery>[]});
+  const _$_GalleryState({final List<Gallery>? photos = const <Gallery>[]})
+      : _photos = photos;
 
-  @JsonKey(defaultValue: const <Gallery>[])
+  final List<Gallery>? _photos;
   @override
-  final List<Gallery>? photos;
+  @JsonKey()
+  List<Gallery>? get photos {
+    final value = _photos;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -116,27 +111,27 @@ class _$_GalleryState implements _GalleryState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GalleryState &&
-            const DeepCollectionEquality().equals(other.photos, photos));
+            other is _$_GalleryState &&
+            const DeepCollectionEquality().equals(other._photos, _photos));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(photos));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_photos));
 
   @JsonKey(ignore: true)
   @override
-  _$GalleryStateCopyWith<_GalleryState> get copyWith =>
-      __$GalleryStateCopyWithImpl<_GalleryState>(this, _$identity);
+  _$$_GalleryStateCopyWith<_$_GalleryState> get copyWith =>
+      __$$_GalleryStateCopyWithImpl<_$_GalleryState>(this, _$identity);
 }
 
 abstract class _GalleryState implements GalleryState {
-  const factory _GalleryState({List<Gallery>? photos}) = _$_GalleryState;
+  const factory _GalleryState({final List<Gallery>? photos}) = _$_GalleryState;
 
   @override
-  List<Gallery>? get photos;
+  List<Gallery>? get photos => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$GalleryStateCopyWith<_GalleryState> get copyWith =>
+  _$$_GalleryStateCopyWith<_$_GalleryState> get copyWith =>
       throw _privateConstructorUsedError;
 }

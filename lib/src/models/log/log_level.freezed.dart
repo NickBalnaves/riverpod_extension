@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'log_level.dart';
@@ -11,80 +12,11 @@ part of 'log_level.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$LogLevelTearOff {
-  const _$LogLevelTearOff();
-
-  _All all({int value = 0}) {
-    return _All(
-      value: value,
-    );
-  }
-
-  _Off off({int value = 2000}) {
-    return _Off(
-      value: value,
-    );
-  }
-
-  _Finest finest({int value = 300}) {
-    return _Finest(
-      value: value,
-    );
-  }
-
-  _Finer finer({int value = 400}) {
-    return _Finer(
-      value: value,
-    );
-  }
-
-  _Fine fine({int value = 500}) {
-    return _Fine(
-      value: value,
-    );
-  }
-
-  _Config config({int value = 700}) {
-    return _Config(
-      value: value,
-    );
-  }
-
-  _Info info({int value = 800}) {
-    return _Info(
-      value: value,
-    );
-  }
-
-  _Warning warning({int value = 900}) {
-    return _Warning(
-      value: value,
-    );
-  }
-
-  _Severe severe({int value = 1000}) {
-    return _Severe(
-      value: value,
-    );
-  }
-
-  _Shout shout({int value = 1200}) {
-    return _Shout(
-      value: value,
-    );
-  }
-}
-
-/// @nodoc
-const $LogLevel = _$LogLevelTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$LogLevel {
   int get value => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int value) all,
@@ -206,27 +138,27 @@ class _$LogLevelCopyWithImpl<$Res> implements $LogLevelCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AllCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
-  factory _$AllCopyWith(_All value, $Res Function(_All) then) =
-      __$AllCopyWithImpl<$Res>;
+abstract class _$$_AllCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
+  factory _$$_AllCopyWith(_$_All value, $Res Function(_$_All) then) =
+      __$$_AllCopyWithImpl<$Res>;
   @override
   $Res call({int value});
 }
 
 /// @nodoc
-class __$AllCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
-    implements _$AllCopyWith<$Res> {
-  __$AllCopyWithImpl(_All _value, $Res Function(_All) _then)
-      : super(_value, (v) => _then(v as _All));
+class __$$_AllCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
+    implements _$$_AllCopyWith<$Res> {
+  __$$_AllCopyWithImpl(_$_All _value, $Res Function(_$_All) _then)
+      : super(_value, (v) => _then(v as _$_All));
 
   @override
-  _All get _value => super._value as _All;
+  _$_All get _value => super._value as _$_All;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(_All(
+    return _then(_$_All(
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -240,8 +172,8 @@ class __$AllCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
 class _$_All implements _All {
   const _$_All({this.value = 0});
 
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int value;
 
   @override
@@ -253,17 +185,18 @@ class _$_All implements _All {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _All &&
-            (identical(other.value, value) || other.value == value));
+            other is _$_All &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, value);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  _$AllCopyWith<_All> get copyWith =>
-      __$AllCopyWithImpl<_All>(this, _$identity);
+  _$$_AllCopyWith<_$_All> get copyWith =>
+      __$$_AllCopyWithImpl<_$_All>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -377,37 +310,37 @@ class _$_All implements _All {
 }
 
 abstract class _All implements LogLevel {
-  const factory _All({int value}) = _$_All;
+  const factory _All({final int value}) = _$_All;
 
   @override
-  int get value;
+  int get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AllCopyWith<_All> get copyWith => throw _privateConstructorUsedError;
+  _$$_AllCopyWith<_$_All> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$OffCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
-  factory _$OffCopyWith(_Off value, $Res Function(_Off) then) =
-      __$OffCopyWithImpl<$Res>;
+abstract class _$$_OffCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
+  factory _$$_OffCopyWith(_$_Off value, $Res Function(_$_Off) then) =
+      __$$_OffCopyWithImpl<$Res>;
   @override
   $Res call({int value});
 }
 
 /// @nodoc
-class __$OffCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
-    implements _$OffCopyWith<$Res> {
-  __$OffCopyWithImpl(_Off _value, $Res Function(_Off) _then)
-      : super(_value, (v) => _then(v as _Off));
+class __$$_OffCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
+    implements _$$_OffCopyWith<$Res> {
+  __$$_OffCopyWithImpl(_$_Off _value, $Res Function(_$_Off) _then)
+      : super(_value, (v) => _then(v as _$_Off));
 
   @override
-  _Off get _value => super._value as _Off;
+  _$_Off get _value => super._value as _$_Off;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(_Off(
+    return _then(_$_Off(
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -421,8 +354,8 @@ class __$OffCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
 class _$_Off implements _Off {
   const _$_Off({this.value = 2000});
 
-  @JsonKey(defaultValue: 2000)
   @override
+  @JsonKey()
   final int value;
 
   @override
@@ -434,17 +367,18 @@ class _$_Off implements _Off {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Off &&
-            (identical(other.value, value) || other.value == value));
+            other is _$_Off &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, value);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  _$OffCopyWith<_Off> get copyWith =>
-      __$OffCopyWithImpl<_Off>(this, _$identity);
+  _$$_OffCopyWith<_$_Off> get copyWith =>
+      __$$_OffCopyWithImpl<_$_Off>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -558,37 +492,37 @@ class _$_Off implements _Off {
 }
 
 abstract class _Off implements LogLevel {
-  const factory _Off({int value}) = _$_Off;
+  const factory _Off({final int value}) = _$_Off;
 
   @override
-  int get value;
+  int get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$OffCopyWith<_Off> get copyWith => throw _privateConstructorUsedError;
+  _$$_OffCopyWith<_$_Off> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$FinestCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
-  factory _$FinestCopyWith(_Finest value, $Res Function(_Finest) then) =
-      __$FinestCopyWithImpl<$Res>;
+abstract class _$$_FinestCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
+  factory _$$_FinestCopyWith(_$_Finest value, $Res Function(_$_Finest) then) =
+      __$$_FinestCopyWithImpl<$Res>;
   @override
   $Res call({int value});
 }
 
 /// @nodoc
-class __$FinestCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
-    implements _$FinestCopyWith<$Res> {
-  __$FinestCopyWithImpl(_Finest _value, $Res Function(_Finest) _then)
-      : super(_value, (v) => _then(v as _Finest));
+class __$$_FinestCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
+    implements _$$_FinestCopyWith<$Res> {
+  __$$_FinestCopyWithImpl(_$_Finest _value, $Res Function(_$_Finest) _then)
+      : super(_value, (v) => _then(v as _$_Finest));
 
   @override
-  _Finest get _value => super._value as _Finest;
+  _$_Finest get _value => super._value as _$_Finest;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(_Finest(
+    return _then(_$_Finest(
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -602,8 +536,8 @@ class __$FinestCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
 class _$_Finest implements _Finest {
   const _$_Finest({this.value = 300});
 
-  @JsonKey(defaultValue: 300)
   @override
+  @JsonKey()
   final int value;
 
   @override
@@ -615,17 +549,18 @@ class _$_Finest implements _Finest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Finest &&
-            (identical(other.value, value) || other.value == value));
+            other is _$_Finest &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, value);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  _$FinestCopyWith<_Finest> get copyWith =>
-      __$FinestCopyWithImpl<_Finest>(this, _$identity);
+  _$$_FinestCopyWith<_$_Finest> get copyWith =>
+      __$$_FinestCopyWithImpl<_$_Finest>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -739,37 +674,38 @@ class _$_Finest implements _Finest {
 }
 
 abstract class _Finest implements LogLevel {
-  const factory _Finest({int value}) = _$_Finest;
+  const factory _Finest({final int value}) = _$_Finest;
 
   @override
-  int get value;
+  int get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$FinestCopyWith<_Finest> get copyWith => throw _privateConstructorUsedError;
+  _$$_FinestCopyWith<_$_Finest> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$FinerCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
-  factory _$FinerCopyWith(_Finer value, $Res Function(_Finer) then) =
-      __$FinerCopyWithImpl<$Res>;
+abstract class _$$_FinerCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
+  factory _$$_FinerCopyWith(_$_Finer value, $Res Function(_$_Finer) then) =
+      __$$_FinerCopyWithImpl<$Res>;
   @override
   $Res call({int value});
 }
 
 /// @nodoc
-class __$FinerCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
-    implements _$FinerCopyWith<$Res> {
-  __$FinerCopyWithImpl(_Finer _value, $Res Function(_Finer) _then)
-      : super(_value, (v) => _then(v as _Finer));
+class __$$_FinerCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
+    implements _$$_FinerCopyWith<$Res> {
+  __$$_FinerCopyWithImpl(_$_Finer _value, $Res Function(_$_Finer) _then)
+      : super(_value, (v) => _then(v as _$_Finer));
 
   @override
-  _Finer get _value => super._value as _Finer;
+  _$_Finer get _value => super._value as _$_Finer;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(_Finer(
+    return _then(_$_Finer(
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -783,8 +719,8 @@ class __$FinerCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
 class _$_Finer implements _Finer {
   const _$_Finer({this.value = 400});
 
-  @JsonKey(defaultValue: 400)
   @override
+  @JsonKey()
   final int value;
 
   @override
@@ -796,17 +732,18 @@ class _$_Finer implements _Finer {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Finer &&
-            (identical(other.value, value) || other.value == value));
+            other is _$_Finer &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, value);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  _$FinerCopyWith<_Finer> get copyWith =>
-      __$FinerCopyWithImpl<_Finer>(this, _$identity);
+  _$$_FinerCopyWith<_$_Finer> get copyWith =>
+      __$$_FinerCopyWithImpl<_$_Finer>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -920,37 +857,38 @@ class _$_Finer implements _Finer {
 }
 
 abstract class _Finer implements LogLevel {
-  const factory _Finer({int value}) = _$_Finer;
+  const factory _Finer({final int value}) = _$_Finer;
 
   @override
-  int get value;
+  int get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$FinerCopyWith<_Finer> get copyWith => throw _privateConstructorUsedError;
+  _$$_FinerCopyWith<_$_Finer> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$FineCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
-  factory _$FineCopyWith(_Fine value, $Res Function(_Fine) then) =
-      __$FineCopyWithImpl<$Res>;
+abstract class _$$_FineCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
+  factory _$$_FineCopyWith(_$_Fine value, $Res Function(_$_Fine) then) =
+      __$$_FineCopyWithImpl<$Res>;
   @override
   $Res call({int value});
 }
 
 /// @nodoc
-class __$FineCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
-    implements _$FineCopyWith<$Res> {
-  __$FineCopyWithImpl(_Fine _value, $Res Function(_Fine) _then)
-      : super(_value, (v) => _then(v as _Fine));
+class __$$_FineCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
+    implements _$$_FineCopyWith<$Res> {
+  __$$_FineCopyWithImpl(_$_Fine _value, $Res Function(_$_Fine) _then)
+      : super(_value, (v) => _then(v as _$_Fine));
 
   @override
-  _Fine get _value => super._value as _Fine;
+  _$_Fine get _value => super._value as _$_Fine;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(_Fine(
+    return _then(_$_Fine(
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -964,8 +902,8 @@ class __$FineCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
 class _$_Fine implements _Fine {
   const _$_Fine({this.value = 500});
 
-  @JsonKey(defaultValue: 500)
   @override
+  @JsonKey()
   final int value;
 
   @override
@@ -977,17 +915,18 @@ class _$_Fine implements _Fine {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Fine &&
-            (identical(other.value, value) || other.value == value));
+            other is _$_Fine &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, value);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  _$FineCopyWith<_Fine> get copyWith =>
-      __$FineCopyWithImpl<_Fine>(this, _$identity);
+  _$$_FineCopyWith<_$_Fine> get copyWith =>
+      __$$_FineCopyWithImpl<_$_Fine>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1101,37 +1040,37 @@ class _$_Fine implements _Fine {
 }
 
 abstract class _Fine implements LogLevel {
-  const factory _Fine({int value}) = _$_Fine;
+  const factory _Fine({final int value}) = _$_Fine;
 
   @override
-  int get value;
+  int get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$FineCopyWith<_Fine> get copyWith => throw _privateConstructorUsedError;
+  _$$_FineCopyWith<_$_Fine> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ConfigCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
-  factory _$ConfigCopyWith(_Config value, $Res Function(_Config) then) =
-      __$ConfigCopyWithImpl<$Res>;
+abstract class _$$_ConfigCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
+  factory _$$_ConfigCopyWith(_$_Config value, $Res Function(_$_Config) then) =
+      __$$_ConfigCopyWithImpl<$Res>;
   @override
   $Res call({int value});
 }
 
 /// @nodoc
-class __$ConfigCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
-    implements _$ConfigCopyWith<$Res> {
-  __$ConfigCopyWithImpl(_Config _value, $Res Function(_Config) _then)
-      : super(_value, (v) => _then(v as _Config));
+class __$$_ConfigCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
+    implements _$$_ConfigCopyWith<$Res> {
+  __$$_ConfigCopyWithImpl(_$_Config _value, $Res Function(_$_Config) _then)
+      : super(_value, (v) => _then(v as _$_Config));
 
   @override
-  _Config get _value => super._value as _Config;
+  _$_Config get _value => super._value as _$_Config;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(_Config(
+    return _then(_$_Config(
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -1145,8 +1084,8 @@ class __$ConfigCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
 class _$_Config implements _Config {
   const _$_Config({this.value = 700});
 
-  @JsonKey(defaultValue: 700)
   @override
+  @JsonKey()
   final int value;
 
   @override
@@ -1158,17 +1097,18 @@ class _$_Config implements _Config {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Config &&
-            (identical(other.value, value) || other.value == value));
+            other is _$_Config &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, value);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  _$ConfigCopyWith<_Config> get copyWith =>
-      __$ConfigCopyWithImpl<_Config>(this, _$identity);
+  _$$_ConfigCopyWith<_$_Config> get copyWith =>
+      __$$_ConfigCopyWithImpl<_$_Config>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1282,37 +1222,38 @@ class _$_Config implements _Config {
 }
 
 abstract class _Config implements LogLevel {
-  const factory _Config({int value}) = _$_Config;
+  const factory _Config({final int value}) = _$_Config;
 
   @override
-  int get value;
+  int get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ConfigCopyWith<_Config> get copyWith => throw _privateConstructorUsedError;
+  _$$_ConfigCopyWith<_$_Config> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$InfoCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
-  factory _$InfoCopyWith(_Info value, $Res Function(_Info) then) =
-      __$InfoCopyWithImpl<$Res>;
+abstract class _$$_InfoCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
+  factory _$$_InfoCopyWith(_$_Info value, $Res Function(_$_Info) then) =
+      __$$_InfoCopyWithImpl<$Res>;
   @override
   $Res call({int value});
 }
 
 /// @nodoc
-class __$InfoCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
-    implements _$InfoCopyWith<$Res> {
-  __$InfoCopyWithImpl(_Info _value, $Res Function(_Info) _then)
-      : super(_value, (v) => _then(v as _Info));
+class __$$_InfoCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
+    implements _$$_InfoCopyWith<$Res> {
+  __$$_InfoCopyWithImpl(_$_Info _value, $Res Function(_$_Info) _then)
+      : super(_value, (v) => _then(v as _$_Info));
 
   @override
-  _Info get _value => super._value as _Info;
+  _$_Info get _value => super._value as _$_Info;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(_Info(
+    return _then(_$_Info(
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -1326,8 +1267,8 @@ class __$InfoCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
 class _$_Info implements _Info {
   const _$_Info({this.value = 800});
 
-  @JsonKey(defaultValue: 800)
   @override
+  @JsonKey()
   final int value;
 
   @override
@@ -1339,17 +1280,18 @@ class _$_Info implements _Info {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Info &&
-            (identical(other.value, value) || other.value == value));
+            other is _$_Info &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, value);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  _$InfoCopyWith<_Info> get copyWith =>
-      __$InfoCopyWithImpl<_Info>(this, _$identity);
+  _$$_InfoCopyWith<_$_Info> get copyWith =>
+      __$$_InfoCopyWithImpl<_$_Info>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1463,37 +1405,38 @@ class _$_Info implements _Info {
 }
 
 abstract class _Info implements LogLevel {
-  const factory _Info({int value}) = _$_Info;
+  const factory _Info({final int value}) = _$_Info;
 
   @override
-  int get value;
+  int get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$InfoCopyWith<_Info> get copyWith => throw _privateConstructorUsedError;
+  _$$_InfoCopyWith<_$_Info> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$WarningCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
-  factory _$WarningCopyWith(_Warning value, $Res Function(_Warning) then) =
-      __$WarningCopyWithImpl<$Res>;
+abstract class _$$_WarningCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
+  factory _$$_WarningCopyWith(
+          _$_Warning value, $Res Function(_$_Warning) then) =
+      __$$_WarningCopyWithImpl<$Res>;
   @override
   $Res call({int value});
 }
 
 /// @nodoc
-class __$WarningCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
-    implements _$WarningCopyWith<$Res> {
-  __$WarningCopyWithImpl(_Warning _value, $Res Function(_Warning) _then)
-      : super(_value, (v) => _then(v as _Warning));
+class __$$_WarningCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
+    implements _$$_WarningCopyWith<$Res> {
+  __$$_WarningCopyWithImpl(_$_Warning _value, $Res Function(_$_Warning) _then)
+      : super(_value, (v) => _then(v as _$_Warning));
 
   @override
-  _Warning get _value => super._value as _Warning;
+  _$_Warning get _value => super._value as _$_Warning;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(_Warning(
+    return _then(_$_Warning(
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -1507,8 +1450,8 @@ class __$WarningCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
 class _$_Warning implements _Warning {
   const _$_Warning({this.value = 900});
 
-  @JsonKey(defaultValue: 900)
   @override
+  @JsonKey()
   final int value;
 
   @override
@@ -1520,17 +1463,18 @@ class _$_Warning implements _Warning {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Warning &&
-            (identical(other.value, value) || other.value == value));
+            other is _$_Warning &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, value);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  _$WarningCopyWith<_Warning> get copyWith =>
-      __$WarningCopyWithImpl<_Warning>(this, _$identity);
+  _$$_WarningCopyWith<_$_Warning> get copyWith =>
+      __$$_WarningCopyWithImpl<_$_Warning>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1644,38 +1588,38 @@ class _$_Warning implements _Warning {
 }
 
 abstract class _Warning implements LogLevel {
-  const factory _Warning({int value}) = _$_Warning;
+  const factory _Warning({final int value}) = _$_Warning;
 
   @override
-  int get value;
+  int get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$WarningCopyWith<_Warning> get copyWith =>
+  _$$_WarningCopyWith<_$_Warning> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SevereCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
-  factory _$SevereCopyWith(_Severe value, $Res Function(_Severe) then) =
-      __$SevereCopyWithImpl<$Res>;
+abstract class _$$_SevereCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
+  factory _$$_SevereCopyWith(_$_Severe value, $Res Function(_$_Severe) then) =
+      __$$_SevereCopyWithImpl<$Res>;
   @override
   $Res call({int value});
 }
 
 /// @nodoc
-class __$SevereCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
-    implements _$SevereCopyWith<$Res> {
-  __$SevereCopyWithImpl(_Severe _value, $Res Function(_Severe) _then)
-      : super(_value, (v) => _then(v as _Severe));
+class __$$_SevereCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
+    implements _$$_SevereCopyWith<$Res> {
+  __$$_SevereCopyWithImpl(_$_Severe _value, $Res Function(_$_Severe) _then)
+      : super(_value, (v) => _then(v as _$_Severe));
 
   @override
-  _Severe get _value => super._value as _Severe;
+  _$_Severe get _value => super._value as _$_Severe;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(_Severe(
+    return _then(_$_Severe(
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -1689,8 +1633,8 @@ class __$SevereCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
 class _$_Severe implements _Severe {
   const _$_Severe({this.value = 1000});
 
-  @JsonKey(defaultValue: 1000)
   @override
+  @JsonKey()
   final int value;
 
   @override
@@ -1702,17 +1646,18 @@ class _$_Severe implements _Severe {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Severe &&
-            (identical(other.value, value) || other.value == value));
+            other is _$_Severe &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, value);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  _$SevereCopyWith<_Severe> get copyWith =>
-      __$SevereCopyWithImpl<_Severe>(this, _$identity);
+  _$$_SevereCopyWith<_$_Severe> get copyWith =>
+      __$$_SevereCopyWithImpl<_$_Severe>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1826,37 +1771,38 @@ class _$_Severe implements _Severe {
 }
 
 abstract class _Severe implements LogLevel {
-  const factory _Severe({int value}) = _$_Severe;
+  const factory _Severe({final int value}) = _$_Severe;
 
   @override
-  int get value;
+  int get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SevereCopyWith<_Severe> get copyWith => throw _privateConstructorUsedError;
+  _$$_SevereCopyWith<_$_Severe> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ShoutCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
-  factory _$ShoutCopyWith(_Shout value, $Res Function(_Shout) then) =
-      __$ShoutCopyWithImpl<$Res>;
+abstract class _$$_ShoutCopyWith<$Res> implements $LogLevelCopyWith<$Res> {
+  factory _$$_ShoutCopyWith(_$_Shout value, $Res Function(_$_Shout) then) =
+      __$$_ShoutCopyWithImpl<$Res>;
   @override
   $Res call({int value});
 }
 
 /// @nodoc
-class __$ShoutCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
-    implements _$ShoutCopyWith<$Res> {
-  __$ShoutCopyWithImpl(_Shout _value, $Res Function(_Shout) _then)
-      : super(_value, (v) => _then(v as _Shout));
+class __$$_ShoutCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
+    implements _$$_ShoutCopyWith<$Res> {
+  __$$_ShoutCopyWithImpl(_$_Shout _value, $Res Function(_$_Shout) _then)
+      : super(_value, (v) => _then(v as _$_Shout));
 
   @override
-  _Shout get _value => super._value as _Shout;
+  _$_Shout get _value => super._value as _$_Shout;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(_Shout(
+    return _then(_$_Shout(
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -1870,8 +1816,8 @@ class __$ShoutCopyWithImpl<$Res> extends _$LogLevelCopyWithImpl<$Res>
 class _$_Shout implements _Shout {
   const _$_Shout({this.value = 1200});
 
-  @JsonKey(defaultValue: 1200)
   @override
+  @JsonKey()
   final int value;
 
   @override
@@ -1883,17 +1829,18 @@ class _$_Shout implements _Shout {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Shout &&
-            (identical(other.value, value) || other.value == value));
+            other is _$_Shout &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, value);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  _$ShoutCopyWith<_Shout> get copyWith =>
-      __$ShoutCopyWithImpl<_Shout>(this, _$identity);
+  _$$_ShoutCopyWith<_$_Shout> get copyWith =>
+      __$$_ShoutCopyWithImpl<_$_Shout>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2007,11 +1954,12 @@ class _$_Shout implements _Shout {
 }
 
 abstract class _Shout implements LogLevel {
-  const factory _Shout({int value}) = _$_Shout;
+  const factory _Shout({final int value}) = _$_Shout;
 
   @override
-  int get value;
+  int get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ShoutCopyWith<_Shout> get copyWith => throw _privateConstructorUsedError;
+  _$$_ShoutCopyWith<_$_Shout> get copyWith =>
+      throw _privateConstructorUsedError;
 }

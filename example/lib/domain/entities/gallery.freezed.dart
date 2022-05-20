@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'gallery.dart';
@@ -11,22 +12,7 @@ part of 'gallery.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$GalleryTearOff {
-  const _$GalleryTearOff();
-
-  _Gallery call({String id = '', String image = ''}) {
-    return _Gallery(
-      id: id,
-      image: image,
-    );
-  }
-}
-
-/// @nodoc
-const $Gallery = _$GalleryTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Gallery {
@@ -71,28 +57,29 @@ class _$GalleryCopyWithImpl<$Res> implements $GalleryCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$GalleryCopyWith<$Res> implements $GalleryCopyWith<$Res> {
-  factory _$GalleryCopyWith(_Gallery value, $Res Function(_Gallery) then) =
-      __$GalleryCopyWithImpl<$Res>;
+abstract class _$$_GalleryCopyWith<$Res> implements $GalleryCopyWith<$Res> {
+  factory _$$_GalleryCopyWith(
+          _$_Gallery value, $Res Function(_$_Gallery) then) =
+      __$$_GalleryCopyWithImpl<$Res>;
   @override
   $Res call({String id, String image});
 }
 
 /// @nodoc
-class __$GalleryCopyWithImpl<$Res> extends _$GalleryCopyWithImpl<$Res>
-    implements _$GalleryCopyWith<$Res> {
-  __$GalleryCopyWithImpl(_Gallery _value, $Res Function(_Gallery) _then)
-      : super(_value, (v) => _then(v as _Gallery));
+class __$$_GalleryCopyWithImpl<$Res> extends _$GalleryCopyWithImpl<$Res>
+    implements _$$_GalleryCopyWith<$Res> {
+  __$$_GalleryCopyWithImpl(_$_Gallery _value, $Res Function(_$_Gallery) _then)
+      : super(_value, (v) => _then(v as _$_Gallery));
 
   @override
-  _Gallery get _value => super._value as _Gallery;
+  _$_Gallery get _value => super._value as _$_Gallery;
 
   @override
   $Res call({
     Object? id = freezed,
     Object? image = freezed,
   }) {
-    return _then(_Gallery(
+    return _then(_$_Gallery(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -110,11 +97,11 @@ class __$GalleryCopyWithImpl<$Res> extends _$GalleryCopyWithImpl<$Res>
 class _$_Gallery implements _Gallery {
   const _$_Gallery({this.id = '', this.image = ''});
 
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String id;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String image;
 
   @override
@@ -126,29 +113,32 @@ class _$_Gallery implements _Gallery {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Gallery &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.image, image) || other.image == image));
+            other is _$_Gallery &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.image, image));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, image);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(image));
 
   @JsonKey(ignore: true)
   @override
-  _$GalleryCopyWith<_Gallery> get copyWith =>
-      __$GalleryCopyWithImpl<_Gallery>(this, _$identity);
+  _$$_GalleryCopyWith<_$_Gallery> get copyWith =>
+      __$$_GalleryCopyWithImpl<_$_Gallery>(this, _$identity);
 }
 
 abstract class _Gallery implements Gallery {
-  const factory _Gallery({String id, String image}) = _$_Gallery;
+  const factory _Gallery({final String id, final String image}) = _$_Gallery;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get image;
+  String get image => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$GalleryCopyWith<_Gallery> get copyWith =>
+  _$$_GalleryCopyWith<_$_Gallery> get copyWith =>
       throw _privateConstructorUsedError;
 }

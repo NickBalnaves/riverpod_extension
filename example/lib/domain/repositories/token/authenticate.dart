@@ -19,4 +19,6 @@ final authenticateRepositoryProvider = FutureProvider.autoDispose
       ),
     ).future,
   );
+
+  return null;
 });

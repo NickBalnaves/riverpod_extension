@@ -6,6 +6,7 @@ analyzer:
     - lib/generated/**
     - "**/*.g.dart"
     - "**/*.freezed.dart"
+    - "lib/generated_plugin_registrant.dart"
   strong-mode:
     implicit-casts: false
     implicit-dynamic: false

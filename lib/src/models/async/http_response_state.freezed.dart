@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'http_response_state.dart';
@@ -11,33 +12,7 @@ part of 'http_response_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$HttpResponseStateTearOff {
-  const _$HttpResponseStateTearOff();
-
-  HttpResponseData<T> call<T>(T data) {
-    return HttpResponseData<T>(
-      data,
-    );
-  }
-
-  HttpResponseError<T> error<T>(Exception exception) {
-    return HttpResponseError<T>(
-      exception,
-    );
-  }
-
-  HttpResponseLoading<T> loading<T>(AsyncValue<HttpResponseState<T>>? value) {
-    return HttpResponseLoading<T>(
-      value,
-    );
-  }
-}
-
-/// @nodoc
-const $HttpResponseState = _$HttpResponseStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$HttpResponseState<T> {
@@ -105,29 +80,29 @@ class _$HttpResponseStateCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
-abstract class $HttpResponseDataCopyWith<T, $Res> {
-  factory $HttpResponseDataCopyWith(
-          HttpResponseData<T> value, $Res Function(HttpResponseData<T>) then) =
-      _$HttpResponseDataCopyWithImpl<T, $Res>;
+abstract class _$$HttpResponseDataCopyWith<T, $Res> {
+  factory _$$HttpResponseDataCopyWith(_$HttpResponseData<T> value,
+          $Res Function(_$HttpResponseData<T>) then) =
+      __$$HttpResponseDataCopyWithImpl<T, $Res>;
   $Res call({T data});
 }
 
 /// @nodoc
-class _$HttpResponseDataCopyWithImpl<T, $Res>
+class __$$HttpResponseDataCopyWithImpl<T, $Res>
     extends _$HttpResponseStateCopyWithImpl<T, $Res>
-    implements $HttpResponseDataCopyWith<T, $Res> {
-  _$HttpResponseDataCopyWithImpl(
-      HttpResponseData<T> _value, $Res Function(HttpResponseData<T>) _then)
-      : super(_value, (v) => _then(v as HttpResponseData<T>));
+    implements _$$HttpResponseDataCopyWith<T, $Res> {
+  __$$HttpResponseDataCopyWithImpl(
+      _$HttpResponseData<T> _value, $Res Function(_$HttpResponseData<T>) _then)
+      : super(_value, (v) => _then(v as _$HttpResponseData<T>));
 
   @override
-  HttpResponseData<T> get _value => super._value as HttpResponseData<T>;
+  _$HttpResponseData<T> get _value => super._value as _$HttpResponseData<T>;
 
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(HttpResponseData<T>(
+    return _then(_$HttpResponseData<T>(
       data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -153,7 +128,7 @@ class _$HttpResponseData<T> implements HttpResponseData<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is HttpResponseData<T> &&
+            other is _$HttpResponseData<T> &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -163,8 +138,9 @@ class _$HttpResponseData<T> implements HttpResponseData<T> {
 
   @JsonKey(ignore: true)
   @override
-  $HttpResponseDataCopyWith<T, HttpResponseData<T>> get copyWith =>
-      _$HttpResponseDataCopyWithImpl<T, HttpResponseData<T>>(this, _$identity);
+  _$$HttpResponseDataCopyWith<T, _$HttpResponseData<T>> get copyWith =>
+      __$$HttpResponseDataCopyWithImpl<T, _$HttpResponseData<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -236,38 +212,38 @@ class _$HttpResponseData<T> implements HttpResponseData<T> {
 }
 
 abstract class HttpResponseData<T> implements HttpResponseState<T> {
-  const factory HttpResponseData(T data) = _$HttpResponseData<T>;
+  const factory HttpResponseData(final T data) = _$HttpResponseData<T>;
 
-  T get data;
+  T get data => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $HttpResponseDataCopyWith<T, HttpResponseData<T>> get copyWith =>
+  _$$HttpResponseDataCopyWith<T, _$HttpResponseData<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HttpResponseErrorCopyWith<T, $Res> {
-  factory $HttpResponseErrorCopyWith(HttpResponseError<T> value,
-          $Res Function(HttpResponseError<T>) then) =
-      _$HttpResponseErrorCopyWithImpl<T, $Res>;
+abstract class _$$HttpResponseErrorCopyWith<T, $Res> {
+  factory _$$HttpResponseErrorCopyWith(_$HttpResponseError<T> value,
+          $Res Function(_$HttpResponseError<T>) then) =
+      __$$HttpResponseErrorCopyWithImpl<T, $Res>;
   $Res call({Exception exception});
 }
 
 /// @nodoc
-class _$HttpResponseErrorCopyWithImpl<T, $Res>
+class __$$HttpResponseErrorCopyWithImpl<T, $Res>
     extends _$HttpResponseStateCopyWithImpl<T, $Res>
-    implements $HttpResponseErrorCopyWith<T, $Res> {
-  _$HttpResponseErrorCopyWithImpl(
-      HttpResponseError<T> _value, $Res Function(HttpResponseError<T>) _then)
-      : super(_value, (v) => _then(v as HttpResponseError<T>));
+    implements _$$HttpResponseErrorCopyWith<T, $Res> {
+  __$$HttpResponseErrorCopyWithImpl(_$HttpResponseError<T> _value,
+      $Res Function(_$HttpResponseError<T>) _then)
+      : super(_value, (v) => _then(v as _$HttpResponseError<T>));
 
   @override
-  HttpResponseError<T> get _value => super._value as HttpResponseError<T>;
+  _$HttpResponseError<T> get _value => super._value as _$HttpResponseError<T>;
 
   @override
   $Res call({
     Object? exception = freezed,
   }) {
-    return _then(HttpResponseError<T>(
+    return _then(_$HttpResponseError<T>(
       exception == freezed
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
@@ -293,18 +269,18 @@ class _$HttpResponseError<T> implements HttpResponseError<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is HttpResponseError<T> &&
-            (identical(other.exception, exception) ||
-                other.exception == exception));
+            other is _$HttpResponseError<T> &&
+            const DeepCollectionEquality().equals(other.exception, exception));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, exception);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(exception));
 
   @JsonKey(ignore: true)
   @override
-  $HttpResponseErrorCopyWith<T, HttpResponseError<T>> get copyWith =>
-      _$HttpResponseErrorCopyWithImpl<T, HttpResponseError<T>>(
+  _$$HttpResponseErrorCopyWith<T, _$HttpResponseError<T>> get copyWith =>
+      __$$HttpResponseErrorCopyWithImpl<T, _$HttpResponseError<T>>(
           this, _$identity);
 
   @override
@@ -377,38 +353,40 @@ class _$HttpResponseError<T> implements HttpResponseError<T> {
 }
 
 abstract class HttpResponseError<T> implements HttpResponseState<T> {
-  const factory HttpResponseError(Exception exception) = _$HttpResponseError<T>;
+  const factory HttpResponseError(final Exception exception) =
+      _$HttpResponseError<T>;
 
-  Exception get exception;
+  Exception get exception => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $HttpResponseErrorCopyWith<T, HttpResponseError<T>> get copyWith =>
+  _$$HttpResponseErrorCopyWith<T, _$HttpResponseError<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HttpResponseLoadingCopyWith<T, $Res> {
-  factory $HttpResponseLoadingCopyWith(HttpResponseLoading<T> value,
-          $Res Function(HttpResponseLoading<T>) then) =
-      _$HttpResponseLoadingCopyWithImpl<T, $Res>;
+abstract class _$$HttpResponseLoadingCopyWith<T, $Res> {
+  factory _$$HttpResponseLoadingCopyWith(_$HttpResponseLoading<T> value,
+          $Res Function(_$HttpResponseLoading<T>) then) =
+      __$$HttpResponseLoadingCopyWithImpl<T, $Res>;
   $Res call({AsyncValue<HttpResponseState<T>>? value});
 }
 
 /// @nodoc
-class _$HttpResponseLoadingCopyWithImpl<T, $Res>
+class __$$HttpResponseLoadingCopyWithImpl<T, $Res>
     extends _$HttpResponseStateCopyWithImpl<T, $Res>
-    implements $HttpResponseLoadingCopyWith<T, $Res> {
-  _$HttpResponseLoadingCopyWithImpl(HttpResponseLoading<T> _value,
-      $Res Function(HttpResponseLoading<T>) _then)
-      : super(_value, (v) => _then(v as HttpResponseLoading<T>));
+    implements _$$HttpResponseLoadingCopyWith<T, $Res> {
+  __$$HttpResponseLoadingCopyWithImpl(_$HttpResponseLoading<T> _value,
+      $Res Function(_$HttpResponseLoading<T>) _then)
+      : super(_value, (v) => _then(v as _$HttpResponseLoading<T>));
 
   @override
-  HttpResponseLoading<T> get _value => super._value as HttpResponseLoading<T>;
+  _$HttpResponseLoading<T> get _value =>
+      super._value as _$HttpResponseLoading<T>;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(HttpResponseLoading<T>(
+    return _then(_$HttpResponseLoading<T>(
       value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -434,17 +412,18 @@ class _$HttpResponseLoading<T> implements HttpResponseLoading<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is HttpResponseLoading<T> &&
-            (identical(other.value, value) || other.value == value));
+            other is _$HttpResponseLoading<T> &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, value);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  $HttpResponseLoadingCopyWith<T, HttpResponseLoading<T>> get copyWith =>
-      _$HttpResponseLoadingCopyWithImpl<T, HttpResponseLoading<T>>(
+  _$$HttpResponseLoadingCopyWith<T, _$HttpResponseLoading<T>> get copyWith =>
+      __$$HttpResponseLoadingCopyWithImpl<T, _$HttpResponseLoading<T>>(
           this, _$identity);
 
   @override
@@ -517,11 +496,12 @@ class _$HttpResponseLoading<T> implements HttpResponseLoading<T> {
 }
 
 abstract class HttpResponseLoading<T> implements HttpResponseState<T> {
-  const factory HttpResponseLoading(AsyncValue<HttpResponseState<T>>? value) =
-      _$HttpResponseLoading<T>;
+  const factory HttpResponseLoading(
+      final AsyncValue<HttpResponseState<T>>? value) = _$HttpResponseLoading<T>;
 
-  AsyncValue<HttpResponseState<T>>? get value;
+  AsyncValue<HttpResponseState<T>>? get value =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $HttpResponseLoadingCopyWith<T, HttpResponseLoading<T>> get copyWith =>
+  _$$HttpResponseLoadingCopyWith<T, _$HttpResponseLoading<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

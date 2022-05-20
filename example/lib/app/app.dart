@@ -4,8 +4,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_extension/riverpod_extension.dart';
-import '../domain/repositories/token/refresh.dart';
 
+import '../domain/repositories/token/refresh.dart';
 import 'app_hooks.dart';
 import 'app_keys.dart';
 import 'app_logs.dart';
@@ -32,8 +32,8 @@ class App extends HookConsumerWidget {
             await ref.watch(tokenRefreshProvider.future);
           },
         );
-        WidgetsBinding.instance?.addObserver(observer);
-        return () => WidgetsBinding.instance?.removeObserver(observer);
+        WidgetsBinding.instance.addObserver(observer);
+        return () => WidgetsBinding.instance.removeObserver(observer);
       },
       const [],
     );

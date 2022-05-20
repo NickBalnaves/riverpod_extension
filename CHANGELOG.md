@@ -1,6 +1,14 @@
+## 1.5.0
+
+* chore: upgrade dependencies
+
 ## 1.5.0-dev.0
 
 * chore: Upgrade riverpod to 2.0.0-dev.0
+
+## 1.4.2
+
+* chore: Upgrade freezed
 
 ## 1.4.1
 

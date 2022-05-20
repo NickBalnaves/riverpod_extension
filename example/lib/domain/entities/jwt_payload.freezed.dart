@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'jwt_payload.dart';
@@ -11,40 +12,11 @@ part of 'jwt_payload.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 JwtPayload _$JwtPayloadFromJson(Map<String, dynamic> json) {
   return _JwtPayload.fromJson(json);
 }
-
-/// @nodoc
-class _$JwtPayloadTearOff {
-  const _$JwtPayloadTearOff();
-
-  _JwtPayload call(
-      {String sub = '',
-      String scope = '',
-      String iss = '',
-      int exp = 0,
-      int iat = 0,
-      String jti = ''}) {
-    return _JwtPayload(
-      sub: sub,
-      scope: scope,
-      iss: iss,
-      exp: exp,
-      iat: iat,
-      jti: jti,
-    );
-  }
-
-  JwtPayload fromJson(Map<String, Object?> json) {
-    return JwtPayload.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $JwtPayload = _$JwtPayloadTearOff();
 
 /// @nodoc
 mixin _$JwtPayload {
@@ -117,24 +89,25 @@ class _$JwtPayloadCopyWithImpl<$Res> implements $JwtPayloadCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$JwtPayloadCopyWith<$Res> implements $JwtPayloadCopyWith<$Res> {
-  factory _$JwtPayloadCopyWith(
-          _JwtPayload value, $Res Function(_JwtPayload) then) =
-      __$JwtPayloadCopyWithImpl<$Res>;
+abstract class _$$_JwtPayloadCopyWith<$Res>
+    implements $JwtPayloadCopyWith<$Res> {
+  factory _$$_JwtPayloadCopyWith(
+          _$_JwtPayload value, $Res Function(_$_JwtPayload) then) =
+      __$$_JwtPayloadCopyWithImpl<$Res>;
   @override
   $Res call(
       {String sub, String scope, String iss, int exp, int iat, String jti});
 }
 
 /// @nodoc
-class __$JwtPayloadCopyWithImpl<$Res> extends _$JwtPayloadCopyWithImpl<$Res>
-    implements _$JwtPayloadCopyWith<$Res> {
-  __$JwtPayloadCopyWithImpl(
-      _JwtPayload _value, $Res Function(_JwtPayload) _then)
-      : super(_value, (v) => _then(v as _JwtPayload));
+class __$$_JwtPayloadCopyWithImpl<$Res> extends _$JwtPayloadCopyWithImpl<$Res>
+    implements _$$_JwtPayloadCopyWith<$Res> {
+  __$$_JwtPayloadCopyWithImpl(
+      _$_JwtPayload _value, $Res Function(_$_JwtPayload) _then)
+      : super(_value, (v) => _then(v as _$_JwtPayload));
 
   @override
-  _JwtPayload get _value => super._value as _JwtPayload;
+  _$_JwtPayload get _value => super._value as _$_JwtPayload;
 
   @override
   $Res call({
@@ -145,7 +118,7 @@ class __$JwtPayloadCopyWithImpl<$Res> extends _$JwtPayloadCopyWithImpl<$Res>
     Object? iat = freezed,
     Object? jti = freezed,
   }) {
-    return _then(_JwtPayload(
+    return _then(_$_JwtPayload(
       sub: sub == freezed
           ? _value.sub
           : sub // ignore: cast_nullable_to_non_nullable
@@ -188,23 +161,23 @@ class _$_JwtPayload implements _JwtPayload {
   factory _$_JwtPayload.fromJson(Map<String, dynamic> json) =>
       _$$_JwtPayloadFromJson(json);
 
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String sub;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String scope;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String iss;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int exp;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int iat;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String jti;
 
   @override
@@ -216,22 +189,30 @@ class _$_JwtPayload implements _JwtPayload {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _JwtPayload &&
-            (identical(other.sub, sub) || other.sub == sub) &&
-            (identical(other.scope, scope) || other.scope == scope) &&
-            (identical(other.iss, iss) || other.iss == iss) &&
-            (identical(other.exp, exp) || other.exp == exp) &&
-            (identical(other.iat, iat) || other.iat == iat) &&
-            (identical(other.jti, jti) || other.jti == jti));
+            other is _$_JwtPayload &&
+            const DeepCollectionEquality().equals(other.sub, sub) &&
+            const DeepCollectionEquality().equals(other.scope, scope) &&
+            const DeepCollectionEquality().equals(other.iss, iss) &&
+            const DeepCollectionEquality().equals(other.exp, exp) &&
+            const DeepCollectionEquality().equals(other.iat, iat) &&
+            const DeepCollectionEquality().equals(other.jti, jti));
   }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, sub, scope, iss, exp, iat, jti);
 
   @JsonKey(ignore: true)
   @override
-  _$JwtPayloadCopyWith<_JwtPayload> get copyWith =>
-      __$JwtPayloadCopyWithImpl<_JwtPayload>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(sub),
+      const DeepCollectionEquality().hash(scope),
+      const DeepCollectionEquality().hash(iss),
+      const DeepCollectionEquality().hash(exp),
+      const DeepCollectionEquality().hash(iat),
+      const DeepCollectionEquality().hash(jti));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_JwtPayloadCopyWith<_$_JwtPayload> get copyWith =>
+      __$$_JwtPayloadCopyWithImpl<_$_JwtPayload>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -241,30 +222,30 @@ class _$_JwtPayload implements _JwtPayload {
 
 abstract class _JwtPayload implements JwtPayload {
   factory _JwtPayload(
-      {String sub,
-      String scope,
-      String iss,
-      int exp,
-      int iat,
-      String jti}) = _$_JwtPayload;
+      {final String sub,
+      final String scope,
+      final String iss,
+      final int exp,
+      final int iat,
+      final String jti}) = _$_JwtPayload;
 
   factory _JwtPayload.fromJson(Map<String, dynamic> json) =
       _$_JwtPayload.fromJson;
 
   @override
-  String get sub;
+  String get sub => throw _privateConstructorUsedError;
   @override
-  String get scope;
+  String get scope => throw _privateConstructorUsedError;
   @override
-  String get iss;
+  String get iss => throw _privateConstructorUsedError;
   @override
-  int get exp;
+  int get exp => throw _privateConstructorUsedError;
   @override
-  int get iat;
+  int get iat => throw _privateConstructorUsedError;
   @override
-  String get jti;
+  String get jti => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$JwtPayloadCopyWith<_JwtPayload> get copyWith =>
+  _$$_JwtPayloadCopyWith<_$_JwtPayload> get copyWith =>
       throw _privateConstructorUsedError;
 }

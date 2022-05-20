@@ -23,36 +23,13 @@ class AppTheme extends _AppTheme {
   const AppTheme();
 
   @override
-  ColorScheme get _lightColorScheme => const ColorScheme(
-        primary: Colors.blue,
-        primaryVariant: Colors.blue,
-        secondary: Colors.blue,
-        secondaryVariant: Colors.blue,
-        surface: Colors.white,
-        background: Colors.white,
-        error: Colors.red,
-        onPrimary: Colors.white,
-        onSecondary: Colors.white,
-        onSurface: Colors.black,
-        onBackground: Colors.black,
-        onError: Colors.white,
-        brightness: Brightness.light,
+  ColorScheme get _lightColorScheme => ColorScheme.fromSeed(
+        seedColor: Colors.blue,
       );
 
   @override
-  ColorScheme get _darkColorScheme => const ColorScheme(
-        primary: Colors.black,
-        primaryVariant: Colors.black,
-        secondary: Colors.black,
-        secondaryVariant: Colors.black,
-        surface: Colors.white,
-        background: Colors.white,
-        error: Colors.red,
-        onPrimary: Colors.white,
-        onSecondary: Colors.white,
-        onSurface: Colors.black,
-        onBackground: Colors.black,
-        onError: Colors.white,
+  ColorScheme get _darkColorScheme => ColorScheme.fromSeed(
+        seedColor: Colors.blue,
         brightness: Brightness.dark,
       );
 }
